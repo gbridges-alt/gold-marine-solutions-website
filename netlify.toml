@@ -1,6 +1,31 @@
 headers = []
 redirects = []
 
+# 301 redirects for removed suburb pages — preserves SEO and avoids 404s
+[[redirects]]
+  from = "/coomera.html"
+  to = "/#areas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/hope-island.html"
+  to = "/#areas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/runaway-bay.html"
+  to = "/#areas"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/southport.html"
+  to = "/#areas"
+  status = 301
+  force = true
+
 [functions]
 
   [functions.emails]

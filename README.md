@@ -51,13 +51,9 @@ npx serve .
 ```
 /
 ├── index.html              ← Homepage (main file — edit this most)
-├── coomera.html            ← Suburb SEO landing page
-├── hope-island.html        ← Suburb SEO landing page
-├── runaway-bay.html        ← Suburb SEO landing page
-├── southport.html          ← Suburb SEO landing page
 ├── links.html              ← Link-in-bio / social links page
 ├── privacy.html            ← Privacy policy
-├── netlify.toml            ← Netlify config
+├── netlify.toml            ← Netlify config (includes 301 redirects from old suburb URLs)
 ├── robots.txt              ← Search engine crawl rules
 ├── sitemap.xml             ← XML sitemap for SEO
 ├── googlea6d39f31da54cb95.html  ← Google Search Console verification (do not delete)

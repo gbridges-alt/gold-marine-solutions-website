@@ -64,10 +64,6 @@ Contact form won't work locally — that's expected. Netlify only processes it o
 ```
 /
 ├── index.html              ← MAIN PAGE — homepage, edit this most
-├── coomera.html            ← Suburb SEO page
-├── hope-island.html        ← Suburb SEO page
-├── runaway-bay.html        ← Suburb SEO page
-├── southport.html          ← Suburb SEO page
 ├── links.html              ← Social / link-in-bio page
 ├── privacy.html            ← Privacy policy
 ├── netlify.toml            ← Netlify config (leave alone)
@@ -117,7 +113,7 @@ Search across **all `.html` files** if any of these change:
 
 1. **All CSS/JS is inline** — no separate `.css` or `.js` files. Everything lives inside `<style>` and `<script>` tags in each HTML file.
 
-2. **Suburb pages are not templated** — `coomera.html`, `hope-island.html`, `runaway-bay.html`, `southport.html` all have their own copy of the nav and footer. If you change the nav on `index.html`, replicate that change in each suburb page.
+2. **Suburb pages were removed** — `coomera.html`, `hope-island.html`, `runaway-bay.html`, `southport.html` previously existed as suburb-specific SEO landing pages but have been deleted (Geordie operates fully mobile across the whole region, so suburb-specific pages were misleading). 301 redirects in `netlify.toml` send the old URLs to `/#areas` so any inbound links don't 404.
 
 3. **`netlify.toml` had an old absolute path** — the `publish =` line originally pointed to a Google Drive path. It's been corrected to `"."`. If Netlify ever complains about the publish directory, make sure it reads `publish = "."`.
 
@@ -141,4 +137,4 @@ Search across **all `.html` files** if any of these change:
 
 **Change business hours:** Search `Mon-Sun` in `index.html`.
 
-**Add a new suburb page:** Copy an existing suburb page (e.g. `coomera.html`), update the text and `<title>`/meta tags, add a link in the footer of each page, and add it to `sitemap.xml`.
+**Add a new suburb to the service-area chips:** Add a `<span class="area-tag">Suburb Name</span>` inside the `.area-tags` block in `index.html`. No separate page needed — Geordie services everywhere mobile.
