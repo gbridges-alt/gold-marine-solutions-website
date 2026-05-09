@@ -1,5 +1,4 @@
 headers = []
-redirects = []
 
 # 301 redirects for removed suburb pages — preserves SEO and avoids 404s
 [[redirects]]
