@@ -134,6 +134,33 @@
   body.show-annual .alt-price.monthly { display: none; }
   body.show-annual .alt-price.annual { display: block; }
 
+  /* COMPARISON TABLE */
+  .compare { background: var(--white); padding: 80px 24px; }
+  .compare-inner { max-width: 1100px; margin: 0 auto; }
+  .compare-header { text-align: center; margin-bottom: 40px; }
+  .compare-header h2 { font-size: 32px; font-weight: 800; color: var(--navy); letter-spacing: -0.4px; margin-bottom: 8px; }
+  .compare-header p { color: var(--slate); font-size: 15px; }
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 16px; border: 1px solid #E2E8F0; }
+  .compare-table { width: 100%; border-collapse: collapse; min-width: 720px; background: var(--white); }
+  .compare-table th, .compare-table td { padding: 14px 16px; text-align: center; border-bottom: 1px solid #F1F5F9; font-size: 14px; }
+  .compare-table th:first-child, .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--navy); width: 36%; }
+  .compare-table thead th { background: var(--off-white); font-weight: 800; color: var(--navy); padding: 18px 16px; font-size: 15px; letter-spacing: -0.2px; }
+  .compare-table thead th.featured { background: var(--mint); color: var(--white); position: relative; }
+  .compare-table thead th.featured::after { content: 'Most popular'; display: block; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.85; margin-top: 2px; }
+  .compare-table tbody tr:last-child td { border-bottom: none; }
+  .compare-table .check { color: var(--mint-dark); font-size: 18px; font-weight: 800; }
+  .compare-table .dash { color: #CBD5E0; font-size: 18px; }
+  .compare-table .price-row td { font-size: 20px; font-weight: 800; color: var(--navy); padding-top: 22px; padding-bottom: 22px; }
+  .compare-table .price-row td small { display: block; font-size: 12px; font-weight: 500; color: var(--slate); margin-top: 4px; }
+  .compare-table .group-row td { background: #FAFBFC; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--slate); font-weight: 800; padding: 12px 16px; text-align: left; }
+  .compare-fineprint { margin-top: 24px; font-size: 12px; color: var(--slate); line-height: 1.6; padding: 0 8px; }
+  .compare-fineprint p { margin-bottom: 4px; }
+  .commitment-note { margin-top: 32px; padding: 22px 28px; background: var(--off-white); border-left: 4px solid var(--mint); border-radius: 8px; color: var(--slate); font-size: 14px; line-height: 1.6; }
+  .commitment-note strong { color: var(--navy); display: block; margin-bottom: 4px; font-weight: 700; }
+  @media (max-width: 768px) {
+    .compare-header h2 { font-size: 26px; }
+  }
+
   /* WHY MEMBERSHIP */
   .why { padding: 96px 24px; background: var(--white); }
   .why-inner { max-width: 1100px; margin: 0 auto; }
@@ -279,7 +306,7 @@
 <div class="billing-toggle">
   <div class="toggle-wrap" role="tablist" aria-label="Billing frequency">
     <button class="toggle-btn active" id="billMonthly" type="button" aria-selected="true">Monthly</button>
-    <button class="toggle-btn" id="billAnnual" type="button" aria-selected="false">Annual <span class="save-pill">SAVE ~17%</span></button>
+    <button class="toggle-btn" id="billAnnual" type="button" aria-selected="false">Annual <span class="save-pill">1.5 MONTHS FREE</span></button>
   </div>
 </div>
 
@@ -293,12 +320,12 @@
         <div class="tier-name">Gold Select</div>
         <p class="tier-tagline">For the recreational owner who wants priority access without heavy service inclusions.</p>
         <div class="tier-price price monthly"><span class="amount">$149</span><span class="period">/ month</span></div>
-        <div class="tier-price price annual"><span class="amount">$1,490</span><span class="period">/ year</span></div>
-        <p class="tier-alt-price alt-price monthly">or <strong>$1,490/yr</strong> — save $298</p>
-        <p class="tier-alt-price alt-price annual"><strong>Save $298 vs monthly</strong></p>
+        <div class="tier-price price annual"><span class="amount">$1,565</span><span class="period">/ year</span></div>
+        <p class="tier-alt-price alt-price monthly">or <strong>$1,565/yr</strong> — save $223</p>
+        <p class="tier-alt-price alt-price annual"><strong>Save $223 vs monthly</strong></p>
         <ul class="tier-features">
           <li><strong>Priority booking</strong> — skip the queue on routine jobs</li>
-          <li><strong>24/7 phone support</strong></li>
+          <li><strong>Priority phone support</strong></li>
           <li><strong>10% off</strong> labour rates</li>
           <li><strong>10% off</strong> parts</li>
           <li>1 semi-annual wellness check</li>
@@ -311,15 +338,17 @@
         <div class="tier-name">Gold Premier</div>
         <p class="tier-tagline">For the active recreational owner who's out on the water frequently.</p>
         <div class="tier-price price monthly"><span class="amount">$349</span><span class="period">/ month</span></div>
-        <div class="tier-price price annual"><span class="amount">$3,490</span><span class="period">/ year</span></div>
-        <p class="tier-alt-price alt-price monthly">or <strong>$3,490/yr</strong> — save $698</p>
-        <p class="tier-alt-price alt-price annual"><strong>Save $698 vs monthly</strong></p>
+        <div class="tier-price price annual"><span class="amount">$3,665</span><span class="period">/ year</span></div>
+        <p class="tier-alt-price alt-price monthly">or <strong>$3,665/yr</strong> — save $523</p>
+        <p class="tier-alt-price alt-price annual"><strong>Save $523 vs monthly</strong></p>
         <ul class="tier-features">
-          <li><strong>15% off</strong> labour rates</li>
-          <li><strong>15% off</strong> parts</li>
+          <li><strong>Everything in Gold Select</strong>, plus:</li>
+          <li><strong>Priority phone support</strong></li>
+          <li><strong>15% off</strong> labour rates <em>(upgraded)</em></li>
+          <li><strong>15% off</strong> parts <em>(upgraded)</em></li>
           <li><strong>1 free fuel delivery</strong> per month</li>
           <li>Full pre-trip inspection during fuel-ups</li>
-          <li>Quarterly wellness checks (combined with fuel-ups where possible)</li>
+          <li>Quarterly wellness checks <em>(upgraded from semi-annual)</em></li>
           <li>Annual battery health &amp; load test</li>
           <li><strong>Priority breakdown response</strong></li>
           <li>Annual fuel system treatment</li>
@@ -332,13 +361,14 @@
         <div class="tier-name">Gold Signature</div>
         <p class="tier-tagline">Zero-friction operation. For high-end clients who treat their boat as a second home.</p>
         <div class="tier-price price monthly"><span class="amount">$649</span><span class="period">/ month</span></div>
-        <div class="tier-price price annual"><span class="amount">$6,490</span><span class="period">/ year</span></div>
-        <p class="tier-alt-price alt-price monthly">or <strong>$6,490/yr</strong> — save $1,298</p>
-        <p class="tier-alt-price alt-price annual"><strong>Save $1,298 vs monthly</strong></p>
+        <div class="tier-price price annual"><span class="amount">$6,815</span><span class="period">/ year</span></div>
+        <p class="tier-alt-price alt-price monthly">or <strong>$6,815/yr</strong> — save $973</p>
+        <p class="tier-alt-price alt-price annual"><strong>Save $973 vs monthly</strong></p>
         <ul class="tier-features">
+          <li><strong>Everything in Gold Select &amp; Premier</strong>, plus:</li>
+          <li><strong>24/7 phone support</strong> <em>(upgraded from priority)</em></li>
           <li><strong>Exclusive member labour rates</strong></li>
-          <li><strong>At-cost parts pricing</strong></li>
-          <li><strong>1 free fuel delivery</strong> per month</li>
+          <li><strong>At-cost parts pricing<sup>*</sup></strong></li>
           <li>Monthly pre-trip preparation (fuel, fluids, full vessel walk-through)</li>
           <li><strong>Same-day priority response</strong></li>
           <li>2 waived after-hours callout fees per year</li>
@@ -349,6 +379,73 @@
         <a href="#waitlist" class="tier-cta" data-tier="Gold Signature">Join the Waitlist</a>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare">
+  <div class="compare-inner">
+    <div class="compare-header">
+      <h2>Compare tiers side-by-side</h2>
+      <p>Every difference at a glance.</p>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Gold Select</th>
+            <th class="featured">Gold Premier</th>
+            <th>Gold Signature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="price-row">
+            <td>Monthly</td>
+            <td>$149<small>per month</small></td>
+            <td>$349<small>per month</small></td>
+            <td>$649<small>per month</small></td>
+          </tr>
+          <tr class="price-row">
+            <td>Annual <small style="font-weight:500;color:var(--slate)">(1.5 months free)</small></td>
+            <td>$1,565<small>save $223/yr</small></td>
+            <td>$3,665<small>save $523/yr</small></td>
+            <td>$6,815<small>save $973/yr</small></td>
+          </tr>
+
+          <tr class="group-row"><td colspan="4">Access &amp; support</td></tr>
+          <tr><td>Priority booking</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Phone support</td><td>Priority</td><td>Priority</td><td><strong>24/7</strong></td></tr>
+          <tr><td>Breakdown response</td><td><span class="dash">—</span></td><td>Priority</td><td><strong>Same-day priority</strong></td></tr>
+          <tr><td>Waived after-hours callout fees</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><strong>2 / year</strong></td></tr>
+
+          <tr class="group-row"><td colspan="4">Discounts</td></tr>
+          <tr><td>Labour rate</td><td>10% off</td><td>15% off</td><td><strong>Exclusive member rates</strong></td></tr>
+          <tr><td>Parts</td><td>10% off</td><td>15% off</td><td><strong>At cost<sup>*</sup></strong></td></tr>
+
+          <tr class="group-row"><td colspan="4">Fuel &amp; pre-trip</td></tr>
+          <tr><td>Free fuel delivery</td><td><span class="dash">—</span></td><td>1 / month</td><td>1 / month</td></tr>
+          <tr><td>Pre-trip service</td><td><span class="dash">—</span></td><td>Inspection during fuel-ups</td><td><strong>Monthly full prep</strong></td></tr>
+          <tr><td>Annual fuel system treatment</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="group-row"><td colspan="4">Wellness, reports &amp; surveys</td></tr>
+          <tr><td>Wellness checks</td><td>1 / year</td><td>Quarterly</td><td>Quarterly</td></tr>
+          <tr><td>Annual battery health &amp; load test</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Annual mechanical survey</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Quarterly oil sampling</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Quarterly vessel reports</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compare-fineprint">
+      <p><sup>*</sup> <strong>At-cost parts pricing</strong> on Gold Signature is capped at <strong>$4,000 worth of parts per annum</strong>. Above the cap, the standard 15% member discount applies for the remainder of the year.</p>
+    </div>
+
+    <div class="commitment-note">
+      <strong>Annual plans — 12-month commitment</strong>
+      All annual memberships include a 12-month commitment. Early cancellation before the 12-month term may incur additional fees to cover services and discounts already received. Monthly plans can be cancelled any time.
     </div>
   </div>
 </section>
@@ -451,7 +548,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Can I cancel any time? <span class="chevron">⌄</span></button>
-        <div class="faq-a">Monthly members can cancel any time — no lock-in. Annual members pay upfront for the full year. We'll honour any service credits you've already earned.</div>
+        <div class="faq-a">Monthly members can cancel any time — no lock-in. Annual plans include a 12-month commitment in exchange for the discounted rate; cancelling early may incur fees to cover services and discounts already received. Any unused service credits roll over to the end of your term.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Do I have to be a member to use Gold Marine Solutions? <span class="chevron">⌄</span></button>
