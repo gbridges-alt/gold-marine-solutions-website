@@ -191,6 +191,20 @@
   .hero-photo:hover img { transform: scale(1.05); }
   .hero-photo.tall { grid-row: span 2; aspect-ratio: auto; }
 
+  /* MEMBERSHIP BANNER */
+  .membership-banner { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); padding: 28px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .membership-banner-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .membership-banner-text { color: var(--white); flex: 1; min-width: 280px; }
+  .membership-banner-badge { display: inline-block; background: rgba(197,165,90,0.18); border: 1px solid rgba(197,165,90,0.35); color: var(--mint-light); padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+  .membership-banner h3 { font-size: 22px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.3px; }
+  .membership-banner h3 span { color: var(--mint-light); }
+  .membership-banner p { color: rgba(255,255,255,0.6); font-size: 14px; }
+  .membership-banner .btn-primary { white-space: nowrap; }
+  @media (max-width: 768px) {
+    .membership-banner-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .membership-banner h3 { font-size: 19px; }
+  }
+
   /* PRICING STRIP */
   .pricing-strip { background: var(--white); padding: 36px 24px; border-bottom: 1px solid #E2E8F0; }
   .pricing-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; justify-content: center; }
@@ -390,6 +404,7 @@
       <a href="#about">About</a>
       <a href="#gallery">Our Work</a>
       <a href="#reviews">Reviews</a>
+      <a href="/membership.html">Membership</a>
       <a href="#areas">Service Areas</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -411,6 +426,7 @@
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#gallery" onclick="closeMenu()">Our Work</a>
   <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="/membership.html" onclick="closeMenu()">Membership</a>
   <a href="#areas" onclick="closeMenu()">Service Areas</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
@@ -479,6 +495,18 @@
       <div class="pricing-extra">Oil sampling, anodes, impeller health, belts &amp; drive system</div>
     </div>
     <div class="pricing-note"><strong>Fixed quote</strong> before any work starts. No surprises on the invoice.</div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP BANNER -->
+<section class="membership-banner" aria-label="Gold Marine Membership">
+  <div class="membership-banner-inner">
+    <div class="membership-banner-text">
+      <span class="membership-banner-badge">★ New — Founding members</span>
+      <h3>The <span>Gold Marine Membership</span> — priority service, member rates, included emergency cover</h3>
+      <p>Three tiers from $49/mo. Lock in founding-member rates for life.</p>
+    </div>
+    <a href="/membership.html" class="btn-primary">See the Tiers →</a>
   </div>
 </section>
 
@@ -897,13 +925,11 @@
       <a href="#services">Emergency Callouts</a>
     </div>
     <div>
-      <h4>Service Areas</h4>
-      <a href="#areas">Coomera</a>
-      <a href="#areas">Hope Island</a>
-      <a href="#areas">Southport</a>
-      <a href="#areas">Runaway Bay</a>
-      <a href="#areas">Surfers Paradise</a>
-      <a href="#areas">Jacobs Well</a>
+      <h4>Membership</h4>
+      <a href="/membership.html#tiers">Gold Select</a>
+      <a href="/membership.html#tiers">Gold Premier</a>
+      <a href="/membership.html#tiers">Gold Signature</a>
+      <a href="/membership.html#waitlist">Join the Waitlist</a>
     </div>
     <div>
       <h4>Contact</h4>
