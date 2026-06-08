@@ -104,7 +104,7 @@ Search across **all `.html` files** if any of these change:
 | Email | `geordie@goldmarinesolutions.com` |
 | WhatsApp link | `https://wa.me/61436965243` |
 | Facebook | `https://www.facebook.com/profile.php?id=61556990786261` |
-| Instagram | `https://www.instagram.com/outbackdiesel/` |
+| Instagram | `https://www.instagram.com/goldmarinesolutions/` |
 | Google Analytics ID | `G-6W754KYH0C` (in `index.html` `<head>`) |
 
 ---
