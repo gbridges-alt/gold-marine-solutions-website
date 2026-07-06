@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6W754KYH0C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6W754KYH0C');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vessel Management Memberships | Gold Marine Solutions — Own the Boat. We'll Manage the Rest.</title>
+<meta name="description" content="Premium vessel management and preventative maintenance memberships on the Gold Coast. Priority access, planned maintenance and one trusted marine contact. Gold Select, Gold Premier, Gold Signature.">
+
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="canonical" href="https://goldmarinesolutions.com/membership.html">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Gold Marine Memberships — Own the Boat. We'll Manage the Rest.">
+<meta property="og:description" content="Priority marine service, preventative maintenance and complete vessel management for Gold Coast boat owners. Three tiers: Gold Select, Gold Premier, Gold Signature.">
+<meta property="og:image" content="https://goldmarinesolutions.com/hero-cat.jpg">
+<meta property="og:url" content="https://goldmarinesolutions.com/membership.html">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --mint: #C5A55A;
+    --mint-light: #D4B96A;
+    --mint-dark: #A8893D;
+    --navy: #1A1A1A;
+    --navy-light: #2A2A2A;
+    --charcoal: #111111;
+    --slate: #4A5568;
+    --light-mint: #F5F0E0;
+    --off-white: #F7F6F3;
+    --white: #FFFFFF;
+    --gold: #C5A55A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #C5A55A; outline-offset: 3px; border-radius: 4px; }
+  body { font-family: 'Inter', -apple-system, sans-serif; color: var(--charcoal); line-height: 1.6; }
+  img { max-width: 100%; }
+
+  /* NAV */
+  .nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(26,26,26,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 120px; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--mint-light); }
+  .nav-links a.current { color: var(--mint-light); }
+  .nav-phone { display: flex; align-items: center; gap: 16px; }
+  .nav-phone a.phone { color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none; }
+  .btn-nav { background: var(--mint); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+  .btn-nav:hover { background: var(--mint-dark); transform: translateY(-1px); }
+  .btn-emergency { background: #DC2626; color: var(--white); padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.3px; text-transform: uppercase; }
+  .btn-emergency:hover { background: #B91C1C; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(220,38,38,0.45); }
+  .btn-emergency .pulse-dot { width: 8px; height: 8px; background: #FFF; border-radius: 50%; animation: pulse 1.6s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
+
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; position: fixed; top: 120px; left: 0; right: 0; background: rgba(17,17,17,0.98); backdrop-filter: blur(12px); z-index: 999; padding: 24px; flex-direction: column; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 16px; font-weight: 500; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu a:hover { color: var(--mint-light); }
+  .mobile-menu .mobile-cta { margin-top: 16px; background: var(--mint); color: white; padding: 14px; border-radius: 8px; text-align: center; font-weight: 700; border-bottom: none; }
+
+  /* HERO */
+  .hero { padding: 0; position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
+  .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.85) 50%, rgba(26,26,26,0.78) 100%); }
+  .hero-inner { max-width: 900px; margin: 0 auto; padding: 160px 24px 80px; position: relative; z-index: 2; text-align: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(197,165,90,0.2); border: 1px solid rgba(197,165,90,0.35); color: var(--mint-light); padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; letter-spacing: 0.5px; }
+  .hero h1 { color: var(--white); font-size: 56px; font-weight: 800; line-height: 1.05; letter-spacing: -1.8px; margin-bottom: 24px; }
+  .hero h1 span { color: var(--mint-light); }
+  .hero-sub { color: rgba(255,255,255,0.8); font-size: 19px; line-height: 1.7; margin-bottom: 36px; max-width: 700px; margin-left: auto; margin-right: auto; }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--mint); color: var(--white); padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--mint-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(197,165,90,0.35); }
+  .btn-outline { background: transparent; color: var(--white); padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; border: 2px solid rgba(255,255,255,0.25); transition: all 0.25s; }
+  .btn-outline:hover { border-color: var(--mint-light); color: var(--mint-light); }
+
+  /* BILLING TOGGLE */
+  .billing-toggle { display: flex; justify-content: center; padding: 56px 24px 16px; background: var(--off-white); }
+  .toggle-wrap { display: inline-flex; align-items: center; gap: 16px; background: var(--white); padding: 8px; border-radius: 100px; border: 1px solid #E2E8F0; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .toggle-btn { background: none; border: none; padding: 12px 24px; border-radius: 100px; font-family: inherit; font-size: 14px; font-weight: 600; color: var(--slate); cursor: pointer; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; }
+  .toggle-btn.active { background: var(--navy); color: var(--white); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  .toggle-btn .save-pill { background: var(--mint); color: var(--white); padding: 2px 8px; border-radius: 100px; font-size: 11px; font-weight: 700; margin-left: 4px; }
+  .toggle-btn.active .save-pill { background: var(--mint-light); color: var(--navy); }
+
+  /* TIERS */
+  .tiers { padding: 24px 24px 96px; background: var(--off-white); }
+  .tiers-inner { max-width: 1200px; margin: 0 auto; }
+  .tiers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+  .tier-card { background: var(--white); border-radius: 20px; overflow: hidden; border: 1px solid #E2E8F0; padding: 36px 28px; display: flex; flex-direction: column; position: relative; transition: all 0.3s; }
+  .tier-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px rgba(0,0,0,0.08); }
+  .tier-card.featured { border-color: var(--mint); box-shadow: 0 24px 48px rgba(197,165,90,0.18); transform: scale(1.02); }
+  .tier-card.featured::before { content: 'MOST POPULAR'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--mint); color: var(--white); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 6px 16px; border-radius: 0 0 8px 8px; }
+  .tier-name { font-size: 22px; font-weight: 800; color: var(--navy); margin-bottom: 6px; letter-spacing: -0.3px; }
+  .tier-tagline { color: var(--slate); font-size: 14px; margin-bottom: 24px; min-height: 42px; }
+  .tier-price { display: flex; align-items: baseline; gap: 6px; margin-bottom: 4px; }
+  .tier-price .amount { font-size: 44px; font-weight: 800; color: var(--navy); letter-spacing: -1.5px; }
+  .tier-price .period { color: var(--slate); font-size: 15px; font-weight: 600; }
+  .tier-alt-price { color: var(--slate); font-size: 13px; margin-bottom: 28px; height: 18px; }
+  .tier-alt-price strong { color: var(--mint-dark); font-weight: 700; }
+  .tier-features { list-style: none; padding: 0; margin: 0 0 32px; flex-grow: 1; }
+  .tier-features li { padding: 10px 0 10px 30px; position: relative; color: var(--charcoal); font-size: 14.5px; line-height: 1.5; border-bottom: 1px solid #F1F5F9; }
+  .tier-features li:last-child { border-bottom: none; }
+  .tier-features li::before { content: '✓'; position: absolute; left: 0; top: 10px; width: 20px; height: 20px; background: var(--light-mint); color: var(--mint-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; }
+  .tier-features li strong { color: var(--navy); font-weight: 700; }
+  .tier-cta { display: block; text-align: center; background: var(--navy); color: var(--white); padding: 14px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; transition: all 0.25s; }
+  .tier-cta:hover { background: var(--mint-dark); transform: translateY(-1px); }
+  .tier-card.featured .tier-cta { background: var(--mint); }
+  .tier-card.featured .tier-cta:hover { background: var(--mint-dark); }
+
+  /* SIGNATURE CARD — distinct, premium treatment */
+  .tier-card.signature { background: linear-gradient(160deg, var(--charcoal) 0%, var(--navy-light) 100%); border: 1px solid var(--mint); }
+  .tier-card.signature::before { content: 'COMPLETE VESSEL MANAGEMENT'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--mint); color: var(--charcoal); font-size: 11px; font-weight: 800; letter-spacing: 1.5px; padding: 6px 16px; border-radius: 0 0 8px 8px; white-space: nowrap; }
+  .tier-card.signature .tier-name { color: var(--mint-light); }
+  .tier-card.signature .tier-tagline { color: rgba(255,255,255,0.7); }
+  .tier-card.signature .tier-price .amount { color: var(--white); }
+  .tier-card.signature .tier-price .period { color: rgba(255,255,255,0.6); }
+  .tier-card.signature .tier-alt-price { color: rgba(255,255,255,0.6); }
+  .tier-card.signature .tier-alt-price strong { color: var(--mint-light); }
+  .tier-card.signature .tier-features li { color: rgba(255,255,255,0.85); border-bottom-color: rgba(255,255,255,0.08); }
+  .tier-card.signature .tier-features li strong { color: var(--white); }
+  .tier-card.signature .tier-features li::before { background: rgba(197,165,90,0.2); color: var(--mint-light); }
+  .tier-card.signature .tier-cta { background: var(--mint); }
+  .tier-card.signature .tier-cta:hover { background: var(--mint-light); color: var(--charcoal); }
+  .tier-card.signature:hover { box-shadow: 0 24px 48px rgba(197,165,90,0.25); }
+
+  /* SIGNATURE SPOTLIGHT */
+  .spotlight { padding: 96px 24px; background: linear-gradient(160deg, var(--charcoal) 0%, var(--navy-light) 100%); }
+  .spotlight-inner { max-width: 1000px; margin: 0 auto; }
+  .spotlight-header { text-align: center; margin-bottom: 40px; }
+  .spotlight-header .section-label { color: var(--mint-light); }
+  .spotlight-header .section-title { color: var(--white); }
+  .spotlight-lede { color: rgba(255,255,255,0.75); font-size: 17px; line-height: 1.8; max-width: 760px; margin: 0 auto 32px; text-align: center; }
+  .spotlight-quote { text-align: center; font-size: 24px; font-weight: 800; color: var(--mint-light); letter-spacing: -0.4px; margin: 0 auto 56px; max-width: 700px; line-height: 1.4; }
+  .spotlight-why { background: rgba(255,255,255,0.04); border: 1px solid rgba(197,165,90,0.25); border-radius: 16px; padding: 36px; margin-bottom: 48px; }
+  .spotlight-why h3 { color: var(--white); font-size: 24px; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.3px; }
+  .spotlight-why p { color: rgba(255,255,255,0.75); font-size: 15px; line-height: 1.8; margin-bottom: 12px; }
+  .spotlight-why p:last-child { margin-bottom: 0; }
+  .spotlight-why em { color: var(--mint-light); font-style: normal; font-weight: 600; }
+  .spotlight-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .spotlight-col { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 32px; }
+  .spotlight-col h4 { color: var(--mint-light); font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 18px; }
+  .spotlight-col ul { list-style: none; padding: 0; margin: 0; }
+  .spotlight-col li { padding: 9px 0 9px 28px; position: relative; color: rgba(255,255,255,0.8); font-size: 14.5px; line-height: 1.5; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .spotlight-col li:last-child { border-bottom: none; }
+  .spotlight-col li::before { content: '✓'; position: absolute; left: 0; top: 9px; color: var(--mint-light); font-weight: 800; font-size: 13px; }
+  @media (max-width: 768px) {
+    .spotlight-cols { grid-template-columns: 1fr; }
+    .spotlight-quote { font-size: 19px; }
+    .spotlight-why { padding: 26px; }
+  }
+
+  .price.annual { display: none; }
+  .alt-price.annual { display: none; }
+  body.show-annual .price.monthly { display: none; }
+  body.show-annual .price.annual { display: flex; }
+  body.show-annual .alt-price.monthly { display: none; }
+  body.show-annual .alt-price.annual { display: block; }
+
+  /* COMPARISON TABLE */
+  .compare { background: var(--white); padding: 80px 24px; }
+  .compare-inner { max-width: 1100px; margin: 0 auto; }
+  .compare-header { text-align: center; margin-bottom: 40px; }
+  .compare-header h2 { font-size: 32px; font-weight: 800; color: var(--navy); letter-spacing: -0.4px; margin-bottom: 8px; }
+  .compare-header p { color: var(--slate); font-size: 15px; }
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 16px; border: 1px solid #E2E8F0; }
+  .compare-table { width: 100%; border-collapse: collapse; min-width: 720px; background: var(--white); }
+  .compare-table th, .compare-table td { padding: 14px 16px; text-align: center; border-bottom: 1px solid #F1F5F9; font-size: 14px; }
+  .compare-table th:first-child, .compare-table td:first-child { text-align: left; font-weight: 600; color: var(--navy); width: 36%; }
+  .compare-table thead th { background: var(--off-white); font-weight: 800; color: var(--navy); padding: 18px 16px; font-size: 15px; letter-spacing: -0.2px; }
+  .compare-table thead th.featured { background: var(--mint); color: var(--white); position: relative; }
+  .compare-table thead th.featured::after { content: 'Most popular'; display: block; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; opacity: 0.85; margin-top: 2px; }
+  .compare-table tbody tr:last-child td { border-bottom: none; }
+  .compare-table .check { color: var(--mint-dark); font-size: 18px; font-weight: 800; }
+  .compare-table .dash { color: #CBD5E0; font-size: 18px; }
+  .compare-table .price-row td { font-size: 20px; font-weight: 800; color: var(--navy); padding-top: 22px; padding-bottom: 22px; }
+  .compare-table .price-row td small { display: block; font-size: 12px; font-weight: 500; color: var(--slate); margin-top: 4px; }
+  .compare-table .group-row td { background: #FAFBFC; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--slate); font-weight: 800; padding: 12px 16px; text-align: left; }
+  .compare-fineprint { margin-top: 24px; font-size: 12px; color: var(--slate); line-height: 1.6; padding: 0 8px; }
+  .compare-fineprint p { margin-bottom: 4px; }
+  .commitment-note { margin-top: 32px; padding: 22px 28px; background: var(--off-white); border-left: 4px solid var(--mint); border-radius: 8px; color: var(--slate); font-size: 14px; line-height: 1.6; }
+  .commitment-note strong { color: var(--navy); display: block; margin-bottom: 4px; font-weight: 700; }
+  @media (max-width: 768px) {
+    .compare-header h2 { font-size: 26px; }
+  }
+
+  /* WHY MEMBERSHIP */
+  .why { padding: 96px 24px; background: var(--white); }
+  .why-inner { max-width: 1100px; margin: 0 auto; }
+  .why-header { text-align: center; margin-bottom: 56px; }
+  .section-label { color: var(--mint); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
+  .section-title { font-size: 38px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; }
+  .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .why-item { padding: 24px; text-align: left; }
+  .why-icon { font-size: 32px; margin-bottom: 12px; display: block; }
+  .why-item h4 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .why-item p { font-size: 14px; color: var(--slate); line-height: 1.6; }
+
+  /* WAITLIST FORM */
+  .waitlist { padding: 96px 24px; background: linear-gradient(135deg, var(--charcoal) 0%, var(--navy-light) 100%); }
+  .waitlist-inner { max-width: 700px; margin: 0 auto; }
+  .waitlist-header { text-align: center; margin-bottom: 40px; color: var(--white); }
+  .waitlist-header h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; letter-spacing: -0.5px; }
+  .waitlist-header p { font-size: 17px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+  .waitlist-form { background: var(--white); border-radius: 20px; padding: 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.3); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1.5px solid #E2E8F0; border-radius: 8px; font-family: inherit; font-size: 14px; transition: all 0.2s; background: var(--off-white); }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--mint); box-shadow: 0 0 0 3px rgba(197,165,90,0.1); background: white; }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .btn-submit { width: 100%; background: var(--mint); color: var(--white); padding: 16px; border: none; border-radius: 10px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.25s; }
+  .btn-submit:hover { background: var(--mint-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(197,165,90,0.3); }
+  .waitlist-note { text-align: center; color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 16px; line-height: 1.6; }
+
+  /* FAQ */
+  .faq { padding: 96px 24px; background: var(--white); }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq-header { text-align: center; margin-bottom: 48px; }
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid #E2E8F0; }
+  .faq-item:first-child { border-top: 1px solid #E2E8F0; }
+  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 22px 0; font-size: 16px; font-weight: 700; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: inherit; }
+  .faq-q:hover { color: var(--mint-dark); }
+  .faq-q .chevron { color: var(--mint); font-size: 20px; transition: transform 0.3s; flex-shrink: 0; }
+  .faq-q.open .chevron { transform: rotate(180deg); }
+  .faq-a { display: none; padding: 0 0 22px; color: var(--slate); font-size: 15px; line-height: 1.7; }
+  .faq-a.open { display: block; }
+
+  /* STICKY MOBILE CALL */
+  .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: var(--mint); padding: 14px 24px; gap: 12px; align-items: center; justify-content: center; box-shadow: 0 -4px 24px rgba(0,0,0,0.3); }
+  .sticky-call a { color: white; text-decoration: none; font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 8px; flex: 1; justify-content: center; padding: 10px; border-radius: 8px; }
+  .sticky-call a.call-btn { background: rgba(0,0,0,0.2); }
+  .sticky-call a.quote-btn { background: rgba(255,255,255,0.15); }
+  @media (min-width: 769px) { .sticky-call { display: none !important; } }
+  @media (max-width: 768px) { .sticky-call { display: flex; } body { padding-bottom: 80px; } }
+
+  /* FOOTER */
+  .footer { padding: 56px 24px 24px; background: var(--charcoal); }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-brand p { color: rgba(255,255,255,0.45); font-size: 13px; line-height: 1.7; margin-top: 12px; }
+  .footer h4 { color: var(--white); font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+  .footer a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; display: block; margin-bottom: 10px; transition: color 0.2s; }
+  .footer a:hover { color: var(--mint-light); }
+  .footer-bottom { max-width: 1200px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
+  .footer-bottom p { color: rgba(255,255,255,0.25); font-size: 12px; }
+
+  @media (max-width: 768px) {
+    .hero-inner { padding-top: 150px; padding-bottom: 56px; }
+    .hero h1 { font-size: 34px; }
+    .hero-sub { font-size: 16px; }
+    .tiers-grid { grid-template-columns: 1fr; }
+    .tier-card.featured { transform: none; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .section-title { font-size: 28px; }
+    .nav-links { display: none; }
+    .nav-phone .phone { display: none; }
+    .nav-phone .btn-nav { display: none; }
+    .btn-emergency { padding: 8px 12px; font-size: 11px; gap: 6px; }
+    .btn-emergency .pulse-dot { width: 6px; height: 6px; }
+    .nav-inner { height: 100px; }
+    .nav-logo img { height: 80px !important; max-width: 200px !important; }
+    .mobile-menu { top: 100px; }
+    .hamburger { display: flex; }
+    .waitlist-form { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
+    </a>
+    <div class="nav-links">
+      <a href="/#services">Services</a>
+      <a href="/#about">About</a>
+      <a href="/#gallery">Our Work</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/membership.html" class="current">Membership</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/#contact">Contact</a>
+    </div>
+    <div class="nav-phone">
+      <a href="tel:0436965243" class="btn-emergency" aria-label="Emergency 24/7"><span class="pulse-dot"></span>Emergency 24/7</a>
+      <a href="/#contact" class="btn-nav">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#services" onclick="closeMenu()">Services</a>
+  <a href="/#about" onclick="closeMenu()">About</a>
+  <a href="/#gallery" onclick="closeMenu()">Our Work</a>
+  <a href="/#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="/membership.html" onclick="closeMenu()">Membership</a>
+  <a href="/#faq" onclick="closeMenu()">FAQ</a>
+  <a href="/#contact" onclick="closeMenu()">Contact</a>
+  <a href="tel:0436965243" class="mobile-cta" style="background:#DC2626;margin-top:16px;">🚨 Emergency 24/7</a>
+  <a href="tel:0436965243" class="mobile-cta" style="margin-top:8px;">📞 Call 0436 965 243</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="hero-cat.jpg" alt="Caterpillar marine diesel engine being serviced" loading="eager">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">★ LIMITED FOUNDING MEMBER SPOTS</div>
+    <h1>Own the Boat. <span>We'll Manage the Rest.</span></h1>
+    <p class="hero-sub">Priority marine service, preventative maintenance and complete vessel management for owners who want their boat ready when they are.</p>
+    <div class="hero-btns">
+      <a href="#tiers" class="btn-primary">Find the Right Membership</a>
+      <a href="#waitlist" class="btn-outline">Book a Vessel Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- BILLING TOGGLE -->
+<div class="billing-toggle">
+  <div class="toggle-wrap" role="tablist" aria-label="Billing frequency">
+    <button class="toggle-btn active" id="billMonthly" type="button" aria-selected="true">Monthly</button>
+    <button class="toggle-btn" id="billAnnual" type="button" aria-selected="false">Annual <span class="save-pill">1.5 MONTHS FREE</span></button>
+  </div>
+</div>
+
+<!-- TIERS -->
+<section class="tiers" id="tiers">
+  <div class="tiers-inner">
+    <div class="tiers-grid">
+
+      <!-- Gold Select -->
+      <div class="tier-card">
+        <div class="tier-name">Gold Select</div>
+        <p class="tier-tagline"><strong>Protect your investment.</strong> Priority access and a trusted set of eyes on your vessel.</p>
+        <div class="tier-price price monthly"><span class="amount">$149</span><span class="period">/ month</span></div>
+        <div class="tier-price price annual"><span class="amount">$1,565</span><span class="period">/ year</span></div>
+        <p class="tier-alt-price alt-price monthly">or <strong>$1,565/yr</strong> — save $223</p>
+        <p class="tier-alt-price alt-price annual"><strong>Save $223 vs monthly</strong></p>
+        <ul class="tier-features">
+          <li><strong>Priority booking</strong> — members jump the queue on routine work</li>
+          <li><strong>Priority phone support</strong> — one trusted marine contact for advice and planning</li>
+          <li>Semi-annual wellness check on your vessel</li>
+          <li>Preferred member rates on labour (10% off) and parts (10% off)</li>
+          <li>Priority access to detailing slots (standard rates)</li>
+        </ul>
+        <a href="#waitlist" class="tier-cta" data-tier="Gold Select">Reserve Your Spot</a>
+      </div>
+
+      <!-- Gold Premier -->
+      <div class="tier-card featured">
+        <div class="tier-name">Gold Premier</div>
+        <p class="tier-tagline"><strong>Stay ready for every trip.</strong> For the active owner who's on the water most weekends.</p>
+        <div class="tier-price price monthly"><span class="amount">$429</span><span class="period">/ month</span></div>
+        <div class="tier-price price annual"><span class="amount">$4,505</span><span class="period">/ year</span></div>
+        <p class="tier-alt-price alt-price monthly">or <strong>$4,505/yr</strong> — save $643</p>
+        <p class="tier-alt-price alt-price annual"><strong>Save $643 vs monthly</strong></p>
+        <ul class="tier-features">
+          <li><strong>Everything in Gold Select</strong>, plus:</li>
+          <li><strong>Quarterly wellness checks</strong> — problems found before they find you</li>
+          <li><strong>Quarterly pre-trip readiness check</strong> + exterior wash-down (vessels up to 35ft; over 35ft quoted before approval)</li>
+          <li>Annual battery health &amp; load test</li>
+          <li>Annual fuel system service</li>
+          <li><strong>Priority breakdown response</strong> — jump the queue when something goes wrong</li>
+          <li>Enhanced member rates on labour (15% off) and parts (15% off)</li>
+          <li>20% off all detailing</li>
+        </ul>
+        <a href="#waitlist" class="tier-cta" data-tier="Gold Premier">Reserve Your Spot</a>
+      </div>
+
+      <!-- Gold Signature -->
+      <div class="tier-card signature">
+        <div class="tier-name">Gold Signature</div>
+        <p class="tier-tagline"><strong>Complete vessel management.</strong> One trusted marine contact managing your vessel year-round. You own the boat — we manage the moving parts.</p>
+        <div class="tier-price price monthly"><span class="amount">$899</span><span class="period">/ month</span></div>
+        <div class="tier-price price annual"><span class="amount">$9,440</span><span class="period">/ year</span></div>
+        <p class="tier-alt-price alt-price monthly">or <strong>$9,440/yr</strong> — save $1,348</p>
+        <p class="tier-alt-price alt-price annual"><strong>Save $1,348 vs monthly</strong></p>
+        <ul class="tier-features">
+          <li><strong>Monthly vessel readiness visit</strong> — engine room inspection, fluid levels, bilge, battery &amp; charging system, belts, hoses &amp; corrosion, with pre-trip readiness notes</li>
+          <li><strong>Quarterly vessel health report</strong> with photos, a maintenance forecast, and urgent vs non-urgent recommendations</li>
+          <li><strong>Annual mechanical survey</strong></li>
+          <li><strong>Annual haul-out coordination</strong> — hardstand, antifoul, prop, anodes, shipwright, detailing and repair trades managed for you</li>
+          <li>Quarterly oil sampling program</li>
+          <li>Annual full detail allowance — cut, polish &amp; wax (vessels up to 35ft; over 35ft quoted before approval)</li>
+          <li><strong>24/7 phone support</strong> with same-day priority response where capacity allows</li>
+          <li>2 waived after-hours callout fees per year + priority emergency scheduling</li>
+          <li>Exclusive member labour rates</li>
+          <li>At-cost scheduled maintenance parts up to an annual cap<sup>*</sup></li>
+        </ul>
+        <a href="#waitlist" class="tier-cta" data-tier="Gold Signature">Book a Vessel Assessment</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE SPOTLIGHT -->
+<section class="spotlight" id="signature">
+  <div class="spotlight-inner">
+    <div class="spotlight-header">
+      <div class="section-label">Gold Signature</div>
+      <h2 class="section-title">Complete Vessel Management</h2>
+    </div>
+    <p class="spotlight-lede">Gold Signature is not a bigger discount plan — it's a different service. Built for high-end recreational owners, absentee owners and busy professionals who treat their boat as a serious investment, Signature gives you one trusted marine contact managing the vessel year-round: inspections, planning, trades, haul-outs, reporting and emergency response.</p>
+    <p class="spotlight-quote">"You own the boat. Gold Marine Solutions manages the moving parts."</p>
+
+    <div class="spotlight-why">
+      <h3>Why Signature Makes Sense</h3>
+      <p>Instead of waiting for problems, Signature keeps your vessel inspected, documented and ready. Every month it's checked. Every quarter it's reported on, with photos and clear priorities. Maintenance is forecast and planned before it becomes urgent — not discovered on the morning of a trip.</p>
+      <p>For many owners, the cost is easier to justify than an uncontrolled annual dry dock bill, an emergency repair, a lost weekend, a failed trip, or a poorly documented maintenance history at resale. Signature is designed to <em>reduce hassle, improve planning and give you one trusted point of contact</em> — instead of separately coordinating mechanics, detailers, hardstand, antifoul, surveyors and emergency repairs yourself.</p>
+      <p>Signature does not replace dry docking when it is required. It helps plan, coordinate and manage the process so annual maintenance is more controlled, less stressful and better documented.</p>
+    </div>
+
+    <div class="spotlight-cols">
+      <div class="spotlight-col">
+        <h4>What the owner sees</h4>
+        <ul>
+          <li>Boat checked monthly</li>
+          <li>Maintenance planned before it becomes urgent</li>
+          <li>One point of contact for all contractors</li>
+          <li>Reports with photos and clear priorities</li>
+          <li>Priority support when something goes wrong</li>
+          <li>Better documentation for resale</li>
+        </ul>
+      </div>
+      <div class="spotlight-col">
+        <h4>How it's structured</h4>
+        <ul>
+          <li>Time-capped scheduled visits, sized to your vessel</li>
+          <li>Repairs quoted separately, approved by you</li>
+          <li>Clear parts and consumables policy</li>
+          <li>Annual cap on at-cost scheduled maintenance parts</li>
+          <li>Pricing subject to vessel size and condition</li>
+          <li>Onboarding inspection before approval</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare">
+  <div class="compare-inner">
+    <div class="compare-header">
+      <h2>Compare tiers side-by-side</h2>
+      <p>Select protects. Premier keeps you trip-ready. Signature manages the vessel for you.</p>
+    </div>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Gold Select</th>
+            <th class="featured">Gold Premier</th>
+            <th>Gold Signature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="price-row">
+            <td>Monthly</td>
+            <td>$149<small>per month</small></td>
+            <td>$429<small>per month</small></td>
+            <td>$899<small>per month</small></td>
+          </tr>
+          <tr class="price-row">
+            <td>Annual <small style="font-weight:500;color:var(--slate)">(1.5 months free)</small></td>
+            <td>$1,565<small>save $223/yr</small></td>
+            <td>$4,505<small>save $643/yr</small></td>
+            <td>$9,440<small>save $1,348/yr</small></td>
+          </tr>
+
+          <tr class="group-row"><td colspan="4">Access &amp; support</td></tr>
+          <tr><td>Priority booking</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Phone support</td><td>Priority</td><td>Priority</td><td><strong>24/7</strong></td></tr>
+          <tr><td>Emergency response</td><td><span class="dash">—</span></td><td>Priority</td><td><strong>Same-day priority<sup>†</sup> + priority emergency scheduling</strong></td></tr>
+          <tr><td>Waived after-hours callout fees</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><strong>2 / year</strong></td></tr>
+
+          <tr class="group-row"><td colspan="4">Member rates</td></tr>
+          <tr><td>Labour rate</td><td>10% off</td><td>15% off</td><td><strong>Exclusive member rates</strong></td></tr>
+          <tr><td>Parts pricing</td><td>10% off</td><td>15% off</td><td><strong>At-cost scheduled maintenance parts, up to annual cap<sup>*</sup></strong></td></tr>
+          <tr><td>Detailing discount</td><td><span class="dash">—</span></td><td>20% off</td><td><strong>Member rates</strong></td></tr>
+
+          <tr class="group-row"><td colspan="4">Readiness &amp; detailing</td></tr>
+          <tr><td>Pre-trip checks</td><td><span class="dash">—</span></td><td>Quarterly</td><td><strong>Monthly</strong></td></tr>
+          <tr><td>Exterior wash-down</td><td><span class="dash">—</span></td><td>Quarterly</td><td><strong>Monthly</strong></td></tr>
+          <tr><td>Wellness checks</td><td>Semi-annual</td><td>Quarterly</td><td><strong>Included in monthly visits</strong></td></tr>
+          <tr><td>Battery health &amp; load test</td><td><span class="dash">—</span></td><td>Annual</td><td>Annual</td></tr>
+          <tr><td>Annual fuel system service</td><td><span class="dash">—</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Annual full detail allowance</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+
+          <tr class="group-row"><td colspan="4">Vessel management &amp; reporting — Signature only</td></tr>
+          <tr><td>Monthly vessel readiness visit</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Quarterly vessel health report (with photos)</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Annual mechanical survey</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Quarterly oil sampling</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Annual haul-out coordination</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="compare-fineprint">
+      <p><sup>*</sup> <strong>At-cost parts pricing</strong> on Gold Signature applies to scheduled maintenance parts up to an annual cap of <strong>$4,000 worth of parts per annum</strong>. Preferred member pricing applies after the cap or for major repair parts. At-cost pricing does not apply to major repairs unless approved in writing.</p>
+      <p><sup>†</sup> <strong>Priority and same-day response</strong> are subject to safety, access, weather, parts availability and operational capacity.</p>
+      <p>Membership covers <strong>one nominated vessel</strong>. Multi-vessel packages are quoted separately.</p>
+      <p>Included inspections, pre-trip checks and readiness visits are <strong>scheduled services</strong> and may be time-capped by tier and vessel size.</p>
+      <p>Repairs, parts, consumables, hardstand, crane/travel lift, antifoul, third-party contractors and major corrective work are <strong>quoted separately</strong> unless specifically included in writing. Third-party coordination on Gold Signature covers organisation and management — third-party charges are passed through or quoted directly.</p>
+      <p>Membership pricing applies to vessels up to <strong>35ft in sound condition</strong>. Vessels over 35ft are welcome, however cut, polish, detailing, and larger labour-intensive cosmetic works will be quoted separately before approval to ensure accurate pricing and service quality.</p>
+      <p>Larger vessels, neglected vessels or vessels with known faults may require an <strong>onboarding inspection</strong> before membership approval.</p>
+    </div>
+
+    <div class="commitment-note">
+      <strong>Annual plans — 12-month commitment</strong>
+      All annual memberships include a 12-month commitment. Early cancellation before the 12-month term may incur additional fees to cover services and discounts already received. Monthly plans can be cancelled any time.
+    </div>
+  </div>
+</section>
+
+<!-- WHY MEMBERSHIP -->
+<section class="why">
+  <div class="why-inner">
+    <div class="why-header">
+      <div class="section-label">Why Join</div>
+      <h2 class="section-title">Built for Owners Who'd Rather Be on the Water</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <span class="why-icon">⚡</span>
+        <h4>Priority access</h4>
+        <p>Members jump the queue — on routine work and when something goes wrong. Signature adds same-day priority response and waived after-hours callout fees.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">🧭</span>
+        <h4>Fewer surprises</h4>
+        <p>Preventative maintenance and planned inspections catch small issues before they become lost weekends or failed trips. Annual maintenance is planned, not discovered.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">📋</span>
+        <h4>One trusted contact</h4>
+        <p>One number to call instead of separately coordinating mechanics, detailers, hardstand, antifoul, surveyors and emergency repairs. We manage the moving parts.</p>
+      </div>
+      <div class="why-item">
+        <span class="why-icon">📈</span>
+        <h4>Better resale records</h4>
+        <p>Documented inspections, reports with photos and a clean maintenance history protect your investment — and speak for themselves when it's time to sell.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="waitlist-header">
+      <h2>Reserve Your Membership Spot</h2>
+      <p>Memberships are launching soon and founding members lock in current rates for life. Not sure which tier fits? Book a vessel assessment and we'll recommend the level that protects your boat, suits your usage and keeps you on the water.</p>
+    </div>
+    <div class="waitlist-form">
+      <form name="membership-waitlist" method="POST" netlify netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="membership-waitlist">
+        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="form-row">
+          <div class="form-group"><label>First Name *</label><input type="text" name="first-name" placeholder="Your first name" required></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" name="last-name" placeholder="Your last name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Phone *</label><input type="tel" name="phone" placeholder="04XX XXX XXX" required></div>
+          <div class="form-group"><label>Email *</label><input type="email" name="email" placeholder="you@example.com" required></div>
+        </div>
+        <div class="form-group">
+          <label>Tier of Interest *</label>
+          <select name="tier" id="tier" required>
+            <option value="">Select a tier...</option>
+            <option>Gold Select — $149/mo</option>
+            <option>Gold Premier — $429/mo</option>
+            <option>Gold Signature — $899/mo</option>
+            <option>Not sure — recommend one</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Billing Preference</label>
+          <select name="billing">
+            <option>Monthly</option>
+            <option>Annual (with discount)</option>
+            <option>No preference yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Vessel Details</label>
+          <textarea name="vessel" placeholder="e.g. 38ft Riviera, twin Cat 3208s — or Yamaha 250hp on a trailer boat"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Anything else we should know?</label>
+          <textarea name="message" placeholder="How often you use the boat, recent service history, questions about the tiers..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Reserve Your Membership Spot</button>
+      </form>
+      <p class="waitlist-note">No payment required. Founding members will be invited to subscribe when launch is ready. Prefer to talk it through? Call or WhatsApp to book a vessel assessment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <div class="section-label">Common Questions</div>
+      <h2 class="section-title">Membership FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">When does the membership launch? <span class="chevron">⌄</span></button>
+        <div class="faq-a">We're building the membership system now and aiming to open it to founding members soon. Joining the waitlist guarantees you'll be invited before public launch and lock in current rates for life.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Can I cancel any time? <span class="chevron">⌄</span></button>
+        <div class="faq-a">Monthly members can cancel any time — no lock-in. Annual plans include a 12-month commitment in exchange for the discounted rate; cancelling early may incur fees to cover services and discounts already received. Any unused service credits roll over to the end of your term.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I have to be a member to use Gold Marine Solutions? <span class="chevron">⌄</span></button>
+        <div class="faq-a">Not at all. Non-members get the same quality service at standard rates. Membership is for clients who want priority, discounts, and bundled extras.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What makes Gold Signature different from Premier? <span class="chevron">⌄</span></button>
+        <div class="faq-a">Premier keeps an active owner trip-ready with quarterly checks and priority response. Signature is a complete vessel management service: your boat is visited monthly, reported on quarterly with photos, surveyed annually, and we coordinate hardstand, antifoul, shipwrights, detailing and repair trades on your behalf. You own the boat — Gold Marine Solutions manages the moving parts.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Does Signature replace annual dry docking? <span class="chevron">⌄</span></button>
+        <div class="faq-a">No — Signature does not replace dry docking when it is required. It helps plan, coordinate and manage the process so annual maintenance is more controlled, less stressful and better documented. Hardstand, crane/travel lift, antifoul and third-party contractor charges are quoted separately or passed through directly.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">My boat is over 35ft — can I still join? <span class="chevron">⌄</span></button>
+        <div class="faq-a">Absolutely. Membership pricing applies to vessels up to 35ft in sound condition. Vessels over 35ft are welcome, however cut, polish, detailing, and larger labour-intensive cosmetic works will be quoted separately before approval to ensure accurate pricing and service quality. Larger vessels simply take more time, product and access to do properly — a tailored quote means you get the same standard of work, priced fairly for your boat.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What if I have a second vessel? <span class="chevron">⌄</span></button>
+        <div class="faq-a">Membership covers one nominated vessel. Multi-vessel packages are quoted separately — talk to Geordie about your situation when we open enrolment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How do member rates and parts pricing work? <span class="chevron">⌄</span></button>
+        <div class="faq-a">Member rates apply automatically to your invoice — no codes needed. Gold Select and Premier members receive 10% and 15% off the standard $175/hr labour rate. Gold Signature members receive exclusive member labour rates, plus at-cost scheduled maintenance parts up to an annual cap; preferred member pricing applies after the cap or for major repair parts. Repairs and major corrective work are always quoted separately for your approval.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does "founding member rates for life" mean? <span class="chevron">⌄</span></button>
+        <div class="faq-a">If we adjust prices in the future, founding members keep their original rate as long as their membership stays active. It's our thank-you for backing the membership early.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-call">
+  <a href="tel:0436965243" class="call-btn">📞 Call</a>
+  <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20tell%20me%20about%20the%20Gold%20Marine%20Membership." class="call-btn">💬 WhatsApp</a>
+  <a href="#waitlist" class="quote-btn">Join Waitlist</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="margin-bottom:8px;">
+        <img src="logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
+      </a>
+      <p>Gold Coast mobile marine mechanic and auto electrician. Diesel and petrol specialists. Repaired right the first time — or your money back.</p>
+      <p style="margin-top:8px;">ABN 57 680 746 356 &nbsp;·&nbsp; Fully insured &nbsp;·&nbsp; Burleigh Heads, QLD</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="/#services">Petrol Engine Service</a>
+      <a href="/#services">Diesel Engine Service</a>
+      <a href="/#services">Marine Electrical</a>
+      <a href="/#services">Pre-Purchase Inspections</a>
+      <a href="/#services">Emergency Callouts</a>
+    </div>
+    <div>
+      <h4>Membership</h4>
+      <a href="/membership.html#tiers">Gold Select</a>
+      <a href="/membership.html#tiers">Gold Premier</a>
+      <a href="/membership.html#tiers">Gold Signature</a>
+      <a href="/membership.html#waitlist">Join the Waitlist</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:0436965243">0436 965 243</a>
+      <a href="mailto:geordie@goldmarinesolutions.com">geordie@goldmarinesolutions.com</a>
+      <a href="https://wa.me/61436965243" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://www.facebook.com/profile.php?id=61556990786261" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://www.instagram.com/goldmarinesolutions/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="year"></span> Gold Marine Solutions. Gold Coast, Queensland, Australia. &nbsp;·&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<script>
+  // Dynamic year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) closeMenu();
+  });
+
+  // Billing toggle
+  const monthlyBtn = document.getElementById('billMonthly');
+  const annualBtn = document.getElementById('billAnnual');
+  monthlyBtn.addEventListener('click', () => {
+    document.body.classList.remove('show-annual');
+    monthlyBtn.classList.add('active'); monthlyBtn.setAttribute('aria-selected','true');
+    annualBtn.classList.remove('active'); annualBtn.setAttribute('aria-selected','false');
+  });
+  annualBtn.addEventListener('click', () => {
+    document.body.classList.add('show-annual');
+    annualBtn.classList.add('active'); annualBtn.setAttribute('aria-selected','true');
+    monthlyBtn.classList.remove('active'); monthlyBtn.setAttribute('aria-selected','false');
+  });
+
+  // Tier CTAs prefill the tier select on the form
+  document.querySelectorAll('.tier-cta').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const tier = btn.getAttribute('data-tier');
+      const sel = document.getElementById('tier');
+      if (sel && tier) {
+        for (let i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].text.startsWith(tier)) { sel.selectedIndex = i; break; }
+        }
+      }
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-q').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-expanded','false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+        answer.classList.add('open');
+      }
+    });
+  });
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6a1d2f1ee29f411c2ce867a3/1jq1004gp';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
