@@ -18,7 +18,8 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="canonical" href="https://goldmarinesolutions.com">
-<meta name="robots" content="index, follow">
+<!-- STAGING-ONLY: strip this line before any production merge. Production must be index,follow. -->
+<meta name="robots" content="noindex,nofollow,noarchive">
 
 <!-- Open Graph -->
 <meta property="og:title" content="Mobile Marine Mechanic Gold Coast | Gold Marine Solutions">
@@ -121,316 +122,61 @@
   ]
 }
 </script>
-<style>
-  :root {
-    --mint: #C5A55A;
-    --mint-light: #D4B96A;
-    --mint-dark: #A8893D;
-    --navy: #1A1A1A;
-    --navy-light: #2A2A2A;
-    --charcoal: #111111;
-    --slate: #4A5568;
-    --light-mint: #F5F0E0;
-    --off-white: #F7F6F3;
-    --white: #FFFFFF;
-    --gold: #C5A55A;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  a:focus-visible, button:focus-visible { outline: 2px solid #C5A55A; outline-offset: 3px; border-radius: 4px; }
-  body { font-family: 'Inter', -apple-system, sans-serif; color: var(--charcoal); line-height: 1.6; }
-  img { max-width: 100%; }
-
-  /* NAV */
-  .nav { position: fixed; top: 0; width: 100%; z-index: 1000; background: rgba(26,26,26,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; height: 120px; }
-  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .nav-links { display: flex; gap: 32px; align-items: center; }
-  .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--mint-light); }
-  .nav-phone { display: flex; align-items: center; gap: 16px; }
-  .nav-phone a.phone { color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none; }
-  .btn-nav { background: var(--mint); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; }
-  .btn-nav:hover { background: var(--mint-dark); transform: translateY(-1px); }
-  .btn-emergency { background: #DC2626; color: var(--white); padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.3px; text-transform: uppercase; box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
-  .btn-emergency:hover { background: #B91C1C; transform: translateY(-1px); box-shadow: 0 6px 18px rgba(220,38,38,0.45); }
-  .btn-emergency .pulse-dot { width: 8px; height: 8px; background: #FFF; border-radius: 50%; animation: pulse 1.6s ease-in-out infinite; }
-  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.7); } }
-
-  /* HAMBURGER */
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-menu { display: none; position: fixed; top: 120px; left: 0; right: 0; background: rgba(17,17,17,0.98); backdrop-filter: blur(12px); z-index: 999; padding: 24px; flex-direction: column; gap: 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 16px; font-weight: 500; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
-  .mobile-menu a:last-child { border-bottom: none; }
-  .mobile-menu a:hover { color: var(--mint-light); }
-  .mobile-menu .mobile-cta { margin-top: 16px; background: var(--mint); color: white; padding: 14px; border-radius: 8px; text-align: center; font-weight: 700; border-bottom: none; }
-
-  /* HERO */
-  .hero { padding: 0; position: relative; min-height: 92vh; display: flex; align-items: center; overflow: hidden; }
-  .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-  .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-  .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,26,26,0.92) 0%, rgba(26,26,26,0.75) 50%, rgba(26,26,26,0.6) 100%); }
-  .hero-inner { max-width: 1200px; margin: 0 auto; padding: 170px 24px 80px; position: relative; z-index: 2; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; width: 100%; }
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(197,165,90,0.2); border: 1px solid rgba(197,165,90,0.35); color: var(--mint-light); padding: 8px 18px; border-radius: 100px; font-size: 13px; font-weight: 600; margin-bottom: 24px; }
-  .hero h1 { color: var(--white); font-size: 52px; font-weight: 800; line-height: 1.08; letter-spacing: -1.5px; margin-bottom: 20px; }
-  .hero h1 span { color: var(--mint-light); }
-  .hero-tagline { color: var(--white); font-size: 24px; font-weight: 700; line-height: 1.3; letter-spacing: -0.2px; margin-bottom: 22px; }
-  .hero-sub { color: rgba(255,255,255,0.8); font-size: 18px; line-height: 1.7; margin-bottom: 36px; }
-  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
-  .btn-primary { background: var(--mint); color: var(--white); padding: 16px 32px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; transition: all 0.25s; display: inline-flex; align-items: center; gap: 8px; }
-  .btn-primary:hover { background: var(--mint-dark); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(197,165,90,0.35); }
-  .btn-secondary { background: rgba(255,255,255,0.08); color: var(--white); padding: 16px 32px; border-radius: 10px; font-weight: 600; font-size: 16px; text-decoration: none; border: 2px solid rgba(255,255,255,0.2); display: inline-flex; align-items: center; gap: 8px; transition: all 0.25s; backdrop-filter: blur(4px); }
-  .btn-secondary:hover { border-color: var(--mint-light); color: var(--mint-light); background: rgba(197,165,90,0.08); }
-  .hero-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .hero-photo { border-radius: 12px; overflow: hidden; aspect-ratio: 1; border: 2px solid rgba(255,255,255,0.1); }
-  .hero-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-  .hero-photo:hover img { transform: scale(1.05); }
-  .hero-photo.tall { grid-row: span 2; aspect-ratio: auto; }
-
-  /* MEMBERSHIP BANNER */
-  .membership-banner { background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%); padding: 28px 24px; border-bottom: 1px solid rgba(255,255,255,0.06); }
-  .membership-banner-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
-  .membership-banner-text { color: var(--white); flex: 1; min-width: 280px; }
-  .membership-banner-badge { display: inline-block; background: rgba(197,165,90,0.18); border: 1px solid rgba(197,165,90,0.35); color: var(--mint-light); padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
-  .membership-banner h3 { font-size: 22px; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.3px; }
-  .membership-banner h3 span { color: var(--mint-light); }
-  .membership-banner p { color: rgba(255,255,255,0.6); font-size: 14px; }
-  .membership-banner .btn-primary { white-space: nowrap; }
-  @media (max-width: 768px) {
-    .membership-banner-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
-    .membership-banner h3 { font-size: 19px; }
-  }
-
-  /* PRICING STRIP */
-  .pricing-strip { background: var(--white); padding: 36px 24px; border-bottom: 1px solid #E2E8F0; }
-  .pricing-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 24px; flex-wrap: wrap; align-items: center; justify-content: center; }
-  .pricing-item { text-align: center; padding: 0 16px; }
-  .pricing-label { color: var(--slate); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; }
-  .pricing-value { color: var(--navy); font-size: 24px; font-weight: 800; letter-spacing: -0.3px; }
-  .pricing-extra { color: var(--slate); font-size: 11px; font-weight: 500; margin-top: 6px; line-height: 1.4; max-width: 220px; margin-left: auto; margin-right: auto; }
-  .pricing-divider { width: 1px; height: 60px; background: #E2E8F0; }
-  .pricing-note { color: var(--slate); font-size: 14px; flex-basis: 100%; text-align: center; margin-top: 12px; }
-  .pricing-note strong { color: var(--mint-dark); font-weight: 700; }
-  @media (max-width: 768px) {
-    .pricing-divider { display: none; }
-    .pricing-inner { gap: 20px; }
-    .pricing-value { font-size: 20px; }
-  }
-
-  /* TRUST BAR */
-  .trust-bar { background: var(--mint); padding: 18px 24px; }
-  .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
-  .trust-item { color: var(--white); font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
-
-  /* SERVICES */
-  .services { padding: 96px 24px; background: var(--off-white); }
-  .section-inner { max-width: 1200px; margin: 0 auto; }
-  .section-header { text-align: center; margin-bottom: 56px; }
-  .section-label { color: var(--mint); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
-  .section-title { font-size: 38px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; }
-  .section-subtitle { color: var(--slate); font-size: 17px; margin-top: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
-  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .service-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid #E2E8F0; transition: all 0.3s; }
-  .service-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); border-color: var(--mint); }
-  .service-card-img { height: 200px; overflow: hidden; }
-  .service-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-  .service-card:hover .service-card-img img { transform: scale(1.08); }
-  .service-card-body { padding: 24px; }
-  .service-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-  .service-card p { color: var(--slate); font-size: 14px; line-height: 1.6; margin-bottom: 14px; }
-
-  /* ABOUT */
-  .about { padding: 96px 24px; background: var(--white); }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-  .about-img { border-radius: 20px; overflow: hidden; position: relative; }
-  .about-img img { width: 100%; height: 500px; object-fit: cover; object-position: top center; display: block; }
-  .about-img-badge { position: absolute; bottom: 20px; left: 20px; background: var(--mint); color: white; padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: 14px; }
-  .about-content h2 { font-size: 36px; font-weight: 800; color: var(--navy); margin-bottom: 20px; letter-spacing: -0.5px; }
-  .about-content > p { color: var(--slate); font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
-  .about-features { display: flex; flex-direction: column; gap: 20px; }
-  .about-feature { display: flex; gap: 16px; }
-  .about-feature-icon { width: 44px; height: 44px; min-width: 44px; background: var(--light-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-  .about-feature h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 2px; }
-  .about-feature p { font-size: 14px; color: var(--slate); }
-
-  /* GALLERY */
-  .gallery { padding: 96px 24px; background: var(--off-white); }
-  .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  .gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 1; }
-  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; }
-  .gallery-item:hover img { transform: scale(1.08); }
-  .gallery-item.wide { grid-column: span 2; aspect-ratio: 2/1; }
-
-  /* GUARANTEE */
-  .guarantee { padding: 80px 24px; background: linear-gradient(135deg, var(--charcoal) 0%, var(--navy-light) 100%); }
-  .guarantee-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-  .guarantee-inner h2 { color: var(--white); font-size: 32px; font-weight: 800; margin-bottom: 16px; }
-  .guarantee-inner p { color: rgba(255,255,255,0.7); font-size: 18px; line-height: 1.7; }
-  .guarantee-inner .big { font-size: 64px; margin-bottom: 16px; }
-
-  /* REVIEWS */
-  .reviews { padding: 96px 24px; background: var(--white); }
-  .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .review-card { background: var(--off-white); border-radius: 16px; padding: 32px; border: 1px solid #E2E8F0; }
-  .review-stars { color: var(--gold); font-size: 20px; margin-bottom: 16px; letter-spacing: 2px; }
-  .review-text { color: var(--charcoal); font-size: 15px; line-height: 1.7; margin-bottom: 20px; font-style: italic; }
-  .review-author { font-weight: 700; color: var(--navy); font-size: 14px; }
-  .review-source { color: var(--slate); font-size: 12px; margin-top: 2px; }
-  .reviews-cta { text-align: center; margin-top: 40px; }
-  .reviews-cta a { display: inline-flex; align-items: center; gap: 8px; color: var(--mint-dark); font-weight: 700; font-size: 15px; text-decoration: none; border: 2px solid var(--mint); padding: 12px 28px; border-radius: 8px; transition: all 0.2s; }
-  .reviews-cta a:hover { background: var(--mint); color: white; }
-
-  /* SERVICE AREA */
-  .area { padding: 96px 24px; background: var(--off-white); }
-  .area-tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-  .area-tag { background: var(--white); color: var(--navy); padding: 12px 24px; border-radius: 100px; font-size: 14px; font-weight: 600; border: 1px solid #E2E8F0; transition: all 0.2s; text-decoration: none; display: inline-block; }
-  .area-tag:hover { background: var(--mint); color: white; border-color: var(--mint); }
-
-  /* CTA */
-  .cta { padding: 96px 24px; position: relative; overflow: hidden; }
-  .cta-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-  .cta-bg img { width: 100%; height: 100%; object-fit: cover; }
-  .cta-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(26,26,26,0.93) 0%, rgba(42,42,42,0.9) 100%); }
-  .cta-content { position: relative; z-index: 2; text-align: center; max-width: 700px; margin: 0 auto; }
-  .cta h2 { color: var(--white); font-size: 40px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.5px; }
-  .cta p { color: rgba(255,255,255,0.75); font-size: 18px; margin-bottom: 36px; }
-  .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-  /* CONTACT */
-  .contact-section { padding: 96px 24px; background: var(--off-white); }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; max-width: 1000px; margin: 0 auto; }
-  .contact-info h3 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 24px; }
-  .contact-detail { display: flex; gap: 14px; margin-bottom: 24px; align-items: flex-start; }
-  .contact-detail .icon { width: 44px; height: 44px; min-width: 44px; background: var(--light-mint); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
-  .contact-detail strong { display: block; color: var(--navy); font-size: 14px; font-weight: 700; }
-  .contact-detail span { color: var(--slate); font-size: 14px; }
-  .contact-form { background: var(--white); border-radius: 16px; padding: 36px; border: 1px solid #E2E8F0; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .form-group { margin-bottom: 16px; }
-  .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
-  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1.5px solid #E2E8F0; border-radius: 8px; font-family: inherit; font-size: 14px; transition: all 0.2s; background: var(--off-white); }
-  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--mint); box-shadow: 0 0 0 3px rgba(197,165,90,0.1); background: white; }
-  .form-group textarea { resize: vertical; min-height: 90px; }
-  .btn-submit { width: 100%; background: var(--mint); color: var(--white); padding: 16px; border: none; border-radius: 10px; font-weight: 700; font-size: 16px; cursor: pointer; transition: all 0.25s; }
-  .btn-submit:hover { background: var(--mint-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(197,165,90,0.3); }
-
-  /* MOBILE STICKY CTA */
-  .sticky-call { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 998; background: var(--mint); padding: 14px 24px; display: flex; gap: 12px; align-items: center; justify-content: center; box-shadow: 0 -4px 24px rgba(0,0,0,0.3); }
-  .sticky-call a { color: white; text-decoration: none; font-weight: 700; font-size: 16px; display: flex; align-items: center; gap: 8px; flex: 1; justify-content: center; padding: 10px; border-radius: 8px; }
-  .sticky-call a.call-btn { background: rgba(0,0,0,0.2); }
-  .sticky-call a.quote-btn { background: rgba(255,255,255,0.15); }
-  @media (min-width: 769px) { .sticky-call { display: none !important; } }
-  @media (max-width: 768px) { .sticky-call { display: flex; } body { padding-bottom: 80px; } }
-
-  /* HOW IT WORKS */
-  .how-it-works { padding: 96px 24px; background: var(--white); }
-  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; position: relative; margin-top: 16px; }
-  .steps-grid::before { content: ''; position: absolute; top: 36px; left: calc(16.67% + 24px); right: calc(16.67% + 24px); height: 2px; background: linear-gradient(90deg, var(--mint), var(--mint-light), var(--mint)); z-index: 0; }
-  .step-card { text-align: center; padding: 48px 28px 36px; background: var(--off-white); border-radius: 20px; position: relative; border: 1px solid #E2E8F0; transition: all 0.3s; }
-  .step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); border-color: var(--mint); }
-  .step-num { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); width: 36px; height: 36px; background: var(--mint); color: white; border-radius: 50%; font-size: 15px; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(197,165,90,0.4); }
-  .step-icon { font-size: 44px; margin-bottom: 16px; display: block; }
-  .step-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-  .step-card p { color: var(--slate); font-size: 14px; line-height: 1.7; }
-
-  /* FAQ */
-  .faq { padding: 96px 24px; background: var(--white); }
-  .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
-  .faq-item { border-bottom: 1px solid #E2E8F0; }
-  .faq-item:first-child { border-top: 1px solid #E2E8F0; }
-  .faq-q { width: 100%; background: none; border: none; text-align: left; padding: 22px 0; font-size: 16px; font-weight: 700; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: inherit; }
-  .faq-q:hover { color: var(--mint-dark); }
-  .faq-q .chevron { color: var(--mint); font-size: 20px; transition: transform 0.3s; flex-shrink: 0; }
-  .faq-q.open .chevron { transform: rotate(180deg); }
-  .faq-a { display: none; padding: 0 0 22px; color: var(--slate); font-size: 15px; line-height: 1.7; }
-  .faq-a.open { display: block; }
-
-  /* FOOTER */
-  .footer { padding: 56px 24px 24px; background: var(--charcoal); }
-  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-  .footer-brand p { color: rgba(255,255,255,0.45); font-size: 13px; line-height: 1.7; margin-top: 12px; }
-  .footer h4 { color: var(--white); font-size: 14px; font-weight: 700; margin-bottom: 16px; }
-  .footer a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 13px; display: block; margin-bottom: 10px; transition: color 0.2s; }
-  .footer a:hover { color: var(--mint-light); }
-  .footer-bottom { max-width: 1200px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; }
-  .footer-bottom p { color: rgba(255,255,255,0.25); font-size: 12px; }
-
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; }
-    .steps-grid::before { display: none; }
-    .hero-inner { grid-template-columns: 1fr; padding-top: 150px; }
-    .hero h1 { font-size: 34px; }
-    .hero-tagline { font-size: 19px; }
-    .hero-photos { display: none; }
-    .services-grid { grid-template-columns: 1fr; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; }
-    .about-img { order: -1; }
-    .about-img img { height: 300px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .gallery-item.wide { grid-column: span 2; }
-    .footer-inner { grid-template-columns: 1fr 1fr; }
-    .contact-grid { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-    .nav-phone .phone { display: none; }
-    .nav-phone .btn-nav { display: none; }
-    .btn-emergency { padding: 8px 12px; font-size: 11px; gap: 6px; }
-    .btn-emergency .pulse-dot { width: 6px; height: 6px; }
-    .nav-inner { height: 100px; }
-    .nav-logo img { height: 80px !important; max-width: 200px !important; }
-    .mobile-menu { top: 100px; }
-    .hamburger { display: flex; }
-    .trust-inner { gap: 16px; }
-    .form-row { grid-template-columns: 1fr; }
-    .cta h2 { font-size: 28px; }
-    .section-title { font-size: 28px; }
-  }
-</style>
+<link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body>
+<body class="has-staging-banner">
+<!-- STAGING-ONLY: strip this banner before any production merge. -->
+<div class="staging-banner">Staging preview &mdash; not indexed &mdash; not for public release</div>
 
-<!-- NAVIGATION -->
+
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <img src="logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
+    <a href="/" class="nav-logo" aria-label="Gold Marine Solutions — home">
+      <img src="/logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
     </a>
     <div class="nav-links">
+          <div class="nav-item"><a href="/vessel-management/">Vessel Management <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/vessel-management/" class="is-parent">Vessel Management</a><a href="/membership.html">Gold Marine Memberships</a></div></div>
+          <div class="nav-item"><a href="/purchase-and-sale/">Purchase &amp; Sale <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/purchase-and-sale/" class="is-parent">Purchase &amp; Sale</a><a href="/purchase-and-sale/pre-purchase-inspection/">Vessel Purchase Advisory</a></div></div>
+          <div class="nav-item"><a href="/vessel-systems/">Vessel Systems <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/vessel-systems/" class="is-parent">Vessel Systems</a><a href="/vessel-systems/sanitation-heads/">Sanitation, Heads &amp; Vacuflush</a></div></div>
+          <div class="nav-item"><a href="/marine-mechanical/">Mechanical <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/marine-mechanical/" class="is-parent">Marine Mechanical</a><a href="/marine-mechanical/diesel-engine-service/">Diesel Engine Service &amp; Repair</a><a href="/marine-mechanical/petrol-outboard-service/">Petrol &amp; Outboard Engine Service</a></div></div>
+          <div class="nav-item"><a href="/marine-electrical/">Electrical <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/marine-electrical/" class="is-parent">Marine Electrical</a><a href="/marine-electrical/batteries-charging/">Batteries, Charging &amp; Starting</a></div></div>
       <a href="https://shop.goldmarinesolutions.com">Store</a>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#reviews">Reviews</a>
-      <a href="/membership.html">Membership</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
     </div>
     <div class="nav-phone">
-      <a href="tel:0436965243" class="btn-emergency" aria-label="Emergency 24/7"><span class="pulse-dot"></span>Emergency 24/7</a>
-      <a href="#contact" class="btn-nav">Get a Quote</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <a href="tel:0436965243" class="phone">0436 965 243</a>
+      <a href="/emergency-marine-callout/" class="btn-emergency"><span class="pulse-dot" aria-hidden="true"></span> Urgent Callout</a>
+      <a href="/contact/" class="btn-nav">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="https://shop.goldmarinesolutions.com" onclick="closeMenu()">Store</a>
-  <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#reviews" onclick="closeMenu()">Reviews</a>
-  <a href="/membership.html" onclick="closeMenu()">Membership</a>
-  <a href="#faq" onclick="closeMenu()">FAQ</a>
-  <a href="#contact" onclick="closeMenu()">Contact</a>
-  <a href="tel:0436965243" class="mobile-cta" style="background:#DC2626;margin-top:16px;">🚨 Emergency 24/7</a>
-  <a href="tel:0436965243" class="mobile-cta" style="margin-top:8px;">&#128222; Call 0436 965 243</a>
+      <div class="mm-group-label">Vessel Management</div>
+      <a href="/vessel-management/" class="mm-child">Vessel Management</a>
+      <a href="/membership.html" class="mm-child">Gold Marine Memberships</a>
+      <div class="mm-group-label">Purchase &amp; Sale</div>
+      <a href="/purchase-and-sale/" class="mm-child">Purchase &amp; Sale</a>
+      <a href="/purchase-and-sale/pre-purchase-inspection/" class="mm-child">Vessel Purchase Advisory</a>
+      <div class="mm-group-label">Vessel Systems</div>
+      <a href="/vessel-systems/" class="mm-child">Vessel Systems</a>
+      <a href="/vessel-systems/sanitation-heads/" class="mm-child">Sanitation, Heads &amp; Vacuflush</a>
+      <div class="mm-group-label">Mechanical</div>
+      <a href="/marine-mechanical/" class="mm-child">Marine Mechanical</a>
+      <a href="/marine-mechanical/diesel-engine-service/" class="mm-child">Diesel Engine Service &amp; Repair</a>
+      <a href="/marine-mechanical/petrol-outboard-service/" class="mm-child">Petrol &amp; Outboard Engine Service</a>
+      <div class="mm-group-label">Electrical</div>
+      <a href="/marine-electrical/" class="mm-child">Marine Electrical</a>
+      <a href="/marine-electrical/batteries-charging/" class="mm-child">Batteries, Charging &amp; Starting</a>
+      <div class="mm-group-label">More</div>
+      <a href="/about/" class="mm-child">About</a>
+      <a href="/service-areas/" class="mm-child">Service Areas</a>
+      <a href="/emergency-marine-callout/" class="mm-child">Urgent Callout</a>
+      <a href="https://shop.goldmarinesolutions.com" class="mm-child">Store</a>
+      <a href="/contact/" class="mobile-cta">Get a Quote</a>
 </div>
 
 <!-- HERO -->
@@ -949,85 +695,53 @@
 <div class="sticky-call">
   <a href="tel:0436965243" class="call-btn">&#128222; Call</a>
   <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20I%27d%20like%20a%20quote%20for%20my%20boat." class="call-btn">&#128172; WhatsApp</a>
-  <a href="#contact" class="quote-btn">Get a Quote</a>
+  <a href="/contact/" class="quote-btn">Get a Quote</a>
 </div>
 
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="#" class="nav-logo" style="margin-bottom:8px;">
-        <img src="logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
+      <a href="/" class="nav-logo" style="margin-bottom:8px;">
+        <img src="/logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
       </a>
-      <p>Gold Coast mobile marine mechanic and auto electrician. Diesel and petrol specialists. Repaired right the first time — or your money back.</p>
-      <p style="margin-top:8px;">ABN 57 680 746 356 &nbsp;·&nbsp; Fully insured &nbsp;·&nbsp; Burleigh Heads, QLD</p>
+      <p>One call. Every marine solution.<br>Mobile marine mechanical and electrical service across the Gold Coast and South East Queensland.</p>
+      <p style="margin-top:12px;">ABN 57 680 746 356</p>
     </div>
     <div>
       <h4>Services</h4>
-      <a href="#services">Petrol Engine Service</a>
-      <a href="#services">Diesel Engine Service</a>
-      <a href="#services">Marine Electrical</a>
-      <a href="#services">Pre-Purchase Inspections</a>
-      <a href="#services">Detailing &amp; Sale-Ready Prep</a>
-      <a href="#services">Emergency Callouts</a>
+      <a href="/vessel-management/">Vessel Management</a>
+      <a href="/purchase-and-sale/">Purchase &amp; Sale</a>
+      <a href="/vessel-systems/">Vessel Systems</a>
+      <a href="/marine-mechanical/">Marine Mechanical</a>
+      <a href="/marine-electrical/">Marine Electrical</a>
+      <a href="/emergency-marine-callout/">Urgent Callout</a>
     </div>
     <div>
-      <h4>Membership</h4>
-      <a href="/membership.html#tiers">Gold Select</a>
-      <a href="/membership.html#tiers">Gold Premier</a>
-      <a href="/membership.html#tiers">Gold Signature</a>
-      <a href="/membership.html#waitlist">Join the Waitlist</a>
+      <h4>Company</h4>
+      <a href="/about/">About</a>
+      <a href="/service-areas/">Service Areas</a>
+      <a href="/membership.html">Memberships</a>
+      <a href="/#gallery">Our Work</a>
+      <a href="/contact/">Contact</a>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h4>Connect</h4>
       <a href="tel:0436965243">0436 965 243</a>
       <a href="mailto:geordie@goldmarinesolutions.com">geordie@goldmarinesolutions.com</a>
-      <a href="https://wa.me/61436965243" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="https://www.facebook.com/profile.php?id=61556990786261" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://www.instagram.com/goldmarinesolutions/" target="_blank" rel="noopener noreferrer">Instagram</a>
-      <a href="https://www.google.com/search?q=Gold+Marine+Solutions+Burleigh+Heads#lrd=0x8757d444a7181a39:0x97f36bf972eca6d8,1" target="_blank" rel="noopener noreferrer">Google Reviews</a>
+      <a href="https://shop.goldmarinesolutions.com">Store</a>
+      <a href="https://www.instagram.com/goldmarinesolutions/" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61556990786261" rel="noopener">Facebook</a>
+      <a href="/links.html">Links</a>
+      <a href="/privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>&copy; <span id="year"></span> Gold Marine Solutions. Gold Coast, Queensland, Australia. &nbsp;·&nbsp; <a href="#gallery" style="color:rgba(255,255,255,0.35);text-decoration:none;">Our Work</a> &nbsp;·&nbsp; <a href="#areas" style="color:rgba(255,255,255,0.35);text-decoration:none;">Service Areas</a> &nbsp;·&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">Privacy Policy</a></p>
+    <p>&copy; <span id="year">2026</span> Gold Marine Solutions Pty Ltd. All rights reserved.</p>
   </div>
 </footer>
 
-<script>
-  // Dynamic copyright year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Mobile hamburger menu
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-
-  function closeMenu() {
-    hamburger.classList.remove('open');
-    mobileMenu.classList.remove('open');
-  }
-
-  // FAQ accordion
-  document.querySelectorAll('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const answer = btn.nextElementSibling;
-      const isOpen = btn.classList.contains('open');
-      document.querySelectorAll('.faq-q').forEach(b => { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); b.nextElementSibling.classList.remove('open'); });
-      if (!isOpen) { btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); answer.classList.add('open'); }
-    });
-  });
-
-  // Close menu on outside click
-  document.addEventListener('click', (e) => {
-    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
-      closeMenu();
-    }
-  });
-</script>
+<script src="/assets/js/site.js"></script>
 
 </body>
 </html>

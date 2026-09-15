@@ -17,3 +17,7 @@ node_modules/
 # Local env
 .env
 .env.local
+
+# Local pre-edit backups (not part of the site)
+*.backup.html
+*.backup-*.html

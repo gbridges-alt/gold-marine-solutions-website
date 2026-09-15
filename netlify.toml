@@ -1,29 +1,54 @@
 headers = []
 
-# 301 redirects for removed suburb pages — preserves SEO and avoids 404s
+# ---------------------------------------------------------------------------
+# Staging protection.
+# Branch deploys and deploy previews are served noindex,nofollow,noarchive at
+# the HTTP level. These contexts NEVER apply to the production context, so this
+# protection cannot leak to goldmarinesolutions.com.
+# The pages on the staging branch also carry a STAGING-ONLY <meta name="robots">
+# tag as a second layer — see the pre-merge checklist in HANDOVER.md.
+# ---------------------------------------------------------------------------
+[[context.branch-deploy.headers]]
+  for = "/*"
+  [context.branch-deploy.headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[context.deploy-preview.headers]]
+  for = "/*"
+  [context.deploy-preview.headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+# ---------------------------------------------------------------------------
+# 301 redirects for removed suburb pages.
+# MASTER-SITEMAP-v3.2 §8 — retargeted from /#areas to /service-areas/ now that
+# the Service Areas page exists. No suburb or marina pages in any phase.
+# ---------------------------------------------------------------------------
 [[redirects]]
   from = "/coomera.html"
-  to = "/#areas"
+  to = "/service-areas/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/hope-island.html"
-  to = "/#areas"
+  to = "/service-areas/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/runaway-bay.html"
-  to = "/#areas"
+  to = "/service-areas/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/southport.html"
-  to = "/#areas"
+  to = "/service-areas/"
   status = 301
   force = true
+
+# NOTE: /membership.html, /links.html, /privacy.html and / have NO redirects.
+# Their URLs are unchanged and must stay that way — MASTER-SITEMAP-v3.2 §2.
 
 [functions]
 

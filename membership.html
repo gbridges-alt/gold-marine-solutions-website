@@ -17,7 +17,8 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="canonical" href="https://goldmarinesolutions.com/membership.html">
-<meta name="robots" content="index, follow">
+<!-- STAGING-ONLY: strip this line before any production merge. Production must be index,follow. -->
+<meta name="robots" content="noindex,nofollow,noarchive">
 
 <meta property="og:title" content="Gold Marine Memberships | Vessel Care &amp; Management Gold Coast">
 <meta property="og:description" content="Mechanical confidence you can feel — and presentation you can see. Structured vessel care with technical intelligence, from wash-downs to private vessel management.">
@@ -29,6 +30,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/assets/css/site.css">
 <style>
   :root {
     --mint: #C5A55A;
@@ -282,7 +284,10 @@
   }
 </style>
 </head>
-<body>
+<body class="has-staging-banner">
+<!-- STAGING-ONLY: strip this banner before any production merge. -->
+<div class="staging-banner">Staging preview &mdash; not indexed &mdash; not for public release</div>
+
 
 <!-- NAV -->
 <nav class="nav">
