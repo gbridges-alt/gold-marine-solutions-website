@@ -33,7 +33,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Home","item":"https://goldmarinesolutions.com/"}},{{"@type":"ListItem","position":2,"name":"Contact & Booking"}}]}
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldmarinesolutions.com/"},{"@type":"ListItem","position":2,"name":"Contact & Booking"}]}
 </script>
 </head>
 <body class="has-staging-banner">
@@ -51,7 +51,6 @@
           <div class="nav-item"><a href="/vessel-systems/">Vessel Systems <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/vessel-systems/" class="is-parent">Vessel Systems</a><a href="/vessel-systems/sanitation-heads/">Sanitation, Heads &amp; Vacuflush</a></div></div>
           <div class="nav-item"><a href="/marine-mechanical/">Mechanical <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/marine-mechanical/" class="is-parent">Marine Mechanical</a><a href="/marine-mechanical/diesel-engine-service/">Diesel Engine Service &amp; Repair</a><a href="/marine-mechanical/petrol-outboard-service/">Petrol &amp; Outboard Engine Service</a></div></div>
           <div class="nav-item"><a href="/marine-electrical/">Electrical <span class="nav-caret" aria-hidden="true">&#9660;</span></a><div class="nav-dropdown"><a href="/marine-electrical/" class="is-parent">Marine Electrical</a><a href="/marine-electrical/batteries-charging/">Batteries, Charging &amp; Starting</a></div></div>
-      <a href="https://shop.goldmarinesolutions.com">Store</a>
     </div>
     <div class="nav-phone">
       <a href="tel:0436965243" class="phone">0436 965 243</a>
@@ -108,18 +107,92 @@
   <span class="sep" aria-hidden="true">&rsaquo;</span>
   <span aria-current="page">Contact &amp; Booking</span></div></nav>
 
-<section class="section section--light">
+<section class="section section--tint">
   <div class="section-inner">
-    <div class="copy-placeholder">
-  <div class="tag">Copy pending approval</div>
-  <h3>No FINAL page-copy file exists for Contact &amp; Booking</h3>
-  <p>This page is listed in Phase 1 of <code>MASTER-SITEMAP-v3.2.md</code>, but no FINAL page-copy file exists for it in the project.</p>
-  <p>This route, its navigation, layout, metadata, breadcrumbs and CTAs are built and correct. Only the customer-facing body text is outstanding. The sections below are reserved for it:</p>
-  <ul><li>Contact intro copy</li><li>Booking form — <strong>built and working</strong> (Netlify Forms, <code>contact</code>)</li><li>Direct contact details — <strong>built</strong></li><li>Response expectations</li></ul>
-  <p>Governing rule: FINAL page-copy files control customer-facing text. Nothing has been written here on the copy's behalf.</p>
-</div>
+    <div class="copy-placeholder" style="margin-bottom:40px;">
+      <div class="tag">Copy pending approval</div>
+      <h3>No FINAL page-copy file exists for Contact &amp; Booking</h3>
+      <p>This page is listed in Phase 1 of <code>MASTER-SITEMAP-v3.2.md</code>, but no FINAL page-copy file exists for it. The <strong>intro copy and response expectations</strong> below are outstanding. Nothing customer-facing has been written on the copy's behalf.</p>
+      <p>The booking form, the contact details and the conversion plumbing are <strong>built and working</strong> — the form posts to Netlify Forms under the existing <code>contact</code> form name, so submissions land in the same place as the homepage form.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Get in touch</h3>
+        <div class="contact-detail">
+          <div class="icon">&#128222;</div>
+          <div><strong>Phone</strong><span><a href="tel:0436965243" style="color:var(--mint-dark);text-decoration:none;">0436 965 243</a></span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">&#9993;&#65039;</div>
+          <div><strong>Email</strong><span><a href="mailto:geordie@goldmarinesolutions.com" style="color:var(--mint-dark);text-decoration:none;">geordie@goldmarinesolutions.com</a></span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">&#9875;</div>
+          <div><strong>Where we work</strong><span>The Gold Coast and South East Queensland &mdash; at the berth, on the hardstand or on the trailer.</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="icon">&#128680;</div>
+          <div><strong>Broken down?</strong><span>Call rather than fill in a form. <a href="/emergency-marine-callout/" style="color:var(--mint-dark);">Urgent breakdown support &rarr;</a></span></div>
+        </div>
+        <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
+          <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20I%27d%20like%20a%20quote%20for%20my%20boat." target="_blank" rel="noopener noreferrer" class="btn-nav" style="background:#25D366;padding:12px 20px;">&#128172; WhatsApp</a>
+          <a href="https://www.facebook.com/profile.php?id=61556990786261" target="_blank" rel="noopener noreferrer" class="btn-nav" style="background:#1877F2;padding:12px 20px;">Facebook</a>
+          <a href="https://www.instagram.com/goldmarinesolutions/" target="_blank" rel="noopener noreferrer" class="btn-nav" style="background:var(--charcoal);padding:12px 20px;">Instagram</a>
+        </div>
+      </div>
+
+      <!-- Netlify Forms. Same form name as the homepage form, so submissions
+           land in one place. Honeypot as per the existing production form. -->
+      <div class="contact-form">
+        <form name="contact" method="POST" netlify netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+          <div class="form-row">
+            <div class="form-group"><label for="c-first">First Name *</label><input id="c-first" type="text" name="first-name" placeholder="Your first name" required></div>
+            <div class="form-group"><label for="c-last">Last Name *</label><input id="c-last" type="text" name="last-name" placeholder="Your last name" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label for="c-phone">Phone *</label><input id="c-phone" type="tel" name="phone" placeholder="04XX XXX XXX" required></div>
+            <div class="form-group"><label for="c-email">Email *</label><input id="c-email" type="email" name="email" placeholder="you@example.com" required></div>
+          </div>
+          <div class="form-group"><label for="c-suburb">Suburb *</label><input id="c-suburb" type="text" name="suburb" placeholder="Where the vessel is" required></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-service">Service Needed *</label>
+              <select id="c-service" name="service" required>
+                <option value="">Select a service...</option>
+                <option>Diesel Engine Service &amp; Repair</option>
+                <option>Petrol &amp; Outboard Engine Service</option>
+                <option>Marine Electrical</option>
+                <option>Batteries, Charging &amp; Starting</option>
+                <option>Vessel Systems / Sanitation</option>
+                <option>Vessel Purchase Advisory / Pre-Purchase Inspection</option>
+                <option>Vessel Management</option>
+                <option>Urgent Breakdown</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="c-urgency">How urgent? *</label>
+              <select id="c-urgency" name="urgency" required>
+                <option value="">Select urgency...</option>
+                <option>Routine — within a few weeks</option>
+                <option>This week</option>
+                <option>Urgent — next 24-48 hours</option>
+                <option>Emergency — boat stranded / not running</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label for="c-vessel">Vessel Details</label><textarea id="c-vessel" name="vessel" placeholder="e.g. 38ft Riviera, twin Cat 3208s — or Yamaha 150hp on a trailer boat"></textarea></div>
+          <div class="form-group"><label for="c-message">Tell us more about the job</label><textarea id="c-message" name="message" placeholder="What's going on with your boat? Symptoms, error codes, or anything else we should know."></textarea></div>
+          <button type="submit" class="btn-submit">Send Quote Request</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <section class="page-cta">
   <div class="page-cta-inner">

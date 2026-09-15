@@ -6,7 +6,9 @@ This file is for Claude (or any AI assistant) helping Geordie maintain and edit 
 
 ## What This Site Is
 
-Static website for **Gold Marine Solutions** — Geordie Bridges, mobile marine mechanic and auto electrician, Gold Coast / SEQ.
+Static website for **Gold Marine Solutions** — Geordie Bridges, mobile marine mechanic, Gold Coast / SEQ.
+
+> **Credential rule.** Gold Marine holds a **mechanical trade qualification**. It does **not** hold an Australian auto-electrician qualification or an electrical contractor licence. Never write "auto electrician", "qualified electrician" or anything implying unrestricted 240V/AC capability. The approved wording is: *"marine 12V and 24V electrical diagnosis, testing and troubleshooting backed by Geordie's heavy-diesel mechanical and electrical training."*
 
 - **Live URL**: https://goldmarinesolutions.com
 - **Owner**: Geordie Bridges — geordie@goldmarinesolutions.com — 0436 965 243
@@ -138,3 +140,88 @@ Search across **all `.html` files** if any of these change:
 **Change business hours:** Search `Mon-Sun` in `index.html`.
 
 **Add a new suburb to the service-area chips:** Add a `<span class="area-tag">Suburb Name</span>` inside the `.area-tags` block in `index.html`. No separate page needed — Geordie services everywhere mobile.
+
+
+---
+
+# Staging branch — `staging/site-repositioning`
+
+Phase 1 of the approved repositioning, built against `MASTER-SITEMAP-v3.2.md`
+(LOCKED). **Production `main` is untouched.**
+
+## What changed structurally
+
+| Area | Before | After |
+|---|---|---|
+| Pages | 4 | 18 (4 existing + 14 new Phase 1 routes) |
+| CSS | inline `<style>` per page | `/assets/css/site.css`, shared |
+| JS | inline `<script>` per page | `/assets/js/site.js`, shared |
+| Nav | flat anchor list | five pillar dropdowns + Urgent Callout route |
+| Images | repo root | new imagery in `/assets/img/` (root images unchanged) |
+
+Still plain HTML. Still no build step, no npm, no bundler. Edit any `.html`
+file in a text editor and push.
+
+## URLs that must never change
+
+`/` · `/membership.html` · `/links.html` · `/privacy.html`
+
+No redirects point at them and none should. The homepage `<title>` carries the
+existing ranking for *marine mechanic Gold Coast* and the related head terms —
+it is byte-identical to production and must not be materially changed.
+
+## PRE-MERGE CHECKLIST — do all of this before merging to `main`
+
+**Staging protection (must be removed):**
+
+1. Strip every `STAGING-ONLY` marker. Two per page:
+   ```bash
+   grep -rn "STAGING-ONLY" --include="*.html" .
+   ```
+   - the `<meta name="robots" content="noindex,nofollow,noarchive">` line, which
+     must go back to `index, follow` (or be removed, which means the same)
+   - the `<div class="staging-banner">` block
+2. Remove `class="has-staging-banner"` from every `<body>` tag.
+3. Leave the `context.branch-deploy` / `context.deploy-preview` header blocks in
+   `netlify.toml`. They never apply to production and protect future branches.
+
+**Content blockers (pages that must not publish as-is):**
+
+4. **Home, Urgent Callout, Service Areas, About, Contact** carry visible
+   `copy-placeholder` blocks because no FINAL page-copy file exists for them.
+   Approve copy for each, or do not publish those routes.
+5. **Urgent Callout** — confirm the current local marine rescue body and its
+   contact details. Required by `MASTER-SITEMAP-v3.2` §4c before publication.
+6. **Vessel Management §8** — the "View Sample Vessel Maintenance Guide" link
+   routes to `/contact/` because the sample guide does not exist. The copy
+   requires that destination to exist before launch.
+7. **Purchase & Sale hub** is built from `PURCHASE-SALE-HUB-PAGE-COPY-v1.md`,
+   which is **not FINAL**. Its §4 credential claim was replaced with the
+   approved capability wording — re-confirm when that file goes FINAL.
+8. **Interim imagery** — the Vessel Systems hero (brief §10) and the Sanitation
+   hero (IMG_9071 needs a crop, brief §12) are running placeholder photography.
+
+**SEO:**
+
+9. Export Search Console page and query data **before** anything ships. Without
+   a baseline you cannot tell a normal post-restructure dip from real damage.
+10. Resubmit `sitemap.xml` in Search Console after the merge.
+11. Confirm the four suburb redirects still resolve: `/coomera.html`,
+    `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
+    `/service-areas/` (301).
+
+## Phase 2 swaps
+
+Several cards route to `/contact/` as a deliberate single link value so each
+Phase 2 page launch is a one-line change:
+
+| Card | Currently | Phase 2 target |
+|---|---|---|
+| Electrical hub §3 | `/contact/` | `/marine-electrical/repairs-fault-finding/` |
+| Mechanical hub §3 ×3 | `/contact/` | gearbox / fuel-cooling / engine-diagnostics |
+| Vessel Systems cards 2-4 | `/contact/` | freshwater / bilges / air-conditioning |
+| Purchase & Sale "selling" | `/contact/` | `/purchase-and-sale/pre-sale-assessment/` |
+| Vessel Management projects | `/contact/` | `/vessel-management/project-coordination/` |
+
+None of them are "coming soon" and none are disabled. Hierarchy on those pages
+reflects routing priority, not capability.
