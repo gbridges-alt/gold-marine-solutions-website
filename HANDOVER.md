@@ -218,17 +218,44 @@ it is byte-identical to production and must not be materially changed.
    build decision. Fold into the copy file at its next revision so the document
    and the site agree.
 
-9. **Interim imagery** — the Vessel Systems hero (brief §10) and the Sanitation
+9. **Owner-directed terminology change — "drivetrain" retired site-wide.**
+   Replaced with "propulsion systems" throughout, on the owner's instruction.
+   Two of these deviate from controlling documents and need folding back in:
+   - `VESSEL-PURCHASE-ADVISORY-PAGE-COPY-v1.2-FINAL` §3: the inspection group
+     *"Engines & drivetrain"* now reads *"Engines & propulsion systems"*.
+   - `MASTER-SITEMAP-v3.2` names the Phase 2 page **Engine & Drivetrain
+     Diagnostics** in five places (§4 Mechanical table, §4b collision table,
+     §5 Phase 2 list, §7 CTA matrix). It is now presented as **Engine &
+     Propulsion Diagnostics**. The sitemap is LOCKED and has NOT been edited —
+     it needs a new version to carry this. **The URL is unchanged**
+     (`/marine-mechanical/engine-diagnostics/`), and the §4b anti-cannibalisation
+     rationale still holds: the name stays system-specific and does not stray
+     into Marine Electrical Repairs & Fault Finding's territory.
+
+10. **Interim imagery** — the Vessel Systems hero (brief §10) and the Sanitation
    hero (IMG_9071 needs a crop, brief §12) are running placeholder photography.
 
 **SEO:**
 
-10. Export Search Console page and query data **before** anything ships. Without
+11. Export Search Console page and query data **before** anything ships. Without
    a baseline you cannot tell a normal post-restructure dip from real damage.
-11. Resubmit `sitemap.xml` in Search Console after the merge.
-12. Confirm the four suburb redirects still resolve: `/coomera.html`,
+12. Resubmit `sitemap.xml` in Search Console after the merge.
+13. Confirm the four suburb redirects still resolve: `/coomera.html`,
     `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
     `/service-areas/` (301).
+
+## Backup HTML files — removed
+
+`index.backup.html`, `membership.backup-pre-premium.html` and
+`membership.backup-pre-vessel-mgmt.html` were committed, so they would have
+been served publicly and indexed at e.g. `/index.backup.html`. They carried
+stale pricing and the auto-electrician credential claims. Deleted; git history
+still has them. `.gitignore` now covers `*.backup.html` and `*.backup-*.html`,
+so no new ones get committed.
+
+Note: several backup files still sit in the working folder untracked. They will
+never deploy via git, but they **would** deploy if you drag the whole folder
+onto Netlify. Use git, or delete them locally before a drag-and-drop deploy.
 
 ## Store — removed
 
