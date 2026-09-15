@@ -454,3 +454,27 @@ body.has-staging-banner .mobile-menu { top: 149px; }
   .nav-links a, .nav-item > a { font-size: 13.5px; }
   .nav-phone { gap: 12px; }
 }
+
+/* ICON ROUTE CARDS — used where a brief specifies an icon or colour treatment
+   rather than photography (Marine Electrical hub §2/§3). */
+.route-card--icon { border-top: 4px solid var(--mint); }
+.route-card--icon .route-card-body { padding: 30px; }
+.route-icon { width: 54px; height: 54px; border-radius: 12px; background: var(--light-mint); display: flex; align-items: center; justify-content: center; font-size: 26px; margin-bottom: 18px; }
+/* §2 carries greater visual prominence than §3 — larger card, upper position. */
+.route-card--lead { border-top-width: 6px; background: linear-gradient(180deg, #FFFDF7 0%, var(--white) 100%); }
+.route-card--lead .route-card-body { padding: 38px; }
+.route-card--lead h3 { font-size: 24px; }
+.route-card--lead p { font-size: 16.5px; }
+.route-card--lead .route-icon { width: 62px; height: 62px; font-size: 30px; }
+.route-card--lead .route-link { font-size: 16px; }
+@media (max-width: 768px) {
+  .route-card--lead .route-card-body { padding: 26px; }
+  .route-card--lead h3 { font-size: 20px; }
+}
+
+/* BEFORE / AFTER PAIR — one confirmed job, shown together and labelled. */
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.ba-item { background: var(--white); border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; }
+.ba-item .ba-label { display: block; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--mint-dark); border-bottom: 1px solid #E2E8F0; }
+.ba-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
+@media (max-width: 768px) { .ba-pair { grid-template-columns: 1fr; } .ba-item img { height: 220px; } }
