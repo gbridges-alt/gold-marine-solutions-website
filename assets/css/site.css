@@ -32,7 +32,6 @@
   .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
   .nav-links a:hover { color: var(--mint-light); }
   .nav-phone { display: flex; align-items: center; gap: 16px; }
-  .nav-phone a.phone { color: var(--white); font-weight: 700; font-size: 15px; text-decoration: none; }
   .btn-nav { background: var(--mint); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; text-decoration: none; transition: all 0.2s; }
   .btn-nav:hover { background: var(--mint-dark); transform: translateY(-1px); }
   .btn-emergency { background: #DC2626; color: var(--white); padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 13px; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px; letter-spacing: 0.3px; text-transform: uppercase; box-shadow: 0 0 0 0 rgba(220,38,38,0.5); }
@@ -261,7 +260,6 @@
     .footer-inner { grid-template-columns: 1fr 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .nav-links { display: none; }
-    .nav-phone .phone { display: none; }
     .nav-phone .btn-nav { display: none; }
     .btn-emergency { padding: 8px 12px; font-size: 11px; gap: 6px; }
     .btn-emergency .pulse-dot { width: 6px; height: 6px; }
@@ -434,9 +432,8 @@ body.has-staging-banner .mobile-menu { top: 149px; }
 
 /* NAV BREAKPOINT — five pillar dropdowns need more room than the old flat nav.
    Collapse to the hamburger below 1100px rather than the original 768px. */
-@media (max-width: 1150px) {
+@media (max-width: 1099px) {
   .nav-links { display: none; }
-  .nav-phone .phone { display: none; }
   .nav-phone .btn-nav { display: none; }
   .hamburger { display: flex; }
   .nav-inner { height: 100px; }
@@ -444,12 +441,12 @@ body.has-staging-banner .mobile-menu { top: 149px; }
   .mobile-menu { top: 100px; }
   body.has-staging-banner .mobile-menu { top: 129px; }
 }
-.nav-phone a.phone, .nav-phone .btn-nav, .nav-phone .btn-emergency { white-space: nowrap; }
+.nav-phone .btn-nav, .nav-phone .btn-emergency { white-space: nowrap; }
 .nav-links > a, .nav-item > a { white-space: nowrap; }
 
 /* Five pillar dropdowns are wider than the old flat nav. Tighten spacing on
    mid-size desktops and collapse to the hamburger earlier. */
-@media (max-width: 1400px) and (min-width: 1151px) {
+@media (max-width: 1400px) and (min-width: 1100px) {
   .nav-links { gap: 22px; }
   .nav-links a, .nav-item > a { font-size: 13.5px; }
   .nav-phone { gap: 12px; }
