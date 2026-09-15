@@ -478,3 +478,32 @@ body.has-staging-banner .mobile-menu { top: 149px; }
 .ba-item .ba-label { display: block; padding: 10px 16px; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-transform: uppercase; color: var(--mint-dark); border-bottom: 1px solid #E2E8F0; }
 .ba-item img { width: 100%; height: 260px; object-fit: cover; display: block; }
 @media (max-width: 768px) { .ba-pair { grid-template-columns: 1fr; } .ba-item img { height: 220px; } }
+
+/* PRICE / SPEC TABLES */
+.gm-table-wrap { overflow-x: auto; }
+.gm-table { width: 100%; border-collapse: collapse; background: var(--white); border: 1px solid #E2E8F0; border-radius: 12px; overflow: hidden; }
+.gm-table caption { text-align: left; font-size: 15px; font-weight: 700; color: var(--navy); padding: 0 0 12px; }
+.gm-table th, .gm-table td { text-align: left; padding: 13px 18px; border-bottom: 1px solid #E2E8F0; font-size: 15px; color: var(--slate); }
+.gm-table th { background: var(--off-white); color: var(--navy); font-weight: 700; font-size: 13px; letter-spacing: 0.4px; text-transform: uppercase; }
+.gm-table tr:last-child td { border-bottom: none; }
+.gm-table td:last-child { font-weight: 700; color: var(--navy); white-space: nowrap; }
+.gm-table--terms td:last-child { font-weight: 400; color: var(--slate); white-space: normal; }
+.gm-table--terms td:first-child { font-weight: 700; color: var(--navy); width: 34%; }
+/* Build requirement: the additions table sits immediately beneath the base
+   table, including on mobile. They must never be separated by a scroll. */
+.price-stack { display: flex; flex-direction: column; gap: 18px; }
+@media (max-width: 768px) {
+  .gm-table th, .gm-table td { padding: 11px 13px; font-size: 14px; }
+  .price-stack { gap: 14px; }
+}
+
+/* FEATURED PANEL inside a section */
+.panel { background: linear-gradient(135deg, var(--charcoal) 0%, var(--navy-light) 100%); border-radius: 16px; padding: 32px 34px; margin: 32px 0; }
+.panel h3 { color: var(--white); font-size: 22px; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.3px; }
+.panel p { color: rgba(255,255,255,0.78); font-size: 16px; line-height: 1.75; }
+.panel-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: center; }
+.panel-grid img { width: 100%; height: 230px; object-fit: cover; border-radius: 12px; display: block; }
+@media (max-width: 768px) { .panel { padding: 24px; } .panel-grid { grid-template-columns: 1fr; } .panel h3 { font-size: 19px; } }
+
+/* PRICE TAG */
+.price-tag { display: inline-block; background: var(--light-mint); color: var(--mint-dark); font-size: 13px; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 14px; }
