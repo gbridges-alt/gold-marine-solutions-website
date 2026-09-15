@@ -193,9 +193,15 @@ it is byte-identical to production and must not be materially changed.
 
 **Content blockers (pages that must not publish as-is):**
 
-4. **Home, Urgent Callout, Service Areas, About, Contact** carry visible
+4. **Urgent Callout, Service Areas and About** carry visible
    `copy-placeholder` blocks because no FINAL page-copy file exists for them.
-   Approve copy for each, or do not publish those routes.
+   Each block is wrapped in `STAGING-ONLY` markers, so step 1's grep catches
+   them. Approve copy for each, or do not publish those routes.
+   `/contact/` no longer shows one: the page is functionally complete (booking
+   form, contact details, CTAs) and the outstanding intro copy would be an
+   addition rather than a fix. Its build note is an HTML comment instead —
+   a "copy pending approval" banner does not belong above the booking form on
+   the site's single conversion destination.
 5. **Urgent Callout** — confirm the current local marine rescue body and its
    contact details. Required by `MASTER-SITEMAP-v3.2` §4c before publication.
 6. **Vessel Management §8** — the "View Sample Vessel Maintenance Guide" link
