@@ -210,15 +210,23 @@ it is byte-identical to production and must not be materially changed.
 7. **Purchase & Sale hub** is built from `PURCHASE-SALE-HUB-PAGE-COPY-v1.md`,
    which is **not FINAL**. Its §4 credential claim was replaced with the
    approved capability wording — re-confirm when that file goes FINAL.
-8. **Interim imagery** — the Vessel Systems hero (brief §10) and the Sanitation
+8. **Owner-directed copy deviation — Marine Mechanical hub hero.**
+   `MARINE-MECHANICAL-HUB-PAGE-COPY-v1.1-FINAL` §1 approved the sub-line
+   *"across marine engines, propulsion and drivetrain — diesel, petrol and
+   outboard."* It now reads *"across marine engine and propulsion systems —
+   Diesel, Petrol and Outboards."* Changed on the owner's instruction, not a
+   build decision. Fold into the copy file at its next revision so the document
+   and the site agree.
+
+9. **Interim imagery** — the Vessel Systems hero (brief §10) and the Sanitation
    hero (IMG_9071 needs a crop, brief §12) are running placeholder photography.
 
 **SEO:**
 
-9. Export Search Console page and query data **before** anything ships. Without
+10. Export Search Console page and query data **before** anything ships. Without
    a baseline you cannot tell a normal post-restructure dip from real damage.
-10. Resubmit `sitemap.xml` in Search Console after the merge.
-11. Confirm the four suburb redirects still resolve: `/coomera.html`,
+11. Resubmit `sitemap.xml` in Search Console after the merge.
+12. Confirm the four suburb redirects still resolve: `/coomera.html`,
     `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
     `/service-areas/` (301).
 
