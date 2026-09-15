@@ -34,14 +34,20 @@ No npm, no Node, no bundler. Edit any `.html` file in a text editor, deploy, don
 
 ## Running Locally
 
-```bash
-# Simplest — just open in browser:
-open index.html
+> **You must use a local server. Do not open `index.html` from Finder.**
+> The site is now multi-page with a shared stylesheet, shared JS and directory
+> URLs (`/marine-mechanical/`). Those are root-relative, so under `file://`
+> they resolve against your hard drive instead of the site — the CSS 404s and
+> every page renders as unstyled text with no header. That is not a bug in the
+> site; it is what `file://` does to a multi-page site.
 
-# Better — local dev server:
-npx serve .
-# Visit http://localhost:3000
+```bash
+cd "<this folder>"
+python3 -m http.server 4173
+# Visit http://127.0.0.1:4173/
 ```
+
+Or `npx serve .` if you prefer Node.
 
 Contact form won't work locally — that's expected. Netlify only processes it on the live domain.
 
@@ -209,6 +215,16 @@ it is byte-identical to production and must not be materially changed.
 11. Confirm the four suburb redirects still resolve: `/coomera.html`,
     `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
     `/service-areas/` (301).
+
+## Store — removed
+
+Gold Marine no longer promotes or operates a Store through this website. There
+was never an internal `/store` or `/shop` route — it was only an external link
+to `https://shop.goldmarinesolutions.com`, which has been removed from the
+mobile navigation and the footer. It was not replaced with anything.
+
+If the Shopify property is being retired too, that is separate from this repo.
+Nothing here links to it any more.
 
 ## Phase 2 swaps
 
