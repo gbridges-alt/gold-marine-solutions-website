@@ -52,4 +52,24 @@
       }
     });
   });
+
+  // Contact form: preselect the enquiry type from ?type= so a CTA carries its
+  // originating intent through to the form. No separate booking pages — every
+  // CTA posts to the same /contact/ enquiry form.
+  var enquiryType = document.getElementById('c-enquiry-type');
+  if (enquiryType) {
+    var wanted = null;
+    try {
+      wanted = new URLSearchParams(window.location.search).get('type');
+    } catch (e) { /* older browser — leave the field unset */ }
+    if (wanted) {
+      wanted = wanted.toLowerCase();
+      for (var i = 0; i < enquiryType.options.length; i++) {
+        if (enquiryType.options[i].value === wanted) {
+          enquiryType.selectedIndex = i;
+          break;
+        }
+      }
+    }
+  }
 })();
