@@ -210,13 +210,17 @@ it is byte-identical to production and must not be materially changed.
 7. **Purchase & Sale hub** is built from `PURCHASE-SALE-HUB-PAGE-COPY-v1.md`,
    which is **not FINAL**. Its §4 credential claim was replaced with the
    approved capability wording — re-confirm when that file goes FINAL.
-8. **Owner-directed copy deviation — Marine Mechanical hub hero.**
+8. **Owner-directed copy deviations — Marine Mechanical hub.**
    `MARINE-MECHANICAL-HUB-PAGE-COPY-v1.1-FINAL` §1 approved the sub-line
    *"across marine engines, propulsion and drivetrain — diesel, petrol and
    outboard."* It now reads *"across marine engine and propulsion systems —
    Diesel, Petrol and Outboards."* Changed on the owner's instruction, not a
-   build decision. Fold into the copy file at its next revision so the document
-   and the site agree.
+   build decision.
+   Same file, §3 sub-line: approved copy read *"Not every propulsion job is an
+   engine service."* It now reads *"Marine mechanical work goes well beyond
+   routine engine servicing."* Also owner-directed.
+   Fold both into the copy file at its next revision so the document and the
+   site agree.
 
 9. **Owner-directed terminology change — "drivetrain" retired site-wide.**
    Replaced with "propulsion systems" throughout, on the owner's instruction.
