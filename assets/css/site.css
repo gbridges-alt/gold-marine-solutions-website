@@ -285,13 +285,12 @@ body.has-staging-banner .mobile-menu { top: 149px; }
 
 /* NAV DROPDOWNS — five pillars need grouped navigation */
 .nav-item { position: relative; display: flex; align-items: center; }
-.nav-item > a { display: inline-flex; align-items: center; gap: 5px; }
+.nav-item > a { display: inline-flex; align-items: center; }
 .nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 264px; background: rgba(17,17,17,0.98); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 8px; opacity: 0; visibility: hidden; transition: opacity 0.18s, transform 0.18s; box-shadow: 0 18px 48px rgba(0,0,0,0.45); }
 .nav-item:hover .nav-dropdown, .nav-item:focus-within .nav-dropdown { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
 .nav-dropdown a { display: block; padding: 10px 14px; border-radius: 8px; font-size: 14px; color: rgba(255,255,255,0.78); }
 .nav-dropdown a:hover { background: rgba(197,165,90,0.14); color: var(--mint-light); }
 .nav-dropdown a.is-parent { color: var(--mint-light); font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.08); border-radius: 8px 8px 0 0; margin-bottom: 4px; }
-.nav-caret { font-size: 9px; opacity: 0.6; }
 
 /* MOBILE MENU GROUPS */
 .mobile-menu .mm-group-label { color: rgba(255,255,255,0.35); font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; padding: 18px 0 6px; border-bottom: none; }
