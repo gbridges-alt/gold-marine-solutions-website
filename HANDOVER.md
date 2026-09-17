@@ -219,8 +219,13 @@ it is byte-identical to production and must not be materially changed.
    Same file, §3 sub-line: approved copy read *"Not every propulsion job is an
    engine service."* It now reads *"Marine mechanical work goes well beyond
    routine engine servicing."* Also owner-directed.
-   Fold both into the copy file at its next revision so the document and the
-   site agree.
+   Same file, §2: the two "Confirmed work includes ..." proof lines were
+   removed from the Diesel and Petrol & Outboard routing cards as too wordy.
+   §2 specifies "one service-led line plus one proof line each". The same proof
+   is still carried in full in the Real work sections of both child pages, so
+   nothing is lost from the site.
+   Fold all three into the copy file at its next revision so the document and
+   the site agree.
 
 9. **Owner-directed terminology change — "drivetrain" retired site-wide.**
    Replaced with "propulsion systems" throughout, on the owner's instruction.
