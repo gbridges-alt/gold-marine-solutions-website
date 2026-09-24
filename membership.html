@@ -282,6 +282,30 @@
     .hamburger { display: flex; }
     .waitlist-form { padding: 28px; }
   }
+
+  /* ------------------------------------------------------------------
+     Overrides for /assets/css/site.css
+     This page predates the shared stylesheet and reuses some of the same
+     class names for a different layout. site.css is linked first (for the
+     shared nav, dropdowns and mobile menu), so any property this page does
+     not declare itself leaks in from the homepage's styles. These rules put
+     the page back to its own design. Keep them below the site.css link.
+     ------------------------------------------------------------------ */
+
+  /* The hero here is ONE centred column. site.css makes .hero-inner a
+     two-column grid for the homepage hero, which stacked this hero's badge,
+     headline, copy and buttons into columns. */
+  /* width:100% also leaks from site.css. .hero-inner is a flex item here,
+     so auto shrink-wraps it to 771px as production does; 100% stretches it
+     to the full 900px max-width and changes where the copy wraps. */
+  .hero-inner { display: block; gap: 0; align-items: initial; width: auto; }
+
+  /* Cosmetic leaks from the homepage hero. */
+  .hero-tagline { line-height: 1.6; }
+  .hero-btns { margin-bottom: 0; }
+
+  /* site.css centres .pricing-note; this page's note is left-aligned prose. */
+  .pricing-note { text-align: left; }
 </style>
 </head>
 <body class="has-staging-banner">
