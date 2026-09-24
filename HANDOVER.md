@@ -43,11 +43,16 @@ No npm, no Node, no bundler. Edit any `.html` file in a text editor, deploy, don
 
 ```bash
 cd "<this folder>"
-python3 -m http.server 4173
+python3 _tools/devserver.py
 # Visit http://127.0.0.1:4173/
 ```
 
-Or `npx serve .` if you prefer Node.
+Use `_tools/devserver.py`, not `python3 -m http.server`. The plain server
+answers form POSTs with 501 (the booking form looks broken) and sends no
+cache headers, so the browser keeps showing a stale build after every edit.
+
+If the page suddenly shows `ERR_CONNECTION_RESET`, the server has stopped or
+is stale. Check with `lsof -ti:4173`, `kill -9 <pid>`, and start it again.
 
 Contact form won't work locally — that's expected. Netlify only processes it on the live domain.
 
@@ -265,6 +270,25 @@ so no new ones get committed.
 Note: several backup files still sit in the working folder untracked. They will
 never deploy via git, but they **would** deploy if you drag the whole folder
 onto Netlify. Use git, or delete them locally before a drag-and-drop deploy.
+
+## Editing the shared header and footer
+
+The nav and footer are duplicated into all 18 pages, because the site is plain
+HTML with no build step. Do not hand-edit them page by page — that is how they
+drift. Edit `_tools/sync_shared.py` (it holds the nav order, the dropdown
+contents and the footer columns) and run:
+
+```bash
+python3 _tools/sync_shared.py --check   # report drift, change nothing
+python3 _tools/sync_shared.py           # rewrite every page
+```
+
+`--check` exits non-zero if any page has drifted, so it is worth running before
+a merge. Everything else — page copy, per-page CTAs, images — is edited
+directly in the HTML.
+
+`_tools/` is committed so it cannot be lost, and `netlify.toml` returns 404 for
+`/_tools/*` so it is never served.
 
 ## Store — removed
 

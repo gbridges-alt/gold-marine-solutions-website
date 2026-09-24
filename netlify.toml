@@ -19,6 +19,16 @@ headers = []
     X-Robots-Tag = "noindex, nofollow, noarchive"
 
 # ---------------------------------------------------------------------------
+# Local tooling is committed so it cannot be lost, but it is not part of the
+# site. publish = "." would otherwise serve it.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/_tools/*"
+  to = "/"
+  status = 404
+  force = true
+
+# ---------------------------------------------------------------------------
 # 301 redirects for removed suburb pages.
 # MASTER-SITEMAP-v3.2 §8 — retargeted from /#areas to /service-areas/ now that
 # the Service Areas page exists. No suburb or marina pages in any phase.
