@@ -202,10 +202,13 @@ it is byte-identical to production and must not be materially changed.
 
 **Content blockers (pages that must not publish as-is):**
 
-4. **Urgent Callout, Service Areas and About** carry visible
-   `copy-placeholder` blocks because no FINAL page-copy file exists for them.
-   Each block is wrapped in `STAGING-ONLY` markers, so step 1's grep catches
-   them. Approve copy for each, or do not publish those routes.
+4. **Service Areas** carries a visible `copy-placeholder` block because no
+   FINAL page-copy file exists for it.
+   The block is wrapped in `STAGING-ONLY` markers, so step 1's grep catches it.
+   Approve copy for it, or do not publish that route.
+   `/about/` was **removed** at the owner's request — see the deviation note
+   below. `/emergency-marine-callout/` no longer shows a placeholder either; it
+   runs on the §4c content.
    `/contact/` no longer shows one: the page is functionally complete (booking
    form, contact details, CTAs) and the outstanding intro copy would be an
    addition rather than a fix. Its build note is an HTML comment instead —
@@ -261,6 +264,21 @@ it is byte-identical to production and must not be materially changed.
 13. Confirm the four suburb redirects still resolve: `/coomera.html`,
     `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
     `/service-areas/` (301).
+
+## About page — removed
+
+`MASTER-SITEMAP-v3.2` lists **About** at `/about/` as a Phase 1 trust page. It
+was removed on the owner's instruction: it was hard to reach and, with no FINAL
+copy ever written for it, only ever held a placeholder.
+
+**This is a deviation from the LOCKED sitemap** and needs folding into a new
+version of that document.
+
+No SEO impact: `/about/` only ever existed on this branch, was never deployed
+and was never indexed, so no redirect is required. The About content itself is
+not lost — it lives in the homepage `#about` section, which is where the sitemap
+notes it sat before the route was planned. The nav and footer "About" links now
+point at `/#about`.
 
 ## Backup HTML files — removed
 
