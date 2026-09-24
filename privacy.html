@@ -25,13 +25,13 @@
   :root { --mint: #C5A55A; --navy: #1A1A1A; --charcoal: #111111; --slate: #4A5568; --off-white: #F7F6F3; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; color: var(--charcoal); line-height: 1.7; background: var(--off-white); }
-  .nav { background: var(--charcoal); padding: 0 24px; }
-  .nav-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 72px; }
-  .nav-logo { color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; }
-  .nav-logo span { color: var(--mint); }
-  .nav-back { color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none; }
-  .nav-back:hover { color: var(--mint); }
-  .content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; background: #fff; }
+  /* The shared nav is position:fixed (the old one sat in the flow), so the
+     content has to clear it. The staging rule goes inert once the banner
+     and its body class are stripped before a production merge. */
+  .content { max-width: 800px; margin: 0 auto; padding: 160px 24px 80px; background: #fff; }
+  body.has-staging-banner .content { padding-top: 189px; }
+  @media (max-width: 1149px) { .content { padding-top: 140px; }
+    body.has-staging-banner .content { padding-top: 169px; } }
   h1 { font-size: 36px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
   .updated { color: var(--slate); font-size: 14px; margin-bottom: 40px; }
   h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin: 36px 0 12px; }
@@ -39,10 +39,6 @@
   ul { color: var(--slate); font-size: 15px; padding-left: 20px; margin-bottom: 16px; }
   ul li { margin-bottom: 8px; }
   a { color: var(--mint); }
-  .footer { background: var(--charcoal); padding: 32px 24px; text-align: center; }
-  .footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
-  .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-  .footer a:hover { color: var(--mint); }
 </style>
 </head>
 <body class="has-staging-banner">
