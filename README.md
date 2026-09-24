@@ -58,8 +58,12 @@ npx serve .
 ├── sitemap.xml             ← XML sitemap for SEO
 ├── googlea6d39f31da54cb95.html  ← Google Search Console verification (do not delete)
 ├── logo.png
-├── geordie.jpg             ← Owner photo (About section)
-└── [various .jpg images]   ← Hero, gallery, and service card photos
+├── assets/                 ← Shared CSS, JS and the newer photography
+│   ├── css/site.css        ← Site-wide stylesheet (all pages link it)
+│   ├── js/site.js          ← Nav, FAQ accordion, contact-form ?type= preselect
+│   └── img/                ← Imported Gold Marine photos, web-sized
+├── _tools/                 ← Local dev scripts, never served (404 via netlify.toml)
+└── [various .jpg images]   ← Remaining legacy gallery and service card photos
 ```
 
 ---
