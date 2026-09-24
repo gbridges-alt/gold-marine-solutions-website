@@ -202,13 +202,11 @@ it is byte-identical to production and must not be materially changed.
 
 **Content blockers (pages that must not publish as-is):**
 
-4. **Service Areas** carries a visible `copy-placeholder` block because no
-   FINAL page-copy file exists for it.
-   The block is wrapped in `STAGING-ONLY` markers, so step 1's grep catches it.
-   Approve copy for it, or do not publish that route.
-   `/about/` was **removed** at the owner's request — see the deviation note
-   below. `/emergency-marine-callout/` no longer shows a placeholder either; it
-   runs on the §4c content.
+4. **No page carries a visible copy placeholder any more.** `/about/` and
+   `/service-areas/` were removed at the owner's request (see the deviation
+   notes below), and `/emergency-marine-callout/` and `/contact/` run on
+   approved or structural content. Step 1's `STAGING-ONLY` grep now only has
+   the banner and the meta robots tag to find.
    `/contact/` no longer shows one: the page is functionally complete (booking
    form, contact details, CTAs) and the outstanding intro copy would be an
    addition rather than a fix. Its build note is an HTML comment instead —
@@ -264,6 +262,31 @@ it is byte-identical to production and must not be materially changed.
 13. Confirm the four suburb redirects still resolve: `/coomera.html`,
     `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
     `/service-areas/` (301).
+
+## Service Areas page — removed
+
+`MASTER-SITEMAP-v3.2` lists **Service Areas** at `/service-areas/` as a Phase 1
+page, and §6 makes it the single answer that replaces the deleted suburb pages.
+Removed on the owner's instruction as unnecessary.
+
+**This is a deviation from the LOCKED sitemap** and needs folding into a new
+version of that document.
+
+Two things were handled with it:
+
+1. **The suburb redirects.** `netlify.toml` had `/coomera.html`,
+   `/hope-island.html`, `/runaway-bay.html` and `/southport.html` 301-ing to
+   `/service-areas/`. Those four were real URLs on the live site and still carry
+   index presence, so they would have started landing on a 404. They now point
+   at `/#areas`, which is exactly where production sends them today — so live
+   behaviour is unchanged.
+
+2. **Geographic relevance.** §7 relied on Service Areas linking to all five hubs
+   and back, "now that there are no suburb pages". That reciprocal pair is gone.
+   The homepage `#areas` section still lists the 22 areas served, and the nav and
+   footer "Service Areas" links now point there. Worth watching in Search
+   Console: if local coverage queries soften, this is the change to look at
+   first.
 
 ## About page — removed
 

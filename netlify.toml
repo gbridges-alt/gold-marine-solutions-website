@@ -30,30 +30,33 @@ headers = []
 
 # ---------------------------------------------------------------------------
 # 301 redirects for removed suburb pages.
-# MASTER-SITEMAP-v3.2 §8 — retargeted from /#areas to /service-areas/ now that
-# the Service Areas page exists. No suburb or marina pages in any phase.
+# These four suburb pages were real URLs on the live site and still carry index
+# presence, so the 301s must land somewhere real. The Service Areas page was
+# removed at the owner's request, so they point back at the homepage #areas
+# section — which is exactly where production sends them today.
+# No suburb or marina pages in any phase.
 # ---------------------------------------------------------------------------
 [[redirects]]
   from = "/coomera.html"
-  to = "/service-areas/"
+  to = "/#areas"
   status = 301
   force = true
 
 [[redirects]]
   from = "/hope-island.html"
-  to = "/service-areas/"
+  to = "/#areas"
   status = 301
   force = true
 
 [[redirects]]
   from = "/runaway-bay.html"
-  to = "/service-areas/"
+  to = "/#areas"
   status = 301
   force = true
 
 [[redirects]]
   from = "/southport.html"
-  to = "/service-areas/"
+  to = "/#areas"
   status = 301
   force = true
 
