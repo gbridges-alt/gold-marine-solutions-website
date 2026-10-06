@@ -31,7 +31,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=1e6efd3a">
+<link rel="stylesheet" href="/assets/css/site.css?v=1bf8ad6a">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldmarinesolutions.com/"},{"@type":"ListItem","position":2,"name":"Marine Mechanical"}]}
 </script>
@@ -172,8 +172,11 @@
      The track lists every brand TWICE: the first run is the accessible one,
      the duplicate is aria-hidden with empty alt so screen readers and the
      document outline see each brand once while the CSS loop stays seamless.
-     To use an official logo file, drop it over the matching SVG in
-     /assets/img/brands/ — the markup here does not change. -->
+     Logos were sliced from the brand strip on outbackdiesel.au, each cropped
+     over the full 390px canvas height so every file shares one scale. That is
+     what lets a single uniform CSS height reproduce the original optical
+     balance — Cummins reads larger than Yanmar because it is larger on the
+     strip. A replacement file must keep the same 390px-tall canvas. -->
 <section class="brand-band" aria-labelledby="brand-band-title">
   <div class="section-inner">
     <div class="section-head">
@@ -183,26 +186,36 @@
   </div>
   <div class="brand-marquee">
     <div class="brand-track">
-      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.svg" alt="Volvo Penta"></div>
-      <div class="brand-item"><img src="/assets/img/brands/caterpillar.svg" alt="Caterpillar"></div>
-      <div class="brand-item"><img src="/assets/img/brands/cummins.svg" alt="Cummins"></div>
-      <div class="brand-item"><img src="/assets/img/brands/yanmar.svg" alt="Yanmar"></div>
-      <div class="brand-item"><img src="/assets/img/brands/kubota.svg" alt="Kubota"></div>
-      <div class="brand-item"><img src="/assets/img/brands/mercury.svg" alt="Mercury"></div>
-      <div class="brand-item"><img src="/assets/img/brands/mercruiser.svg" alt="MerCruiser"></div>
-      <div class="brand-item"><img src="/assets/img/brands/yamaha.svg" alt="Yamaha"></div>
-      <div class="brand-item"><img src="/assets/img/brands/honda.svg" alt="Honda"></div>
-      <div class="brand-item"><img src="/assets/img/brands/evinrude.svg" alt="Evinrude"></div>
-      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/caterpillar.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/cummins.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/yanmar.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/kubota.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/mercury.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/mercruiser.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/yamaha.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/honda.svg" alt="" aria-hidden="true"></div>
-      <div class="brand-item"><img src="/assets/img/brands/evinrude.svg" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.png" alt="Volvo Penta"></div>
+      <div class="brand-item"><img src="/assets/img/brands/caterpillar.png" alt="Caterpillar"></div>
+      <div class="brand-item"><img src="/assets/img/brands/cummins.png" alt="Cummins"></div>
+      <div class="brand-item"><img src="/assets/img/brands/yanmar.png" alt="Yanmar Marine"></div>
+      <div class="brand-item"><img src="/assets/img/brands/kubota.png" alt="Kubota"></div>
+      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/caterpillar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/cummins.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/yanmar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/kubota.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/caterpillar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/cummins.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/yanmar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/kubota.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/caterpillar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/cummins.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/yanmar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/kubota.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/caterpillar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/cummins.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/yanmar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/kubota.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/volvo-penta.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/caterpillar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/cummins.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/yanmar.png" alt="" aria-hidden="true"></div>
+      <div class="brand-item"><img src="/assets/img/brands/kubota.png" alt="" aria-hidden="true"></div>
     </div>
   </div>
   <p class="brand-note">Brand names and trademarks are shown for identification purposes only. Gold Marine Solutions is an independent marine service provider and does not imply manufacturer authorisation or affiliation.</p>

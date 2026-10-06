@@ -374,22 +374,22 @@ body.has-staging-banner .mobile-menu { top: 149px; }
    The track holds the brand list twice and translates exactly -50%, so the
    second copy lands where the first began and the loop has no visible seam.
    Width is driven by content, so adding or removing a brand needs no retiming. */
-.brand-band { background: var(--white); border-top: 1px solid #ECEFF3; border-bottom: 1px solid #ECEFF3; padding: 54px 0 44px; }
-.brand-band .section-head { text-align: center; margin-bottom: 36px; }
+.brand-band { background: var(--white); border-top: 1px solid #ECEFF3; border-bottom: 1px solid #ECEFF3; padding: 54px 0 34px; }
+.brand-band .section-head { text-align: center; margin-bottom: 8px; }
 .brand-band .section-head h2 { margin-bottom: 10px; }
 .brand-band .section-head p { color: var(--slate); max-width: 620px; margin: 0 auto; }
 .brand-marquee { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
-.brand-track { display: flex; align-items: center; width: max-content; animation: brand-scroll 48s linear infinite; }
+.brand-track { display: flex; align-items: center; width: max-content; animation: brand-scroll 44s linear infinite; }
 .brand-track:hover { animation-play-state: paused; }
-.brand-item { flex: 0 0 auto; padding: 0 46px; opacity: 0.62; transition: opacity 0.25s; }
-.brand-item:hover { opacity: 1; }
-.brand-item img { display: block; height: 34px; width: auto; }
+.brand-item { flex: 0 0 auto; padding: 0 26px; }
+
+.brand-item img { display: block; height: 132px; width: auto; }
 @keyframes brand-scroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
-.brand-note { max-width: 760px; margin: 38px auto 0; padding: 0 24px; text-align: center; font-size: 12.5px; line-height: 1.7; color: var(--slate); opacity: 0.85; }
+.brand-note { max-width: 760px; margin: 14px auto 0; padding: 0 24px; text-align: center; font-size: 12.5px; line-height: 1.7; color: var(--slate); opacity: 0.85; }
 @media (max-width: 767px) {
-  .brand-band { padding: 42px 0 34px; }
-  .brand-item { padding: 0 28px; }
-  .brand-item img { height: 26px; }
+  .brand-band { padding: 42px 0 24px; }
+  .brand-item { padding: 0 16px; }
+  .brand-item img { height: 96px; }
   .brand-track { animation-duration: 34s; }
 }
 /* Motion is decorative; honour a reduced-motion preference by holding the
