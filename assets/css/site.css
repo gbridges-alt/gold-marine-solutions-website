@@ -387,6 +387,13 @@ body.has-staging-banner .mobile-menu { top: 149px; }
 .crosslink a:hover { border-color: var(--mint); color: var(--mint-dark); transform: translateY(-2px); }
 .section--dark .crosslink a { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: var(--white); }
 .section--dark .crosslink a:hover { border-color: var(--mint); color: var(--mint-light); }
+/* A .callout keeps its own light background even inside .section--dark, so the
+   dark-section crosslink treatment above (white text on a 6% white pill) turns
+   invisible on it. Restate the light treatment at higher specificity. */
+.callout .crosslink a, .section--dark .callout .crosslink a { background: var(--white); border-color: #E2E8F0; color: var(--navy); }
+.callout .crosslink a:hover, .section--dark .callout .crosslink a:hover { border-color: var(--mint); color: var(--mint-dark); }
+.callout--urgent .crosslink a, .section--dark .callout--urgent .crosslink a { border-color: #FECACA; color: #991B1B; }
+.callout--urgent .crosslink a:hover, .section--dark .callout--urgent .crosslink a:hover { border-color: #DC2626; color: #7F1D1D; }
 /* A .btn-primary inside a .crosslink must still read as the primary CTA.
    .crosslink a (0,1,1) and .section--dark .crosslink a (0,2,1) both outrank a
    bare .btn-primary (0,1,0), so it has to be restated at higher specificity. */
