@@ -32,10 +32,8 @@ PILLARS = [
     ("Mechanical", "/marine-mechanical/", []),
     # Consolidated the same way as Mechanical, owner-directed 2026-10-06.
     ("Electrical", "/marine-electrical/", []),
-    ("Vessel Systems", "/vessel-systems/", [
-        ("Vessel Systems", "/vessel-systems/"),
-        ("Sanitation, Heads &amp; Vacuflush", "/vessel-systems/sanitation-heads/"),
-    ]),
+    # Consolidated like Mechanical and Electrical, owner-directed 2026-10-06.
+    ("Vessel Systems", "/vessel-systems/", []),
     ("Purchase &amp; Sale", "/purchase-and-sale/", [
         ("Purchase &amp; Sale", "/purchase-and-sale/"),
         ("Vessel Purchase Advisory", "/purchase-and-sale/pre-purchase-inspection/"),
