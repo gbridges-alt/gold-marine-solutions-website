@@ -380,6 +380,11 @@ body.has-staging-banner .mobile-menu { top: 149px; }
 .work-body { grid-column: 8 / span 5; }
 .work-item:nth-child(even) .work-media { grid-column: 6 / span 7; justify-content: flex-end; }
 .work-item:nth-child(even) .work-body { grid-column: 1 / span 5; grid-row: 1; }
+/* A before/after pair occupying one work-media slot: two images side by side,
+   each still shown whole. */
+.work-media--pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; width: 100%; }
+.work-media--pair .ba-item { margin: 0; position: relative; }
+.work-media--pair .ba-item img { width: 100%; height: auto; max-height: none; border-radius: 12px; }
 .work-media img { display: block; width: auto; height: auto; max-width: 100%; max-height: 660px; border-radius: 16px; box-shadow: 0 18px 44px rgba(0,0,0,0.16); }
 .work-body h3 { font-size: 23px; font-weight: 700; color: var(--navy); line-height: 1.32; letter-spacing: -0.3px; margin-bottom: 12px; }
 .work-body p { color: var(--slate); font-size: 16.5px; line-height: 1.75; }
@@ -393,6 +398,9 @@ body.has-staging-banner .mobile-menu { top: 149px; }
   .work-media { justify-content: center; }
   .work-item:nth-child(even) .work-media { justify-content: center; }
   .work-media img { border-radius: 12px; max-height: 480px; }
+  /* side by side, a before/after pair is ~155px wide on a phone — too small to
+     read the detail it exists to show. Stack it. */
+  .work-media--pair { grid-template-columns: 1fr; gap: 12px; }
   .work-body h3 { font-size: 20px; }
 }
 

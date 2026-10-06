@@ -30,10 +30,8 @@ PILLARS = [
     # subsystem before making contact. Child pages may return later if Search
     # Console shows the demand to justify them.
     ("Mechanical", "/marine-mechanical/", []),
-    ("Electrical", "/marine-electrical/", [
-        ("Marine Electrical", "/marine-electrical/"),
-        ("Batteries, Charging &amp; Starting", "/marine-electrical/batteries-charging/"),
-    ]),
+    # Consolidated the same way as Mechanical, owner-directed 2026-10-06.
+    ("Electrical", "/marine-electrical/", []),
     ("Vessel Systems", "/vessel-systems/", [
         ("Vessel Systems", "/vessel-systems/"),
         ("Sanitation, Heads &amp; Vacuflush", "/vessel-systems/sanitation-heads/"),
