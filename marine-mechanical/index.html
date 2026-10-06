@@ -31,9 +31,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=f9ec5cab">
+<link rel="stylesheet" href="/assets/css/site.css?v=22833cb0">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://goldmarinesolutions.com/"},{"@type":"ListItem","position":2,"name":"Marine Mechanical"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you come to the boat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — at the berth, on the hardstand or on the trailer. Tell us where it is when you call."}}, {"@type": "Question", "name": "My engine won't start. Is that you or an electrician?", "acceptedAnswer": {"@type": "Answer", "text": "It's us either way. A no-start can be mechanical, fuel related, or in the starting, charging or control circuit, and Gold Marine can assess both the mechanical and electrical side of the fault. Describe what the engine is doing and we'll work out where the fault sits."}}, {"@type": "Question", "name": "How often does my engine need servicing?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the engine, its hours and how the boat is used, and the manufacturer's schedule for that engine is the starting point. Schedules can include both hour-based and time-based intervals, and manufacturers don't all set the same ones. Tell us the engine and the hours and we'll tell you what's due."}}, {"@type": "Question", "name": "What does a service cost?", "acceptedAnswer": {"@type": "Answer", "text": "We quote against the actual job. The engine, how many of them, the vessel configuration, the access and the scope of what's due all move the number, so a single published figure would be misleading more than it would be useful. Send us the engine details and we'll come back with a quote and a time."}}, {"@type": "Question", "name": "Do you work on my engine make?", "acceptedAnswer": {"@type": "Answer", "text": "Gold Marine services and repairs a range of major marine engine makes across diesel, petrol and outboard vessels. Tell us the engine and we'll confirm."}}]}
 </script>
 </head>
 <body class="has-staging-banner">
@@ -46,7 +49,7 @@
       <img src="/logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
     </a>
     <div class="nav-links">
-          <div class="nav-item"><a href="/marine-mechanical/">Mechanical</a><div class="nav-dropdown"><a href="/marine-mechanical/" class="is-parent">Marine Mechanical</a><a href="/marine-mechanical/diesel-engine-service/">Diesel Engine Service &amp; Repair</a><a href="/marine-mechanical/petrol-outboard-service/">Petrol &amp; Outboard Engine Service</a></div></div>
+          <div class="nav-item"><a href="/marine-mechanical/">Mechanical</a></div>
           <div class="nav-item"><a href="/marine-electrical/">Electrical</a><div class="nav-dropdown"><a href="/marine-electrical/" class="is-parent">Marine Electrical</a><a href="/marine-electrical/batteries-charging/">Batteries, Charging &amp; Starting</a></div></div>
           <div class="nav-item"><a href="/vessel-systems/">Vessel Systems</a><div class="nav-dropdown"><a href="/vessel-systems/" class="is-parent">Vessel Systems</a><a href="/vessel-systems/sanitation-heads/">Sanitation, Heads &amp; Vacuflush</a></div></div>
           <div class="nav-item"><a href="/purchase-and-sale/">Purchase &amp; Sale</a><div class="nav-dropdown"><a href="/purchase-and-sale/" class="is-parent">Purchase &amp; Sale</a><a href="/purchase-and-sale/pre-purchase-inspection/">Vessel Purchase Advisory</a></div></div>
@@ -65,8 +68,6 @@
 <div class="mobile-menu" id="mobileMenu">
       <div class="mm-group-label">Mechanical</div>
       <a href="/marine-mechanical/" class="mm-child">Marine Mechanical</a>
-      <a href="/marine-mechanical/diesel-engine-service/" class="mm-child">Diesel Engine Service &amp; Repair</a>
-      <a href="/marine-mechanical/petrol-outboard-service/" class="mm-child">Petrol &amp; Outboard Engine Service</a>
       <div class="mm-group-label">Electrical</div>
       <a href="/marine-electrical/" class="mm-child">Marine Electrical</a>
       <a href="/marine-electrical/batteries-charging/" class="mm-child">Batteries, Charging &amp; Starting</a>
@@ -92,10 +93,10 @@
   <div class="page-hero-overlay"></div>
   <div class="page-hero-inner">
     <p class="eyebrow">Marine Mechanical</p>
-    <h1>Marine Engine Service &amp; Repair &mdash; Gold Coast</h1>
-    <p class="lede">Scheduled servicing, mechanical repairs and fault diagnosis across marine engine and propulsion systems &mdash; Diesel, Petrol and Outboards.</p>
+    <h1>Marine Mechanical Services &mdash; Gold Coast</h1>
+    <p class="lede">Servicing, diagnostics and repairs for diesel, petrol and outboard-powered vessels across the Gold Coast.</p>
     <div class="page-hero-btns">
-      <a href="/contact/?type=service" class="btn-primary">Book a Service</a>
+      <a href="/contact/?type=service" class="btn-primary">Request a Quote</a>
       <a href="tel:0436965243" class="btn-secondary">&#128222; 0436 965 243</a>
     </div>
   </div>
@@ -105,108 +106,208 @@
   <span class="sep" aria-hidden="true">&rsaquo;</span>
   <span aria-current="page">Marine Mechanical</span></div></nav>
 
-<!-- §2 · Start with your engine — the two Phase 1 routes carry greater visual
-     prominence than §3. Hierarchy reflects routing priority, not capability.
-     OWNER-DIRECTED DEVIATION from MARINE-MECHANICAL-HUB-PAGE-COPY-v1.1-FINAL §2,
-     which specifies "one service-led line plus one proof line each". The proof
-     lines ("Confirmed work includes ...") were removed as too wordy for a
-     routing card. The same proof is carried in full in the Real work sections
-     of the Diesel and Petrol & Outboard child pages. -->
+<!-- §2 · Mechanical services.
+     OWNER-DIRECTED CONSOLIDATION (2026-10-06): the Mechanical pillar is now a
+     single page. The former child routes /diesel-engine-service/ and
+     /petrol-outboard-service/ were staging-only and never indexed, so they were
+     removed outright rather than redirected. Their content is consolidated into
+     the H3 sections below. Supersedes MASTER-SITEMAP-v3.2 §4b and
+     MARINE-MECHANICAL-HUB-PAGE-COPY-v1.1-FINAL §2-§3. -->
 <section class="section section--tint">
   <div class="section-inner">
     <div class="section-head">
-      <h2>Start with your engine</h2>
+      <h2>Mechanical services</h2>
+      <p>Engines, propulsion, steering and the systems that keep them running.</p>
     </div>
-    <div class="route-grid route-grid--2">
+    <div class="route-grid route-grid--3">
       <article class="route-card">
         <div class="route-card-img"><img src="/assets/img/IMG_8153.jpg" alt="Marine diesel engine service on a Gold Coast vessel" loading="lazy"></div>
         <div class="route-card-body">
-          <h3>Diesel Engine Service &amp; Repair</h3>
-          <p>Scheduled servicing, repairs and fault diagnosis on marine diesel inboards — single, twin and larger installations.</p>
-          <a class="route-link" href="/marine-mechanical/diesel-engine-service/">Diesel engine service &amp; repair <span aria-hidden="true">&rarr;</span></a>
+          <h3>Diesel Engine Servicing &amp; Repairs</h3>
+          <p>Routine servicing, fault diagnosis, repairs, fuel-injection work, engine removal and replacement, and major mechanical repairs.</p>
         </div>
       </article>
       <article class="route-card">
-        <div class="route-card-img"><img src="/assets/img/IMG_8804.jpg" alt="Outboard engine service on the Gold Coast" loading="lazy"></div>
+        <div class="route-card-img"><img src="/assets/img/IMG_8804.jpg" alt="Honda outboard with the cowling off and a compression tester fitted" loading="lazy"></div>
         <div class="route-card-body">
-          <h3>Petrol &amp; Outboard Engine Service</h3>
-          <p>Annual and 100-hour servicing, compression testing and fault diagnosis on outboards, petrol inboards and sterndrives.</p>
-          <a class="route-link" href="/marine-mechanical/petrol-outboard-service/">Petrol &amp; outboard engine service <span aria-hidden="true">&rarr;</span></a>
+          <h3>Petrol &amp; Outboard Servicing</h3>
+          <p>Annual and scheduled servicing, diagnostics, and ignition, fuel, cooling and general repair work on outboards, petrol inboards and sterndrives.</p>
+        </div>
+      </article>
+      <article class="route-card">
+        <div class="route-card-img"><img src="/gallery-gearbox.jpg" alt="Marine gearbox and driveline work on a Gold Coast vessel" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Gearboxes, Drives &amp; Steering</h3>
+          <p>Gearbox servicing, sterndrives and lower units, driveline faults, shift systems, controls, hydraulic steering, vibration and shifting problems.</p>
+        </div>
+      </article>
+      <article class="route-card">
+        <div class="route-card-img"><img src="/assets/img/IMG_9116.jpg" alt="Marine fuel and cooling system service work" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Fuel &amp; Cooling Systems</h3>
+          <p>Fuel delivery and filtration, pumps, filters, injectors, contamination, raw-water and closed cooling, heat exchangers, thermostats and overheating diagnosis.</p>
+        </div>
+      </article>
+      <article class="route-card">
+        <div class="route-card-img"><img src="/assets/img/IMG_7561.jpg" alt="Electronic diagnostics on a Mercury twin-engine installation" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Marine Engine Diagnostics</h3>
+          <p>No-starts, smoke, loss of power, rough running, overheating and abnormal noises. Electronic diagnostics where the engine supports it, compression testing and mechanical fault isolation.</p>
+        </div>
+      </article>
+      <article class="route-card">
+        <div class="route-card-img"><img src="/assets/img/IMG_8185.jpg" alt="Engine replacement on a timber sailing vessel" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Mechanical Repairs &amp; Engine Replacement</h3>
+          <p>Component replacement, engine removal and replacement, remedial mechanical repairs and larger repair work.</p>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- §3 · Mechanical Repairs & Diagnostics — Phase 2 destinations, fully active.
-     OWNER-DIRECTED DEVIATION from MARINE-MECHANICAL-HUB-PAGE-COPY-v1.1-FINAL §3:
-     approved sub-line read "Not every propulsion job is an engine service."
-     No "coming soon", no disabled or greyed treatment. -->
+<!-- §3 · Capability across diesel, petrol and outboard. Deliberately general:
+     no dealer, authorised-service-centre or manufacturer-accreditation claim,
+     and no logo wall. -->
 <section class="section section--light">
   <div class="section-inner">
     <div class="section-head">
-      <h2>Mechanical Repairs &amp; Diagnostics</h2>
-      <p>Marine mechanical work goes well beyond routine engine servicing.</p>
+      <h2>Diesel, petrol and outboard</h2>
+      <p>Gold Marine works across a range of major marine engine makes and configurations.</p>
     </div>
-    <div class="route-grid route-grid--3">
-      <article class="route-card route-card--secondary">
-        <div class="route-card-body">
-          <h3>Gearboxes, Drives &amp; Steering</h3>
-          <p>Marine gearboxes, sterndrives, lower units, shift systems, hydraulic steering and controls.</p>
-          <a class="route-link" href="/contact/">Talk to us about gearboxes, drives and steering <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
-      <article class="route-card route-card--secondary">
-        <div class="route-card-body">
-          <h3>Fuel &amp; Cooling Systems</h3>
-          <p>Fuel filtration and delivery, contamination, raw-water and closed cooling, heat exchangers, thermostats and overheating diagnosis.</p>
-          <a class="route-link" href="/contact/">Talk to us about fuel and cooling <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
-      <article class="route-card route-card--secondary">
-        <div class="route-card-body">
-          <h3>Engine &amp; Propulsion Diagnostics</h3>
-          <p>Electronic diagnostics where supported, fault codes and live data, compression testing, thermal imaging and mechanical fault isolation.</p>
-          <!-- OWNER-DIRECTED RENAME from "Engine & Drivetrain Diagnostics"
-               (MASTER-SITEMAP-v3.2 §4b). Phase 2 URL /marine-mechanical/
-               engine-diagnostics/ is unchanged. -->
-          <a class="route-link" href="/contact/">Talk to us about diagnostics <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </article>
+    <div class="spec-grid">
+      <div class="spec-item">
+        <h3>Diesel inboards</h3>
+        <p>Single, twin and larger installations. Scheduled servicing, repairs and fault diagnosis.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Petrol inboards &amp; sterndrives</h3>
+        <p>Servicing, diagnostics and repairs, including drive and lower-unit work.</p>
+      </div>
+      <div class="spec-item">
+        <h3>Outboards</h3>
+        <p>Annual and hour-based servicing, compression testing and fault diagnosis.</p>
+      </div>
+      <div class="spec-item">
+        <h3>We come to the vessel</h3>
+        <p>At the berth, on the hardstand or on the trailer &mdash; whichever suits the boat.</p>
+      </div>
     </div>
-    <div class="prose" style="margin-top:34px;">
-      <p>Gold Marine Solutions services and repairs a range of major marine engine makes across diesel, petrol and outboard vessels.</p>
+    <div class="prose" style="margin-top:30px;">
+      <p>A service is quoted against your actual engine, its hours and the manufacturer's schedule for that model &mdash; not a generic checklist. Depending on the engine and interval, that can cover engine oil and filters, fuel filters, spark plugs, raw-water impellers, belts, cooling-system and leak checks, lower-unit or gearbox oil, trim and control operation, and starting and charging checks. You get the work done and a record of what was found, including anything not yet due but worth knowing about.</p>
     </div>
   </div>
 </section>
 
-<!-- §4 · We find the fault first -->
+<!-- §4 · Diagnosis-first. The strongest section on the page: the customer
+     describes the symptom, Gold Marine locates the fault. -->
 <section class="section section--dark">
   <div class="section-inner">
     <div class="section-head">
-      <h2>We find the fault first</h2>
+      <h2>Not sure what's causing the problem?</h2>
+      <p>You don't need to diagnose it before calling us.</p>
     </div>
     <div class="prose">
-      <p>A propulsion symptom can be mechanical, fuel-related, electrical or control-related. Gold Marine diagnoses the fault rather than asking the owner to choose the trade first.</p>
-      <p>That matters because the symptom doesn't name the cause. An engine that won't start, one that's down on power, one running hot — each of those symptoms can have causes across more than one system, and Gold Marine can assess both the mechanical and electrical side of the fault, so you don't need to choose the trade before calling.</p>
-      <p>On a recent no-start investigation on a Ford Lehman diesel, compression testing measured all cylinders below 100 psi.</p>
+      <p>A no-start may be mechanical or electrical. Overheating can involve engine cooling or the vessel's raw-water supply. Loss of power may come from fuel delivery, controls, air supply or internal engine condition.</p>
+      <p><strong>Tell us what the boat is doing and we'll work out where the fault sits.</strong> Gold Marine assesses both the mechanical and electrical side of a fault, so you don't have to choose the trade before you call.</p>
     </div>
     <div class="crosslink" style="margin-top:28px;">
+      <a href="/contact/?type=diagnostic" class="btn-primary" style="border-radius:10px;">Describe the Problem</a>
       <a href="/marine-electrical/">Marine electrical work <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="callout callout--urgent">
+      <p><strong>If the engine has stopped and you're on the water, call rather than fill in a form.</strong></p>
+      <div class="crosslink" style="margin-top:6px;">
+        <a href="/emergency-marine-callout/">Urgent breakdown support <span aria-hidden="true">&rarr;</span></a>
+        <a href="tel:0436965243">&#128222; 0436 965 243</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- §5 · Real work. Confirmed jobs only — each entry states what is confirmed
+     and nothing else. -->
+<section class="section section--tint">
+  <div class="section-inner">
+    <div class="section-head">
+      <h2>Real work</h2>
+    </div>
+    <div class="route-grid route-grid--3">
+      <article class="route-card">
+        <div class="route-card-img"><img src="/assets/img/IMG_8188.jpg" alt="Engine replacement on a timber sailing vessel — crane lift at the marina" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Timber sailing vessel &mdash; engine replacement</h3>
+          <p>Engine removed and replaced, including crane lift at the marina.</p>
+        </div>
+      </article>
+      <article class="route-card">
+        <div class="route-card-img"><img src="/assets/img/IMG_8603.jpg" alt="Ford Lehman marine diesel with the valve gear exposed and a compression tester connected" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Ford Lehman &mdash; no-start diagnosis</h3>
+          <p>Compression testing measured all cylinders below 100 psi.</p>
+        </div>
+      </article>
+      <article class="route-card">
+        <div class="route-card-img"><img src="/assets/img/IMG_7962.jpg" alt="Volvo Penta petrol engine removed and on the hardstand" loading="lazy"></div>
+        <div class="route-card-body">
+          <h3>Volvo Penta petrol engine</h3>
+          <p>Petrol engine removed and on the hardstand.</p>
+        </div>
+      </article>
+    </div>
+    <div class="spec-grid" style="margin-top:24px;">
+      <div class="spec-item">
+        <h3>Riviera 43 &mdash; twin Volvo Penta TAMD74P-B</h3>
+        <p>Annual servicing and vessel checks.</p>
+      </div>
+      <div class="spec-item">
+        <h3>35ft Chris-Craft Commander 3500 &mdash; twin Cummins</h3>
+        <p>Annual servicing and front-structure reseal work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §6 · Common questions -->
+<section class="faq">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Common questions</div>
+      <h2 class="section-title">Marine mechanical work</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you come to the boat? <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="faq-a">Yes &mdash; at the berth, on the hardstand or on the trailer. Tell us where it is when you call.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">My engine won't start. Is that you or an electrician? <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="faq-a">It's us either way. A no-start can be mechanical, fuel related, or in the starting, charging or control circuit, and Gold Marine can assess both the mechanical and electrical side of the fault. Describe what the engine is doing and we'll work out where the fault sits.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How often does my engine need servicing? <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="faq-a">It depends on the engine, its hours and how the boat is used, and the manufacturer's schedule for that engine is the starting point. Schedules can include both hour-based and time-based intervals, and manufacturers don't all set the same ones. Tell us the engine and the hours and we'll tell you what's due.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What does a service cost? <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="faq-a">We quote against the actual job. The engine, how many of them, the vessel configuration, the access and the scope of what's due all move the number, so a single published figure would be misleading more than it would be useful. Send us the engine details and we'll come back with a quote and a time.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you work on my engine make? <span class="chevron" aria-hidden="true">&#9662;</span></button>
+        <div class="faq-a">Gold Marine services and repairs a range of major marine engine makes across diesel, petrol and outboard vessels. Tell us the engine and we'll confirm.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="page-cta">
   <div class="page-cta-inner">
-    <h2>Book it in</h2>
-    <p>Tell us the engine, how many, and where the vessel is, and we'll come back with a quote and availability.</p>
+    <h2>Need mechanical work on your boat?</h2>
+    <p>Whether it's due for a service, won't start, is overheating, has lost power or simply doesn't feel right, contact Gold Marine and we'll work through it.</p>
     <div class="cta-btns">
-      <a href="/contact/?type=service" class="btn-primary">Book a Service</a>
+      <a href="/contact/?type=service" class="btn-primary">Request a Quote</a>
       <a href="tel:0436965243" class="btn-secondary">&#128222; 0436 965 243</a>
     </div>
-    <p class="aside"><strong>Engine stopped? If you're broken down, call rather than fill in a form.</strong> <a href="/emergency-marine-callout/">Urgent breakdown support &rarr;</a></p>
     <p class="aside">If you'd rather servicing was scheduled and tracked across the whole vessel rather than booked each time, ongoing technical management does that. <a href="/vessel-management/">Vessel Management &rarr;</a></p>
   </div>
 </section>

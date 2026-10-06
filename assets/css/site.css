@@ -387,6 +387,11 @@ body.has-staging-banner .mobile-menu { top: 149px; }
 .crosslink a:hover { border-color: var(--mint); color: var(--mint-dark); transform: translateY(-2px); }
 .section--dark .crosslink a { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); color: var(--white); }
 .section--dark .crosslink a:hover { border-color: var(--mint); color: var(--mint-light); }
+/* A .btn-primary inside a .crosslink must still read as the primary CTA.
+   .crosslink a (0,1,1) and .section--dark .crosslink a (0,2,1) both outrank a
+   bare .btn-primary (0,1,0), so it has to be restated at higher specificity. */
+.crosslink a.btn-primary, .section--dark .crosslink a.btn-primary { background: var(--mint); border-color: var(--mint); color: var(--white); padding: 16px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; }
+.crosslink a.btn-primary:hover, .section--dark .crosslink a.btn-primary:hover { background: var(--mint-dark); border-color: var(--mint-dark); color: var(--white); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(197,165,90,0.35); }
 
 /* PAGE CTA BLOCK */
 .page-cta { background: linear-gradient(135deg, var(--charcoal) 0%, var(--navy-light) 100%); padding: 76px 24px; }

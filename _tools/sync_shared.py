@@ -25,11 +25,11 @@ WHATSAPP = ("https://wa.me/61436965243?text=Hi%20Geordie%2C%20I%27d%20like%20"
 # Navigation order is deliberate: Mechanical and Electrical lead, because they
 # remain the primary operational and lead-generation focus.
 PILLARS = [
-    ("Mechanical", "/marine-mechanical/", [
-        ("Marine Mechanical", "/marine-mechanical/"),
-        ("Diesel Engine Service &amp; Repair", "/marine-mechanical/diesel-engine-service/"),
-        ("Petrol &amp; Outboard Engine Service", "/marine-mechanical/petrol-outboard-service/"),
-    ]),
+    # Mechanical is deliberately a single consolidated page with no children.
+    # Owner-directed, 2026-10-06: the customer should not have to pick a
+    # subsystem before making contact. Child pages may return later if Search
+    # Console shows the demand to justify them.
+    ("Mechanical", "/marine-mechanical/", []),
     ("Electrical", "/marine-electrical/", [
         ("Marine Electrical", "/marine-electrical/"),
         ("Batteries, Charging &amp; Starting", "/marine-electrical/batteries-charging/"),
@@ -52,6 +52,13 @@ PILLARS = [
 def nav():
     items = []
     for label, hub, children in PILLARS:
+        if not children:
+            # No dropdown markup at all — an empty .nav-dropdown still renders
+            # a hover target.
+            items.append(
+                '<div class="nav-item"><a href="{hub}">{label}</a></div>'.format(
+                    hub=hub, label=label))
+            continue
         drop = "".join(
             '<a href="{u}"{cls}>{l}</a>'.format(
                 u=u, l=l, cls=' class="is-parent"' if u == hub else "")
@@ -65,7 +72,7 @@ def nav():
     mobile = []
     for label, hub, children in PILLARS:
         mobile.append('<div class="mm-group-label">{}</div>'.format(label))
-        for l, u in children:
+        for l, u in (children or [("Marine " + label, hub)]):
             mobile.append('<a href="{u}" class="mm-child">{l}</a>'.format(u=u, l=l))
     mobile_links = "\n      ".join(mobile)
 
