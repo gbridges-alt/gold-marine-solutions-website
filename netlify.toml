@@ -121,7 +121,14 @@ publishOrigin = "default"
 
     [build.processing.css]
 
+    # Netlify's Pretty URLs rewrote every internal href="/page.html" to
+    # href='/page' in the DEPLOYED html, while canonical/og:url/sitemap all
+    # declare .html. That made canonical and internal links disagree, and sent
+    # every internal link to membership/privacy/links through a 301 hop.
+    # Verified against the deployed output, not the source — the source was
+    # always correct.
     [build.processing.html]
+    pretty_urls = false
 
     [build.processing.images]
 
