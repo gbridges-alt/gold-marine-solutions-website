@@ -1,29 +1,99 @@
 headers = []
 
-# 301 redirects for removed suburb pages — preserves SEO and avoids 404s
+# ---------------------------------------------------------------------------
+# Staging protection.
+# Branch deploys and deploy previews are served noindex,nofollow,noarchive at
+# the HTTP level. These contexts NEVER apply to the production context, so this
+# protection cannot leak to goldmarinesolutions.com.
+# This is the ONLY noindex mechanism for staging. No HTML file carries a blanket
+# noindex meta tag, so nothing can leak to production by being merged.
+# NOTE: these contexts apply to git-driven branch deploys and deploy previews.
+# A manual drag-and-drop deploy has no branch context and is NOT covered — such
+# a preview needs its own _headers file. See REPORT notes.
+# ---------------------------------------------------------------------------
+[[context.branch-deploy.headers]]
+  for = "/*"
+  [context.branch-deploy.headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+[[context.deploy-preview.headers]]
+  for = "/*"
+  [context.deploy-preview.headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+
+# ---------------------------------------------------------------------------
+# Local tooling is committed so it cannot be lost, but it is not part of the
+# site. publish = "." would otherwise serve it.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/_tools/*"
+  to = "/"
+  status = 404
+  force = true
+
+# ---------------------------------------------------------------------------
+# 301 redirects for removed suburb pages.
+# These four suburb pages were real URLs on the live site and still carry index
+# presence, so they must not 404. They land on the homepage root.
+# Owner-directed: do not target the #areas anchor. The section still exists on
+# the homepage, it is simply not a redirect destination.
+# No suburb or marina pages in any phase.
+# ---------------------------------------------------------------------------
 [[redirects]]
   from = "/coomera.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/hope-island.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/runaway-bay.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/southport.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
+
+# ---------------------------------------------------------------------------
+# Extensionless duplicates -> the canonical .html URL.
+# Netlify serves BOTH /membership and /membership.html with a 200, so every one
+# of these pages was reachable at two URLs. .html is the canonical form: it is
+# what production has always used, what the sitemap and canonicals declare, and
+# what any existing index entry points at. Switching to extensionless would be
+# a migration with nothing to gain.
+# Checked before adding: /membership.html does NOT redirect to /membership, so
+# Netlify's pretty-URL rewrite is off and these cannot loop.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/membership"
+  to = "/membership.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/links"
+  to = "/links.html"
+  status = 301
+  force = true
+
+# NOTE: /membership.html, /links.html, /privacy.html and / keep their URLs
+# unchanged — MASTER-SITEMAP-v3.2 §2. The redirects above only collapse the
+# extensionless duplicates onto them.
 
 [functions]
 
@@ -51,7 +121,14 @@ publishOrigin = "default"
 
     [build.processing.css]
 
+    # Netlify's Pretty URLs rewrote every internal href="/page.html" to
+    # href='/page' in the DEPLOYED html, while canonical/og:url/sitemap all
+    # declare .html. That made canonical and internal links disagree, and sent
+    # every internal link to membership/privacy/links through a 301 hop.
+    # Verified against the deployed output, not the source — the source was
+    # always correct.
     [build.processing.html]
+    pretty_urls = false
 
     [build.processing.images]
 

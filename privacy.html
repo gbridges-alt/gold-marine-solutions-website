@@ -13,23 +13,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy | Gold Marine Solutions</title>
 <meta name="description" content="Privacy policy for Gold Marine Solutions — Gold Coast mobile marine mechanic.">
-<meta name="robots" content="noindex, follow">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="canonical" href="https://goldmarinesolutions.com/privacy.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=79dce77f">
 <style>
   :root { --mint: #C5A55A; --navy: #1A1A1A; --charcoal: #111111; --slate: #4A5568; --off-white: #F7F6F3; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Inter', sans-serif; color: var(--charcoal); line-height: 1.7; background: var(--off-white); }
-  .nav { background: var(--charcoal); padding: 0 24px; }
-  .nav-inner { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 72px; }
-  .nav-logo { color: #fff; font-size: 18px; font-weight: 800; text-decoration: none; }
-  .nav-logo span { color: var(--mint); }
-  .nav-back { color: rgba(255,255,255,0.7); font-size: 14px; text-decoration: none; }
-  .nav-back:hover { color: var(--mint); }
-  .content { max-width: 800px; margin: 0 auto; padding: 60px 24px 80px; background: #fff; }
+  /* The shared nav is position:fixed (the old one sat in the flow), so the
+     content has to clear it. The staging rule goes inert once the banner
+     and its body class are stripped before a production merge. */
+  .content { max-width: 800px; margin: 0 auto; padding: 160px 24px 80px; background: #fff; }
+  body.has-staging-banner .content { padding-top: 189px; }
+  @media (max-width: 1149px) { .content { padding-top: 140px; }
+    body.has-staging-banner .content { padding-top: 169px; } }
   h1 { font-size: 36px; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
   .updated { color: var(--slate); font-size: 14px; margin-bottom: 40px; }
   h2 { font-size: 20px; font-weight: 700; color: var(--navy); margin: 36px 0 12px; }
@@ -37,20 +37,52 @@
   ul { color: var(--slate); font-size: 15px; padding-left: 20px; margin-bottom: 16px; }
   ul li { margin-bottom: 8px; }
   a { color: var(--mint); }
-  .footer { background: var(--charcoal); padding: 32px 24px; text-align: center; }
-  .footer p { color: rgba(255,255,255,0.4); font-size: 13px; }
-  .footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-  .footer a:hover { color: var(--mint); }
 </style>
 </head>
 <body>
 
+
+<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="https://goldmarinesolutions.com" class="nav-logo">Gold <span>Marine</span> Solutions</a>
-    <a href="https://goldmarinesolutions.com" class="nav-back">← Back to Main Site</a>
+    <a href="/" class="nav-logo" aria-label="Gold Marine Solutions — home">
+      <img src="/logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
+    </a>
+    <div class="nav-links">
+          <div class="nav-item"><a href="/marine-mechanical/">Mechanical</a></div>
+          <div class="nav-item"><a href="/marine-electrical/">Electrical</a></div>
+          <div class="nav-item"><a href="/vessel-systems/">Vessel Systems</a></div>
+          <div class="nav-item"><a href="/purchase-and-sale/">Purchase &amp; Sale</a><div class="nav-dropdown"><a href="/purchase-and-sale/" class="is-parent">Purchase &amp; Sale</a><a href="/purchase-and-sale/pre-purchase-inspection/">Vessel Purchase Advisory</a></div></div>
+          <div class="nav-item"><a href="/vessel-management/">Vessel Management</a><div class="nav-dropdown"><a href="/vessel-management/" class="is-parent">Vessel Management</a><a href="/membership.html">Gold Marine Memberships</a></div></div>
+    </div>
+    <div class="nav-phone">
+      <a href="/emergency-marine-callout/" class="btn-emergency"><span class="pulse-dot" aria-hidden="true"></span> Urgent Callout</a>
+      <a href="/contact/" class="btn-nav">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+      <div class="mm-group-label">Mechanical</div>
+      <a href="/marine-mechanical/" class="mm-child">Marine Mechanical</a>
+      <div class="mm-group-label">Electrical</div>
+      <a href="/marine-electrical/" class="mm-child">Marine Electrical</a>
+      <div class="mm-group-label">Vessel Systems</div>
+      <a href="/vessel-systems/" class="mm-child">Marine Vessel Systems</a>
+      <div class="mm-group-label">Purchase &amp; Sale</div>
+      <a href="/purchase-and-sale/" class="mm-child">Purchase &amp; Sale</a>
+      <a href="/purchase-and-sale/pre-purchase-inspection/" class="mm-child">Vessel Purchase Advisory</a>
+      <div class="mm-group-label">Vessel Management</div>
+      <a href="/vessel-management/" class="mm-child">Vessel Management</a>
+      <a href="/membership.html" class="mm-child">Gold Marine Memberships</a>
+      <div class="mm-group-label">More</div>
+      <a href="/#about" class="mm-child">About</a>
+      <a href="/emergency-marine-callout/" class="mm-child">Urgent Callout</a>
+      <a href="/contact/" class="mobile-cta">Get a Quote</a>
+</div>
 
 <div class="content">
   <h1>Privacy Policy</h1>
@@ -108,9 +140,72 @@
   <p>We may update this policy from time to time. The current version will always be available at goldmarinesolutions.com/privacy.html.</p>
 </div>
 
+<!-- MOBILE STICKY CALL BAR -->
+<div class="sticky-call">
+  <a href="tel:0436965243" class="call-btn">&#128222; Call</a>
+  <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20I%27d%20like%20a%20quote%20for%20my%20boat." class="call-btn">&#128172; WhatsApp</a>
+  <a href="/contact/" class="quote-btn">Get a Quote</a>
+</div>
+
+<!-- FOOTER -->
 <footer class="footer">
-  <p>&copy; <span id="year"></span> <a href="https://goldmarinesolutions.com">Gold Marine Solutions</a> — Gold Coast, Queensland, Australia</p>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="margin-bottom:8px;">
+        <img src="/logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
+      </a>
+      <p>One call. Every marine solution.<br>Mobile marine mechanical and electrical service across the Gold Coast and South East Queensland.</p>
+      <p style="margin-top:12px;">ABN 57 680 746 356</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="/marine-mechanical/">Marine Mechanical</a>
+      <a href="/marine-electrical/">Marine Electrical</a>
+      <a href="/vessel-systems/">Vessel Systems</a>
+      <a href="/purchase-and-sale/">Purchase &amp; Sale</a>
+      <a href="/vessel-management/">Vessel Management</a>
+      <a href="/emergency-marine-callout/">Urgent Callout</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="/#about">About</a>
+      <a href="/membership.html">Memberships</a>
+      <a href="/#gallery">Our Work</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="tel:0436965243">0436 965 243</a>
+      <a href="mailto:geordie@goldmarinesolutions.com">geordie@goldmarinesolutions.com</a>
+      <a href="https://www.instagram.com/goldmarinesolutions/" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61556990786261" rel="noopener">Facebook</a>
+      <a href="/links.html">Links</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year">2026</span> Gold Marine Solutions Pty Ltd. All rights reserved.</p>
+  </div>
 </footer>
+
+<script src="/assets/js/site.js?v=29e60582"></script>
+
+</body>
+</html>
+
+<script src="/assets/js/site.js?v=29e60582"></script>
+
+</body>
+</html>
+
+<script src="/assets/js/site.js?v=29e60582"></script>
+
+</body>
+</html>
+
+
+
+
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
@@ -125,6 +220,8 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+
+<script src="/assets/js/site.js"></script>
 
 </body>
 </html>

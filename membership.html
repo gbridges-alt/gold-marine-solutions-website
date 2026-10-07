@@ -17,7 +17,6 @@
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="apple-touch-icon" href="logo.png">
 <link rel="canonical" href="https://goldmarinesolutions.com/membership.html">
-<meta name="robots" content="index, follow">
 
 <meta property="og:title" content="Gold Marine Memberships | Vessel Care &amp; Management Gold Coast">
 <meta property="og:description" content="Mechanical confidence you can feel — and presentation you can see. Structured vessel care with technical intelligence, from wash-downs to private vessel management.">
@@ -29,6 +28,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="/assets/css/site.css?v=79dce77f">
 <style>
   :root {
     --mint: #C5A55A;
@@ -280,46 +280,75 @@
     .hamburger { display: flex; }
     .waitlist-form { padding: 28px; }
   }
+
+  /* ------------------------------------------------------------------
+     Overrides for /assets/css/site.css
+     This page predates the shared stylesheet and reuses some of the same
+     class names for a different layout. site.css is linked first (for the
+     shared nav, dropdowns and mobile menu), so any property this page does
+     not declare itself leaks in from the homepage's styles. These rules put
+     the page back to its own design. Keep them below the site.css link.
+     ------------------------------------------------------------------ */
+
+  /* The hero here is ONE centred column. site.css makes .hero-inner a
+     two-column grid for the homepage hero, which stacked this hero's badge,
+     headline, copy and buttons into columns. */
+  /* width:100% also leaks from site.css. .hero-inner is a flex item here,
+     so auto shrink-wraps it to 771px as production does; 100% stretches it
+     to the full 900px max-width and changes where the copy wraps. */
+  .hero-inner { display: block; gap: 0; align-items: initial; width: auto; }
+
+  /* Cosmetic leaks from the homepage hero. */
+  .hero-tagline { line-height: 1.6; }
+  .hero-btns { margin-bottom: 0; }
+
+  /* site.css centres .pricing-note; this page's note is left-aligned prose. */
+  .pricing-note { text-align: left; }
 </style>
 </head>
 <body>
 
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
+    <a href="/" class="nav-logo" aria-label="Gold Marine Solutions — home">
+      <img src="/logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
     </a>
     <div class="nav-links">
-      <a href="/#services">Services</a>
-      <a href="/#about">About</a>
-      <a href="/#gallery">Our Work</a>
-      <a href="/#reviews">Reviews</a>
-      <a href="/membership.html" class="current">Membership</a>
-      <a href="/#faq">FAQ</a>
-      <a href="/#contact">Contact</a>
+          <div class="nav-item"><a href="/marine-mechanical/">Mechanical</a></div>
+          <div class="nav-item"><a href="/marine-electrical/">Electrical</a></div>
+          <div class="nav-item"><a href="/vessel-systems/">Vessel Systems</a></div>
+          <div class="nav-item"><a href="/purchase-and-sale/">Purchase &amp; Sale</a><div class="nav-dropdown"><a href="/purchase-and-sale/" class="is-parent">Purchase &amp; Sale</a><a href="/purchase-and-sale/pre-purchase-inspection/">Vessel Purchase Advisory</a></div></div>
+          <div class="nav-item"><a href="/vessel-management/">Vessel Management</a><div class="nav-dropdown"><a href="/vessel-management/" class="is-parent">Vessel Management</a><a href="/membership.html">Gold Marine Memberships</a></div></div>
     </div>
     <div class="nav-phone">
-      <a href="tel:0436965243" class="btn-emergency" aria-label="Emergency 24/7"><span class="pulse-dot"></span>Emergency 24/7</a>
-      <a href="/#contact" class="btn-nav">Get a Quote</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <a href="/emergency-marine-callout/" class="btn-emergency"><span class="pulse-dot" aria-hidden="true"></span> Urgent Callout</a>
+      <a href="/contact/" class="btn-nav">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/#services" onclick="closeMenu()">Services</a>
-  <a href="/#about" onclick="closeMenu()">About</a>
-  <a href="/#gallery" onclick="closeMenu()">Our Work</a>
-  <a href="/#reviews" onclick="closeMenu()">Reviews</a>
-  <a href="/membership.html" onclick="closeMenu()">Membership</a>
-  <a href="/#faq" onclick="closeMenu()">FAQ</a>
-  <a href="/#contact" onclick="closeMenu()">Contact</a>
-  <a href="tel:0436965243" class="mobile-cta" style="background:#DC2626;margin-top:16px;">🚨 Emergency 24/7</a>
-  <a href="tel:0436965243" class="mobile-cta" style="margin-top:8px;">📞 Call 0436 965 243</a>
+      <div class="mm-group-label">Mechanical</div>
+      <a href="/marine-mechanical/" class="mm-child">Marine Mechanical</a>
+      <div class="mm-group-label">Electrical</div>
+      <a href="/marine-electrical/" class="mm-child">Marine Electrical</a>
+      <div class="mm-group-label">Vessel Systems</div>
+      <a href="/vessel-systems/" class="mm-child">Marine Vessel Systems</a>
+      <div class="mm-group-label">Purchase &amp; Sale</div>
+      <a href="/purchase-and-sale/" class="mm-child">Purchase &amp; Sale</a>
+      <a href="/purchase-and-sale/pre-purchase-inspection/" class="mm-child">Vessel Purchase Advisory</a>
+      <div class="mm-group-label">Vessel Management</div>
+      <a href="/vessel-management/" class="mm-child">Vessel Management</a>
+      <a href="/membership.html" class="mm-child">Gold Marine Memberships</a>
+      <div class="mm-group-label">More</div>
+      <a href="/#about" class="mm-child">About</a>
+      <a href="/emergency-marine-callout/" class="mm-child">Urgent Callout</a>
+      <a href="/contact/" class="mobile-cta">Get a Quote</a>
 </div>
 
 <!-- HERO -->
@@ -465,7 +494,7 @@
           <li>Full paper-documented vessel service book</li>
           <li>Digital/photo-backed vessel health record</li>
           <li>Premium annual wax/polish credit</li>
-          <li><strong>Priority emergency response</strong> and 24/7 phone support</li>
+          <li><strong>Priority emergency response</strong> and priority phone support</li>
           <li>Two waived after-hours callout fees per year</li>
         </ul>
         <div class="tier-doc">Gold Signature members receive a fully maintained Gold Marine vessel service book — inspection records, service history, oil sample records, recommendations, photos where applicable and maintenance forecasting. A strong ownership record that helps protect the vessel's resale value.</div>
@@ -521,7 +550,7 @@
           <tr><td>Bonding &amp; earthing inspection</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>Annual haul-out planning</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>Contractor coordination allowance</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
-          <tr><td>24/7 phone support</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
+          <tr><td>Priority phone support</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><span class="check">✓</span></td></tr>
           <tr><td>Waived after-hours callout fees</td><td><span class="dash">—</span></td><td><span class="dash">—</span></td><td><strong>2 / year</strong></td></tr>
         </tbody>
       </table>
@@ -657,7 +686,7 @@
     <div class="waitlist-form">
       <form name="membership-waitlist" method="POST" netlify netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="membership-waitlist">
-        <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <p class="hp-field" aria-hidden="true"><input name="bot-field" tabindex="-1" autocomplete="off"></p>
         <div class="form-row">
           <div class="form-group"><label>First Name *</label><input type="text" name="first-name" placeholder="Your first name" required></div>
           <div class="form-group"><label>Last Name *</label><input type="text" name="last-name" placeholder="Your last name" required></div>
@@ -691,11 +720,11 @@
   </div>
 </section>
 
-<!-- MOBILE STICKY CTA -->
+<!-- MOBILE STICKY CALL BAR -->
 <div class="sticky-call">
-  <a href="tel:0436965243" class="call-btn">📞 Call</a>
-  <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20tell%20me%20about%20the%20Gold%20Marine%20Memberships." class="call-btn">💬 WhatsApp</a>
-  <a href="#waitlist" class="quote-btn">Book Assessment</a>
+  <a href="tel:0436965243" class="call-btn">&#128222; Call</a>
+  <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20I%27d%20like%20a%20quote%20for%20my%20boat." class="call-btn">&#128172; WhatsApp</a>
+  <a href="/contact/" class="quote-btn">Get a Quote</a>
 </div>
 
 <!-- FOOTER -->
@@ -703,39 +732,60 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="nav-logo" style="margin-bottom:8px;">
-        <img src="logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
+        <img src="/logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
       </a>
-      <p>Gold Coast mobile marine mechanic and auto electrician. Diesel and petrol specialists. Repaired right the first time — or your money back.</p>
-      <p style="margin-top:8px;">ABN 57 680 746 356 &nbsp;·&nbsp; Fully insured &nbsp;·&nbsp; Burleigh Heads, QLD</p>
+      <p>One call. Every marine solution.<br>Mobile marine mechanical and electrical service across the Gold Coast and South East Queensland.</p>
+      <p style="margin-top:12px;">ABN 57 680 746 356</p>
     </div>
     <div>
       <h4>Services</h4>
-      <a href="/#services">Petrol Engine Service</a>
-      <a href="/#services">Diesel Engine Service</a>
-      <a href="/#services">Marine Electrical</a>
-      <a href="/#services">Pre-Purchase Inspections</a>
-      <a href="/#services">Emergency Callouts</a>
+      <a href="/marine-mechanical/">Marine Mechanical</a>
+      <a href="/marine-electrical/">Marine Electrical</a>
+      <a href="/vessel-systems/">Vessel Systems</a>
+      <a href="/purchase-and-sale/">Purchase &amp; Sale</a>
+      <a href="/vessel-management/">Vessel Management</a>
+      <a href="/emergency-marine-callout/">Urgent Callout</a>
     </div>
     <div>
-      <h4>Membership</h4>
-      <a href="/membership.html#tiers">Gold Select</a>
-      <a href="/membership.html#tiers">Gold Premier</a>
-      <a href="/membership.html#tiers">Gold Signature</a>
-      <a href="/membership.html#waitlist">Book a Vessel Assessment</a>
+      <h4>Company</h4>
+      <a href="/#about">About</a>
+      <a href="/membership.html">Memberships</a>
+      <a href="/#gallery">Our Work</a>
+      <a href="/contact/">Contact</a>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h4>Connect</h4>
       <a href="tel:0436965243">0436 965 243</a>
       <a href="mailto:geordie@goldmarinesolutions.com">geordie@goldmarinesolutions.com</a>
-      <a href="https://wa.me/61436965243" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="https://www.facebook.com/profile.php?id=61556990786261" target="_blank" rel="noopener noreferrer">Facebook</a>
-      <a href="https://www.instagram.com/goldmarinesolutions/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.instagram.com/goldmarinesolutions/" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61556990786261" rel="noopener">Facebook</a>
+      <a href="/links.html">Links</a>
+      <a href="/privacy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© <span id="year"></span> Gold Marine Solutions. Gold Coast, Queensland, Australia. &nbsp;·&nbsp; <a href="/privacy.html" style="color:rgba(255,255,255,0.35);text-decoration:none;">Privacy Policy</a></p>
+    <p>&copy; <span id="year">2026</span> Gold Marine Solutions Pty Ltd. All rights reserved.</p>
   </div>
 </footer>
+
+<script src="/assets/js/site.js?v=29e60582"></script>
+
+</body>
+</html>
+
+<script src="/assets/js/site.js?v=29e60582"></script>
+
+</body>
+</html>
+
+<script src="/assets/js/site.js?v=29e60582"></script>
+
+</body>
+</html>
+
+
+
+
 
 <script>
   // Dynamic year
