@@ -34,32 +34,32 @@ headers = []
 # ---------------------------------------------------------------------------
 # 301 redirects for removed suburb pages.
 # These four suburb pages were real URLs on the live site and still carry index
-# presence, so the 301s must land somewhere real. The Service Areas page was
-# removed at the owner's request, so they point back at the homepage #areas
-# section — which is exactly where production sends them today.
+# presence, so they must not 404. They land on the homepage root.
+# Owner-directed: do not target the #areas anchor. The section still exists on
+# the homepage, it is simply not a redirect destination.
 # No suburb or marina pages in any phase.
 # ---------------------------------------------------------------------------
 [[redirects]]
   from = "/coomera.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/hope-island.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/runaway-bay.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
 [[redirects]]
   from = "/southport.html"
-  to = "/#areas"
+  to = "/"
   status = 301
   force = true
 
