@@ -124,7 +124,15 @@
   .service-card:hover .service-card-img img { transform: scale(1.08); }
   .service-card-body { padding: 24px; }
   .service-card h3 { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-  .service-card p { color: var(--slate); font-size: 14px; line-height: 1.6; margin-bottom: 14px; }
+  .service-card p { color: var(--slate); font-size: 14px; line-height: 1.6; margin-bottom: 2px; }
+  /* Homepage cards route into the pillars. Matches .route-link on the pillar
+     pages so the two grids read as one system. */
+  /* 12px vertical padding takes the tap target from 23px to ~47px, clearing
+     the 44px minimum. The paragraph margin below is reduced by the same
+     amount so the visual gap is unchanged. */
+  .service-link { display: inline-flex; align-items: center; gap: 7px; padding: 12px 0; color: var(--mint-dark); font-weight: 700; font-size: 14.5px; text-decoration: none; transition: gap 0.2s, color 0.2s; }
+  .service-link:hover { color: var(--navy); gap: 11px; }
+  .service-card:hover .service-link { color: var(--navy); }
 
   /* ABOUT */
   .about { padding: 96px 24px; background: var(--white); }
