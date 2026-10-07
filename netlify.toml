@@ -5,8 +5,11 @@ headers = []
 # Branch deploys and deploy previews are served noindex,nofollow,noarchive at
 # the HTTP level. These contexts NEVER apply to the production context, so this
 # protection cannot leak to goldmarinesolutions.com.
-# The pages on the staging branch also carry a STAGING-ONLY <meta name="robots">
-# tag as a second layer — see the pre-merge checklist in HANDOVER.md.
+# This is the ONLY noindex mechanism for staging. No HTML file carries a blanket
+# noindex meta tag, so nothing can leak to production by being merged.
+# NOTE: these contexts apply to git-driven branch deploys and deploy previews.
+# A manual drag-and-drop deploy has no branch context and is NOT covered — such
+# a preview needs its own _headers file. See REPORT notes.
 # ---------------------------------------------------------------------------
 [[context.branch-deploy.headers]]
   for = "/*"
@@ -60,8 +63,37 @@ headers = []
   status = 301
   force = true
 
-# NOTE: /membership.html, /links.html, /privacy.html and / have NO redirects.
-# Their URLs are unchanged and must stay that way — MASTER-SITEMAP-v3.2 §2.
+# ---------------------------------------------------------------------------
+# Extensionless duplicates -> the canonical .html URL.
+# Netlify serves BOTH /membership and /membership.html with a 200, so every one
+# of these pages was reachable at two URLs. .html is the canonical form: it is
+# what production has always used, what the sitemap and canonicals declare, and
+# what any existing index entry points at. Switching to extensionless would be
+# a migration with nothing to gain.
+# Checked before adding: /membership.html does NOT redirect to /membership, so
+# Netlify's pretty-URL rewrite is off and these cannot loop.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/membership"
+  to = "/membership.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/privacy"
+  to = "/privacy.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/links"
+  to = "/links.html"
+  status = 301
+  force = true
+
+# NOTE: /membership.html, /links.html, /privacy.html and / keep their URLs
+# unchanged — MASTER-SITEMAP-v3.2 §2. The redirects above only collapse the
+# extensionless duplicates onto them.
 
 [functions]
 

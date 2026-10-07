@@ -95,7 +95,6 @@ def nav():
       {mobile}
       <div class="mm-group-label">More</div>
       <a href="/#about" class="mm-child">About</a>
-      <a href="/#areas" class="mm-child">Service Areas</a>
       <a href="/emergency-marine-callout/" class="mm-child">Urgent Callout</a>
       <a href="/contact/" class="mobile-cta">Get a Quote</a>
 </div>""".format(desktop=desktop, mobile=mobile_links)
@@ -131,7 +130,6 @@ def footer():
     <div>
       <h4>Company</h4>
       <a href="/#about">About</a>
-      <a href="/#areas">Service Areas</a>
       <a href="/membership.html">Memberships</a>
       <a href="/#gallery">Our Work</a>
       <a href="/contact/">Contact</a>
