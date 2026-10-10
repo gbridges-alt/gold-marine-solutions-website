@@ -32,36 +32,13 @@ headers = []
   force = true
 
 # ---------------------------------------------------------------------------
-# 301 redirects for removed suburb pages.
-# These four suburb pages were real URLs on the live site and still carry index
-# presence, so they must not 404. They land on the homepage root.
-# Owner-directed: do not target the #areas anchor. The section still exists on
-# the homepage, it is simply not a redirect destination.
-# No suburb or marina pages in any phase.
+# Suburb redirects removed 2026-10-10. /coomera.html, /hope-island.html,
+# /runaway-bay.html and /southport.html now 404.
+# Evidence: 12 months of Search Console data shows none of the four appearing
+# in Pages at all — zero impressions, zero clicks. A 301 from a removed
+# location page to the homepage is treated as a soft 404 by Google anyway, so
+# the rules were passing nothing. No suburb or marina pages in any phase.
 # ---------------------------------------------------------------------------
-[[redirects]]
-  from = "/coomera.html"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/hope-island.html"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/runaway-bay.html"
-  to = "/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/southport.html"
-  to = "/"
-  status = 301
-  force = true
 
 # ---------------------------------------------------------------------------
 # Extensionless duplicates -> the canonical .html URL.
