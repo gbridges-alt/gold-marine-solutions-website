@@ -31,6 +31,24 @@
   force = true
 
 # ---------------------------------------------------------------------------
+# Internal docs. publish = "." served HANDOVER.md and README.md to the public
+# with a 200 — working notes, the deviation log and the credential rules were
+# readable by anyone. Same treatment as /_tools/*: kept in the repo, 404 at
+# the edge. Add any future internal .md here.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/HANDOVER.md"
+  to = "/"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/README.md"
+  to = "/"
+  status = 404
+  force = true
+
+# ---------------------------------------------------------------------------
 # The sample maintenance guide is a sales asset, not a search landing page.
 # A PDF cannot carry a <meta name="robots"> tag, so it needs an HTTP header.
 # SCOPED TO /assets/docs/* ONLY — this must never widen to /*, which would
