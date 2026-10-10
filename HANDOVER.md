@@ -1,362 +1,380 @@
-# Gold Marine Solutions — Handover Doc for Claude
+# Gold Marine Solutions — maintenance guide
 
-This file is for Claude (or any AI assistant) helping Geordie maintain and edit this website.
+For Geordie, or any AI assistant working on this site.
 
----
+**Live:** https://goldmarinesolutions.com
+**Owner:** Geordie Bridges · geordie@goldmarinesolutions.com · 0436 965 243
+**Repo:** github.com/gbridges-alt/gold-marine-solutions-website (public)
+**Last launch:** 10 Oct 2026 — the 4-URL single-page site was replaced by the
+current 12-page structure.
 
-## What This Site Is
-
-Static website for **Gold Marine Solutions** — Geordie Bridges, mobile marine mechanic, Gold Coast / SEQ.
-
-> **Credential rule.** Gold Marine holds a **mechanical trade qualification**. It does **not** hold an Australian auto-electrician qualification or an electrical contractor licence. Never write "auto electrician", "qualified electrician" or anything implying unrestricted 240V/AC capability. The approved wording is: *"marine 12V and 24V electrical diagnosis, testing and troubleshooting backed by Geordie's heavy-diesel mechanical and electrical training."*
-
-- **Live URL**: https://goldmarinesolutions.com
-- **Owner**: Geordie Bridges — geordie@goldmarinesolutions.com — 0436 965 243
+This file is served as 404 and is not public. Keep it that way; it is listed
+in the `netlify.toml` redirects.
 
 ---
 
-## Tech Stack
+## The rule that matters most
 
-| Layer | Tech |
-|-------|------|
-| Language | Plain HTML, CSS (inline `<style>`), vanilla JS (inline `<script>`) |
-| Framework | None |
-| Build step | None — files deployed as-is |
-| Hosting | Netlify |
-| Forms | Netlify Forms (native `netlify` attribute on `<form>`) |
-| Analytics | Google Analytics 4 — `G-6W754KYH0C` |
-| Fonts | Google Fonts CDN — Inter |
-| Domain | goldmarinesolutions.com (Geordie owns it) |
+> **Credentials.** Gold Marine holds a **mechanical trade qualification**. It
+> does **not** hold an Australian auto-electrician qualification or an
+> electrical contractor licence.
+>
+> Never write "auto electrician", "qualified electrician", or anything
+> implying unrestricted 240V/AC capability. Approved wording:
+> *"marine 12V and 24V electrical diagnosis, testing and troubleshooting
+> backed by Geordie's heavy-diesel mechanical and electrical training."*
 
-No npm, no Node, no bundler. Edit any `.html` file in a text editor, deploy, done.
+Four more claims the site deliberately does **not** make. Check these after
+any copy change:
 
----
+| Never claim | Why |
+|---|---|
+| Manufacturer affiliation | The brand band is nominative use only |
+| Guaranteed 24/7 availability | Urgent Callout offers willingness, not a dispatch guarantee |
+| Marine surveying | Purchase & Sale explicitly disclaims it and refers to an AMSA surveyor |
+| Dometic/VacuFlush dealership | Vessel Systems carries a non-affiliation line |
 
-## Running Locally
-
-> **You must use a local server. Do not open `index.html` from Finder.**
-> The site is now multi-page with a shared stylesheet, shared JS and directory
-> URLs (`/marine-mechanical/`). Those are root-relative, so under `file://`
-> they resolve against your hard drive instead of the site — the CSS 404s and
-> every page renders as unstyled text with no header. That is not a bug in the
-> site; it is what `file://` does to a multi-page site.
+Sweep for them:
 
 ```bash
-cd "<this folder>"
-python3 _tools/devserver.py
-# Visit http://127.0.0.1:4173/
-```
-
-Use `_tools/devserver.py`, not `python3 -m http.server`. The plain server
-answers form POSTs with 501 (the booking form looks broken) and sends no
-cache headers, so the browser keeps showing a stale build after every edit.
-
-If the page suddenly shows `ERR_CONNECTION_RESET`, the server has stopped or
-is stale. Check with `lsof -ti:4173`, `kill -9 <pid>`, and start it again.
-
-Contact form won't work locally — that's expected. Netlify only processes it on the live domain.
-
----
-
-## How to Deploy a Change
-
-### Drag & Drop (no Git needed):
-1. Edit the file(s) locally
-2. Go to https://app.netlify.com → your site → Deploys tab
-3. Drag the whole project folder onto the deploy dropzone
-4. Wait ~30 seconds. Done.
-
-### Via Git (cleaner):
-1. Edit, then: `git add . && git commit -m "what you changed" && git push`
-2. Netlify detects the push and auto-deploys within ~1 minute
-
----
-
-## File Structure
-
-```
-/
-├── index.html              ← MAIN PAGE — homepage, edit this most
-├── links.html              ← Social / link-in-bio page
-├── privacy.html            ← Privacy policy
-├── netlify.toml            ← Netlify config (leave alone)
-├── robots.txt              ← Tells Google what to crawl
-├── sitemap.xml             ← Page list for Google SEO
-├── googlea6d39f31da54cb95.html  ← DO NOT DELETE — Google Search Console verification
-├── logo.png
-├── assets/                 ← Shared CSS, JS and the newer photography
-│   ├── css/site.css        ← Site-wide stylesheet (all pages link it)
-│   ├── js/site.js          ← Nav, FAQ accordion, contact-form ?type= preselect
-│   └── img/                ← Imported Gold Marine photos, web-sized
-├── _tools/                 ← Local dev scripts, never served (404 via netlify.toml)
-└── [various .jpg images]   ← Remaining legacy gallery and service card photos
+grep -rniE 'auto electrician|qualified electrician|240v|authorised dealer|approved service centre|24/7|marine surveyor' --include='*.html' .
 ```
 
 ---
 
-## Contact Form
+## Structure
 
-Located in `index.html` (search for `<form name="contact"`).
+Five pillars, one page each. There are **no child pages** — Mechanical,
+Electrical and Vessel Systems were each consolidated from a hub plus children
+in Oct 2026, because customers should not have to pick a subsystem before
+making contact.
 
-Uses **Netlify Forms** — completely free, zero code required.
-
-```html
-<form name="contact" method="POST" netlify netlify-honeypot="bot-field">
+```
+/                                           home — owns the head terms
+/marine-mechanical/                         consolidated pillar
+/marine-electrical/                         consolidated pillar
+/vessel-systems/                            consolidated pillar
+/purchase-and-sale/                         hub
+/purchase-and-sale/pre-purchase-inspection/ the money page for this pillar
+/vessel-management/                         positioning pillar
+/emergency-marine-callout/                  life-safety page
+/contact/                                   single conversion destination
+/membership.html   /links.html   /privacy.html
 ```
 
-- Submissions appear in: Netlify dashboard → Forms
-- To get email notifications: Site settings → Forms → Form notifications → Add notification → Email
-  - Use: `geordie@goldmarinesolutions.com`
+**Keyword split.** Home owns *marine mechanic Gold Coast*, *mobile marine
+mechanic Gold Coast*, *boat mechanic Gold Coast*. The Mechanical page
+deliberately does **not** target those — it takes service-level terms
+(*marine engine service*, *boat engine repair*). Do not let the pillar pages
+drift onto the head terms; that is the cannibalisation the split prevents.
+
+**Split a pillar back into child pages only when Search Console shows the
+demand.** Start consolidated.
 
 ---
 
-## Hardcoded Values — Find & Replace These If They Change
+## Tech
 
-Search across **all `.html` files** if any of these change:
+Plain static HTML. No npm, no build step, no framework. Edit a `.html` file,
+push, done.
 
-| What | Current value |
-|------|--------------|
-| Phone (display) | `0436 965 243` |
-| Phone (links/tel) | `61436965243` |
-| Email | `geordie@goldmarinesolutions.com` |
-| WhatsApp link | `https://wa.me/61436965243` |
-| Facebook | `https://www.facebook.com/profile.php?id=61556990786261` |
-| Instagram | `https://www.instagram.com/goldmarinesolutions/` |
-| Google Analytics ID | `G-6W754KYH0C` (in `index.html` `<head>`) |
+| | |
+|---|---|
+| Shared CSS | `assets/css/site.css` — linked by all 12 pages |
+| Shared JS | `assets/js/site.js` |
+| Cache busting | `site.css?v=<hash>` — **must be updated when the CSS changes** |
+| Hosting | Netlify, project `gold-marine-solutions-au` |
+| Forms | Netlify Forms, 3 of them |
+| Analytics | GA4 `G-6W754KYH0C` |
+| Netlify plugin | `@netlify/plugin-emails` — installed, unused |
 
----
+Older notes said "all CSS is inline". That has not been true since the shared
+stylesheet was extracted. Some pages still carry page-local `<style>` blocks
+**after** the site.css link, to override it — `membership.html` and
+`privacy.html` especially. Leave those below the link or they stop working.
 
-## Gotchas & Known Issues
+### After any CSS change
 
-1. **All CSS/JS is inline** — no separate `.css` or `.js` files. Everything lives inside `<style>` and `<script>` tags in each HTML file.
+```bash
+H=$(shasum -a 256 assets/css/site.css | cut -c1-8)
+grep -rl 'site\.css?v=' . --include='*.html' | grep -v '\.git' | xargs sed -i '' "s|site\.css?v=[0-9a-f]*|site.css?v=$H|g"
+```
 
-2. **Suburb pages were removed** — `coomera.html`, `hope-island.html`, `runaway-bay.html`, `southport.html` previously existed as suburb-specific SEO landing pages but have been deleted (Geordie operates fully mobile across the whole region, so suburb-specific pages were misleading). 301 redirects in `netlify.toml` send the old URLs to `/#areas` so any inbound links don't 404.
-
-3. **`netlify.toml` had an old absolute path** — the `publish =` line originally pointed to a Google Drive path. It's been corrected to `"."`. If Netlify ever complains about the publish directory, make sure it reads `publish = "."`.
-
-4. **`service-electrical (1).jpg`** — duplicate file, not referenced in any HTML. Safe to delete.
-
-5. **`googlea6d39f31da54cb95.html`** — must stay in the root folder or Google Search Console will lose site verification.
-
-6. **`netlify.toml` references `@netlify/plugin-emails`** — this plugin was added during development but is not actively used. It won't cause errors; can be removed if desired.
-
----
-
-## Common Edits
-
-**Change phone number or email:** Find & Replace (Cmd+Shift+H in VS Code) across all `.html` files.
-
-**Add a new service card:** Find `<!-- SERVICES -->` in `index.html`, copy an existing `.service-card` block.
-
-**Add a gallery photo:** Add your `.jpg` to the root folder, then add an `<img>` inside the `.gallery-grid` section of `index.html`.
-
-**Update a testimonial:** Search `review-text` in `index.html`.
-
-**Change business hours:** Search `Mon-Sun` in `index.html`.
-
-**Add a new suburb to the service-area chips:** Add a `<span class="area-tag">Suburb Name</span>` inside the `.area-tags` block in `index.html`. No separate page needed — Geordie services everywhere mobile.
-
+Skip this and visitors keep the old stylesheet from cache.
 
 ---
 
-# Staging branch — `staging/site-repositioning`
+## The shared header and footer
 
-Phase 1 of the approved repositioning, built against `MASTER-SITEMAP-v3.2.md`
-(LOCKED). **Production `main` is untouched.**
-
-## What changed structurally
-
-| Area | Before | After |
-|---|---|---|
-| Pages | 4 | 18 (4 existing + 14 new Phase 1 routes) |
-| CSS | inline `<style>` per page | `/assets/css/site.css`, shared |
-| JS | inline `<script>` per page | `/assets/js/site.js`, shared |
-| Nav | flat anchor list | five pillar dropdowns + Urgent Callout route |
-| Images | repo root | new imagery in `/assets/img/` (root images unchanged) |
-
-Still plain HTML. Still no build step, no npm, no bundler. Edit any `.html`
-file in a text editor and push.
-
-## URLs that must never change
-
-`/` · `/membership.html` · `/links.html` · `/privacy.html`
-
-No redirects point at them and none should. The homepage `<title>` carries the
-existing ranking for *marine mechanic Gold Coast* and the related head terms —
-it is byte-identical to production and must not be materially changed.
-
-## PRE-MERGE CHECKLIST — do all of this before merging to `main`
-
-**Staging protection (must be removed):**
-
-1. Strip every `STAGING-ONLY` marker. Two per page:
-   ```bash
-   grep -rn "STAGING-ONLY" --include="*.html" .
-   ```
-   - the `<meta name="robots" content="noindex,nofollow,noarchive">` line, which
-     must go back to `index, follow` (or be removed, which means the same)
-   - the `<div class="staging-banner">` block
-2. Remove `class="has-staging-banner"` from every `<body>` tag.
-3. Leave the `context.branch-deploy` / `context.deploy-preview` header blocks in
-   `netlify.toml`. They never apply to production and protect future branches.
-
-**Content blockers (pages that must not publish as-is):**
-
-4. **No page carries a visible copy placeholder any more.** `/about/` and
-   `/service-areas/` were removed at the owner's request (see the deviation
-   notes below), and `/emergency-marine-callout/` and `/contact/` run on
-   approved or structural content. Step 1's `STAGING-ONLY` grep now only has
-   the banner and the meta robots tag to find.
-   `/contact/` no longer shows one: the page is functionally complete (booking
-   form, contact details, CTAs) and the outstanding intro copy would be an
-   addition rather than a fix. Its build note is an HTML comment instead —
-   a "copy pending approval" banner does not belong above the booking form on
-   the site's single conversion destination.
-5. **Urgent Callout** — confirm the current local marine rescue body and its
-   contact details. Required by `MASTER-SITEMAP-v3.2` §4c before publication.
-6. **Vessel Management §8** — the "View Sample Vessel Maintenance Guide" link
-   routes to `/contact/` because the sample guide does not exist. The copy
-   requires that destination to exist before launch.
-7. **Purchase & Sale hub** is built from `PURCHASE-SALE-HUB-PAGE-COPY-v1.md`,
-   which is **not FINAL**. Its §4 credential claim was replaced with the
-   approved capability wording — re-confirm when that file goes FINAL.
-8. **Owner-directed copy deviations — Marine Mechanical hub.**
-   `MARINE-MECHANICAL-HUB-PAGE-COPY-v1.1-FINAL` §1 approved the sub-line
-   *"across marine engines, propulsion and drivetrain — diesel, petrol and
-   outboard."* It now reads *"across marine engine and propulsion systems —
-   Diesel, Petrol and Outboards."* Changed on the owner's instruction, not a
-   build decision.
-   Same file, §3 sub-line: approved copy read *"Not every propulsion job is an
-   engine service."* It now reads *"Marine mechanical work goes well beyond
-   routine engine servicing."* Also owner-directed.
-   Same file, §2: the two "Confirmed work includes ..." proof lines were
-   removed from the Diesel and Petrol & Outboard routing cards as too wordy.
-   §2 specifies "one service-led line plus one proof line each". The same proof
-   is still carried in full in the Real work sections of both child pages, so
-   nothing is lost from the site.
-   Fold all three into the copy file at its next revision so the document and
-   the site agree.
-
-9. **Owner-directed terminology change — "drivetrain" retired site-wide.**
-   Replaced with "propulsion systems" throughout, on the owner's instruction.
-   Two of these deviate from controlling documents and need folding back in:
-   - `VESSEL-PURCHASE-ADVISORY-PAGE-COPY-v1.2-FINAL` §3: the inspection group
-     *"Engines & drivetrain"* now reads *"Engines & propulsion systems"*.
-   - `MASTER-SITEMAP-v3.2` names the Phase 2 page **Engine & Drivetrain
-     Diagnostics** in five places (§4 Mechanical table, §4b collision table,
-     §5 Phase 2 list, §7 CTA matrix). It is now presented as **Engine &
-     Propulsion Diagnostics**. The sitemap is LOCKED and has NOT been edited —
-     it needs a new version to carry this. **The URL is unchanged**
-     (`/marine-mechanical/engine-diagnostics/`), and the §4b anti-cannibalisation
-     rationale still holds: the name stays system-specific and does not stray
-     into Marine Electrical Repairs & Fault Finding's territory.
-
-10. **Interim imagery** — the Vessel Systems hero (brief §10) and the Sanitation
-   hero (IMG_9071 needs a crop, brief §12) are running placeholder photography.
-
-**SEO:**
-
-11. Export Search Console page and query data **before** anything ships. Without
-   a baseline you cannot tell a normal post-restructure dip from real damage.
-12. Resubmit `sitemap.xml` in Search Console after the merge.
-13. Confirm the four suburb redirects still resolve: `/coomera.html`,
-    `/hope-island.html`, `/runaway-bay.html`, `/southport.html` →
-    `/service-areas/` (301).
-
-## Service Areas page — removed
-
-`MASTER-SITEMAP-v3.2` lists **Service Areas** at `/service-areas/` as a Phase 1
-page, and §6 makes it the single answer that replaces the deleted suburb pages.
-Removed on the owner's instruction as unnecessary.
-
-**This is a deviation from the LOCKED sitemap** and needs folding into a new
-version of that document.
-
-Two things were handled with it:
-
-1. **The suburb redirects.** `netlify.toml` had `/coomera.html`,
-   `/hope-island.html`, `/runaway-bay.html` and `/southport.html` 301-ing to
-   `/service-areas/`. Those four were real URLs on the live site and still carry
-   index presence, so they would have started landing on a 404. They now point
-   at `/#areas`, which is exactly where production sends them today — so live
-   behaviour is unchanged.
-
-2. **Geographic relevance.** §7 relied on Service Areas linking to all five hubs
-   and back, "now that there are no suburb pages". That reciprocal pair is gone.
-   The homepage `#areas` section still lists the 22 areas served, and the nav and
-   footer "Service Areas" links now point there. Worth watching in Search
-   Console: if local coverage queries soften, this is the change to look at
-   first.
-
-## About page — removed
-
-`MASTER-SITEMAP-v3.2` lists **About** at `/about/` as a Phase 1 trust page. It
-was removed on the owner's instruction: it was hard to reach and, with no FINAL
-copy ever written for it, only ever held a placeholder.
-
-**This is a deviation from the LOCKED sitemap** and needs folding into a new
-version of that document.
-
-No SEO impact: `/about/` only ever existed on this branch, was never deployed
-and was never indexed, so no redirect is required. The About content itself is
-not lost — it lives in the homepage `#about` section, which is where the sitemap
-notes it sat before the route was planned. The nav and footer "About" links now
-point at `/#about`.
-
-## Backup HTML files — removed
-
-`index.backup.html`, `membership.backup-pre-premium.html` and
-`membership.backup-pre-vessel-mgmt.html` were committed, so they would have
-been served publicly and indexed at e.g. `/index.backup.html`. They carried
-stale pricing and the auto-electrician credential claims. Deleted; git history
-still has them. `.gitignore` now covers `*.backup.html` and `*.backup-*.html`,
-so no new ones get committed.
-
-Note: several backup files still sit in the working folder untracked. They will
-never deploy via git, but they **would** deploy if you drag the whole folder
-onto Netlify. Use git, or delete them locally before a drag-and-drop deploy.
-
-## Editing the shared header and footer
-
-The nav and footer are duplicated into all 18 pages, because the site is plain
-HTML with no build step. Do not hand-edit them page by page — that is how they
-drift. Edit `_tools/sync_shared.py` (it holds the nav order, the dropdown
-contents and the footer columns) and run:
+**Never hand-edit nav or footer markup in a page.** It is duplicated across
+all 12 and will drift. It is owned by:
 
 ```bash
 python3 _tools/sync_shared.py --check   # report drift, change nothing
-python3 _tools/sync_shared.py           # rewrite every page
+python3 _tools/sync_shared.py           # rewrite all pages
 ```
 
-`--check` exits non-zero if any page has drifted, so it is worth running before
-a merge. Everything else — page copy, per-page CTAs, images — is edited
-directly in the HTML.
+Edit the `PILLARS` list in `_tools/sync_shared.py`, run it, commit everything.
+A pillar with `[]` children renders as a plain nav link with no dropdown.
 
-`_tools/` is committed so it cannot be lost, and `netlify.toml` returns 404 for
-`/_tools/*` so it is never served.
+`--check` should always say `would change: 0` before you commit.
 
-## Store — removed
+---
 
-Gold Marine no longer promotes or operates a Store through this website. There
-was never an internal `/store` or `/shop` route — it was only an external link
-to `https://shop.goldmarinesolutions.com`, which has been removed from the
-mobile navigation and the footer. It was not replaced with anything.
+## Running locally
 
-If the Shopify property is being retired too, that is separate from this repo.
-Nothing here links to it any more.
+```bash
+cd "/Users/geordiebridges/Desktop/Gold Marine Solutions website/Gold Marine Solutions/gold-marine-solutions-website"
+python3 _tools/devserver.py 4173
+```
 
-## Phase 2 swaps
+http://127.0.0.1:4173/ — sends no-store headers so you are never fooled by
+cache, and accepts form POSTs so the contact page does not 501.
 
-Several cards route to `/contact/` as a deliberate single link value so each
-Phase 2 page launch is a one-line change:
+If the port is held by a stale process: `lsof -nP -iTCP:4173` then `kill -9`.
+This has happened twice; the symptom is `ERR_CONNECTION_RESET`.
 
-| Card | Currently | Phase 2 target |
-|---|---|---|
-| Electrical hub §3 | `/contact/` | `/marine-electrical/repairs-fault-finding/` |
-| Mechanical hub §3 ×3 | `/contact/` | gearbox / fuel-cooling / engine-diagnostics |
-| Vessel Systems cards 2-4 | `/contact/` | freshwater / bilges / air-conditioning |
-| Purchase & Sale "selling" | `/contact/` | `/purchase-and-sale/pre-sale-assessment/` |
-| Vessel Management projects | `/contact/` | `/vessel-management/project-coordination/` |
+---
 
-None of them are "coming soon" and none are disabled. Hierarchy on those pages
-reflects routing priority, not capability.
+## Deploying
+
+Auto-publish is **on**. A push to `main` goes live as soon as the build
+finishes — there is no review step.
+
+```bash
+git push origin main
+```
+
+**To get a review step back:** Netlify → Deploys → *Lock to stop auto
+publishing*. Builds still run; nothing goes live until you click Publish.
+Worth doing for anything structural.
+
+**Rollback:** Netlify → Deploys → pick an earlier deploy → *Publish deploy*.
+Seconds, no rebuild. `main@b9c5c64` is the pre-launch site if you ever need it.
+
+**Never drag-and-drop a folder to deploy production.** Manual deploys do not
+get the `context.branch-deploy` noindex headers, and a preview deployed that
+way was fully indexable for several days before it was caught.
+
+---
+
+## netlify.toml — why each rule exists
+
+Validate before committing. Hand-inspection is not enough — an unvalidated
+edit broke a production deploy:
+
+```bash
+python3 -c "import tomli; d=tomli.load(open('netlify.toml','rb')); print('ok', len(d['redirects']), 'redirects')"
+```
+
+| Rule | Why |
+|---|---|
+| `pretty_urls = false` | Netlify rewrote every internal `.html` link to extensionless **after deploy**, so rendered links disagreed with their own canonicals. Do not remove. |
+| `/membership` → `/membership.html` (301) | Netlify serves both forms with a 200. `.html` is canonical; these collapse the duplicate. |
+| `/_tools/*`, `/HANDOVER.md`, `/README.md` → 404 | `publish = "."` would otherwise serve them publicly. Add any new internal file here. |
+| `[[headers]]` for `/assets/docs/*` | noindex for the sample PDF, which cannot carry a meta tag. **Never widen to `/*`** — that deindexes the site. |
+| `context.branch-deploy` / `context.deploy-preview` | The only staging noindex. Never applies to production. |
+
+**Do not add `headers = []` back at the top.** It conflicts with `[[headers]]`
+and fails the build with a TOML parse error.
+
+---
+
+## Search Console
+
+**The property is not where you would guess.** It sits on
+**gbridges@macromechanical.com**, and it is a **URL-prefix** property
+(`https://goldmarinesolutions.com/`), verified by the two `google*.html` files
+in the root — not a Domain property.
+
+`geordie@goldmarinesolutions.com` has **no** Search Console properties. Signing
+in as that account shows an empty "Add a website" screen, and asking for the
+Domain property `sc-domain:goldmarinesolutions.com` returns "you don't have
+access" on every account. Neither means the data is gone; it means the wrong
+account or the wrong property type.
+
+Direct link, including the account number:
+
+```
+https://search.google.com/u/0/search-console?resource_id=https%3A%2F%2Fgoldmarinesolutions.com%2F
+```
+
+To ask Google to recrawl a page: URL inspection → paste the full URL → enter →
+**REQUEST INDEXING**. Roughly 10 per property per day. The sitemap handles
+discovery on its own; this only jumps the queue after a change.
+
+---
+
+## Indexing
+
+| | |
+|---|---|
+| Indexable | all 11 public pages, no robots meta, no `X-Robots-Tag` |
+| `links.html` | `noindex, follow` on purpose, excluded from sitemap |
+| Sample PDF | noindex via header, excluded from sitemap |
+| sitemap.xml | 11 URLs — update it when you add a page |
+
+No HTML file carries a blanket noindex, so nothing can suppress production by
+being merged.
+
+---
+
+## URLs that must not change
+
+These carried the site's entire search presence before launch:
+
+```
+/            /membership.html     /links.html     /privacy.html
+```
+
+Also keep `google5dcc5927d4598317.html` and `googlea6d39f31da54cb95.html` in
+the root, or Search Console loses verification.
+
+---
+
+## Working with images
+
+**EXIF rotation is the trap.** Most phone photos here are stored landscape and
+displayed portrait. `sips` crops in **stored** coordinates, so a crop computed
+from what you see lands on the wrong axis — this produced a rotated frame with
+black padding more than once.
+
+Mapping from displayed `(dx, dy, dw, dh)` to a sips crop:
+
+```
+sips -c <dw> <dh> --cropOffset <H - dx - dw> <dy>     # H = stored height
+```
+
+A resize pass (`sips -Z 1600`) sometimes normalises orientation and makes
+plain crops behave. **Always look at the output before committing it.**
+
+**Crop to the frame's ratio** rather than letting `object-fit: cover` guess.
+Measure the frame in the browser first:
+
+```js
+const r = document.querySelector('.route-card-img').getBoundingClientRect();
+r.width / r.height
+```
+
+Current frames: service cards `2.31`, about-img `1.14`, work-list is
+uncropped (`max-height` only).
+
+**Check before publishing any job photo:** builder's plates, job and slot
+numbers, other vessels' registrations, client houses. One frame had a Princess
+builder's plate with job numbers and had to be recropped. `IMG_9071.jpg` is the
+uncropped version and must never be used — `IMG_9071-cropped.jpg` is the safe one.
+
+---
+
+## Forms
+
+Three, all Netlify Forms. Submissions appear in Netlify → Forms.
+
+```
+index.html          name="contact"
+contact/index.html  name="contact"
+membership.html     name="membership-waitlist"
+```
+
+Each has a honeypot: `<p class="hp-field" aria-hidden="true">` with a
+`bot-field` input. It is hidden off-screen, not `display:none`, and carries no
+label text — the old version left "Don't fill this out:" in the raw HTML where
+audit tools read it as page content. Keep the `netlify-honeypot="bot-field"`
+attribute on the form.
+
+---
+
+## Hardcoded values
+
+Find and replace across all `.html` if any change:
+
+| What | Value |
+|---|---|
+| Phone (display) | `0436 965 243` |
+| Phone (tel:) | `61436965243` |
+| Email | `geordie@goldmarinesolutions.com` |
+| WhatsApp | `https://wa.me/61436965243` |
+| Facebook | `facebook.com/profile.php?id=61556990786261` |
+| Instagram | `instagram.com/goldmarinesolutions/` |
+| GA4 | `G-6W754KYH0C` |
+| ABN | `57 680 746 356` |
+| Labour rate | `$175/hr` |
+| Petrol service from | `$350` |
+| Diesel service from | `$525` |
+| Pre-purchase from | `$395 + GST` |
+
+**Pricing lives in two places on the homepage** — the pricing card *and* the
+FAQPage JSON-LD. They have drifted before. Change both, and keep the schema
+answer matching the visible answer or it breaches Google's guidelines.
+
+---
+
+## Life-safety copy
+
+`/emergency-marine-callout/` carries the emergency notice. Verified against
+mrq.qld.gov.au on 10 Oct 2026:
+
+- The body is **Marine Rescue Queensland**. VMR Southport became MRQ Southport
+  East on 20 Aug 2026 — "VMR" is out of date.
+- Correct instruction, matching every MRQ unit page: **call 000 or radio
+  Marine Rescue Queensland on VHF Channel 16**.
+- **Never publish a rescue phone number.** The numbers on MRQ unit pages are
+  general-enquiries and log-on lines, not emergency lines.
+- Gold Marine's area spans several units, so name the statewide body, not one
+  unit.
+
+Re-verify if MRQ restructures again.
+
+---
+
+## Before you commit
+
+```bash
+python3 _tools/sync_shared.py --check          # expect: would change: 0
+python3 -c "import tomli; tomli.load(open('netlify.toml','rb'))"
+python3 -c "
+import json,re,glob
+for f in glob.glob('**/*.html',recursive=True):
+    if f.startswith(('_tools','google')): continue
+    for m in re.findall(r'<script type=\"application/ld\+json\">(.*?)</script>',open(f).read(),re.S):
+        json.loads(m)
+print('JSON-LD ok')"
+```
+
+Then check the **deployed** output, not just source. Two defects this year were
+invisible in source and only appeared after deploy: the Pretty URLs rewrite,
+and a preview that shipped without its noindex headers.
+
+---
+
+## Open items
+
+- **Vessel Systems has one photographed job**, against six on Mechanical. Any
+  heads, holding-tank, bilge-pump or seacock photos would strengthen the
+  weakest pillar on the site.
+- **10 engine-series maintenance guides** sit in `~/Desktop/GMS Service/` —
+  Caterpillar 3208/3406/C15/C18, Volvo Penta D-Series/KAD/TAMD/petrol,
+  MerCruiser petrol, Yanmar. None is tied to a vessel or a client, so any
+  could become a published guide the way the sample PDF was. The two
+  vessel-named ones (Cameo, Riviera 43) and the `Mike Hemburrow` folder are
+  client work — **do not publish those**.
+- **15 unreferenced images** of 47 in `assets/img/`. Harmless, could be cleared.
+- Controlling documents (`MASTER-SITEMAP-v3.2.md` and the LOCKED strategy
+  files) still describe the pre-consolidation architecture. They need a new
+  version to match the site as built.
+
+---
+
+## Baseline
+
+`Gold Marine Solutions/_search-console-baseline-2026-10-10/` holds the last 12
+months of the old site, captured the day it was replaced. It cannot be
+regenerated.
+
+Homepage **165 clicks / 6,901 impressions / avg position 13.82**. Clicks were
+almost entirely brand. The restructure targets terms that had impressions and
+zero clicks: *gold coast boat servicing* (285 impr, pos 39.9), *boat mechanic
+gold coast* (184, pos 11.7), *marine mechanic gold coast* (142, pos 14.3).
+
+Brand queries should not move. If *gold marine solutions* falls from position
+1.08, something is wrong — that is not a settling period.
