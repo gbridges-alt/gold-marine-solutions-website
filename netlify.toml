@@ -32,6 +32,17 @@ headers = []
   force = true
 
 # ---------------------------------------------------------------------------
+# The sample maintenance guide is a sales asset, not a search landing page.
+# A PDF cannot carry a <meta name="robots"> tag, so it needs an HTTP header.
+# SCOPED TO /assets/docs/* ONLY — this must never widen to /*, which would
+# deindex the whole site. Pages are unaffected.
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/assets/docs/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# ---------------------------------------------------------------------------
 # Suburb redirects removed 2026-10-10. /coomera.html, /hope-island.html,
 # /runaway-bay.html and /southport.html now 404.
 # Evidence: 12 months of Search Console data shows none of the four appearing
