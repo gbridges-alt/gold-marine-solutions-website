@@ -72,4 +72,21 @@
       }
     }
   }
+
+  // Google Ads click ID. A paid click lands with ?gclid=... on whatever page
+  // the ad pointed at; the form is usually on a different page. Keep it for
+  // 90 days and copy it into the hidden gclid field of the contact forms, so
+  // Netlify stores it with the submission. Later, booked jobs can be uploaded
+  // to Google Ads as offline conversions against that ID. No PII involved.
+  try {
+    var gclid = new URLSearchParams(window.location.search).get('gclid');
+    if (gclid) {
+      localStorage.setItem('gms_gclid', JSON.stringify({ v: gclid, t: Date.now() }));
+    }
+    var stored = JSON.parse(localStorage.getItem('gms_gclid') || 'null');
+    if (stored && stored.v && (Date.now() - stored.t) < 90 * 86400000) {
+      var fields = document.querySelectorAll('input[name="gclid"]');
+      for (var g = 0; g < fields.length; g++) fields[g].value = stored.v;
+    }
+  } catch (e) { /* private mode or old browser — form still works without it */ }
 })();

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6W754KYH0C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6W754KYH0C');
+  // Google Ads website-call tracking (AW-17391166943). For visitors who arrive
+  // from a Google ad, Google swaps the visible 0436 965 243 for a forwarding
+  // number that rings through to it; calls of 60s+ count as a conversion.
+  // Everyone else sees the real number. Shared across all pages.
+  gtag('config', 'AW-17391166943/w7LECNDmoJodEN_L4ORA', {
+    'phone_conversion_number': '0436 965 243'
+  });
+  // This page is only reached by a successful contact-form submission
+  // (action="/contact/thank-you/" on both "contact" forms), so loading it is
+  // the lead event. Google Ads conversion "Repair Quote Form Submission":
+  gtag('event', 'conversion', {'send_to': 'AW-17391166943/-dGiCM3moJodEN_L4ORA'});
+  // GA4 lead event, for reporting and future import.
+  gtag('event', 'generate_lead', {'form_name': 'contact'});
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanks &mdash; We'll Be In Touch | Gold Marine Solutions</title>
+<!-- Deliberately noindex: this is the contact form's success page, not a landing
+     page, and it fires the Google Ads form conversion on load. It must never
+     be linked from anywhere else on the site or appear in sitemap.xml. This
+     is a single-page robots meta, not the blanket noindex HANDOVER.md warns
+     against — same pattern as links.html. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=79dce77f">
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Gold Marine Solutions — home">
+      <img src="/logo.png" alt="Gold Marine Solutions" style="height:110px; max-width:280px; object-fit:contain; filter: drop-shadow(0 0 8px rgba(197,165,90,0.4));" loading="eager">
+    </a>
+    <div class="nav-links">
+          <div class="nav-item"><a href="/marine-mechanical/">Mechanical</a></div>
+          <div class="nav-item"><a href="/marine-electrical/">Electrical</a></div>
+          <div class="nav-item"><a href="/vessel-systems/">Vessel Systems</a></div>
+          <div class="nav-item"><a href="/purchase-and-sale/">Purchase &amp; Sale</a><div class="nav-dropdown"><a href="/purchase-and-sale/" class="is-parent">Purchase &amp; Sale</a><a href="/purchase-and-sale/pre-purchase-inspection/">Vessel Purchase Advisory</a></div></div>
+          <div class="nav-item"><a href="/vessel-management/">Vessel Management</a><div class="nav-dropdown"><a href="/vessel-management/" class="is-parent">Vessel Management</a><a href="/membership.html">Gold Marine Memberships</a></div></div>
+    </div>
+    <div class="nav-phone">
+      <a href="/emergency-marine-callout/" class="btn-emergency"><span class="pulse-dot" aria-hidden="true"></span> Urgent Callout</a>
+      <a href="/contact/" class="btn-nav">Get a Quote</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+      <div class="mm-group-label">Mechanical</div>
+      <a href="/marine-mechanical/" class="mm-child">Marine Mechanical</a>
+      <div class="mm-group-label">Electrical</div>
+      <a href="/marine-electrical/" class="mm-child">Marine Electrical</a>
+      <div class="mm-group-label">Vessel Systems</div>
+      <a href="/vessel-systems/" class="mm-child">Marine Vessel Systems</a>
+      <div class="mm-group-label">Purchase &amp; Sale</div>
+      <a href="/purchase-and-sale/" class="mm-child">Purchase &amp; Sale</a>
+      <a href="/purchase-and-sale/pre-purchase-inspection/" class="mm-child">Vessel Purchase Advisory</a>
+      <div class="mm-group-label">Vessel Management</div>
+      <a href="/vessel-management/" class="mm-child">Vessel Management</a>
+      <a href="/membership.html" class="mm-child">Gold Marine Memberships</a>
+      <div class="mm-group-label">More</div>
+      <a href="/#about" class="mm-child">About</a>
+      <a href="/emergency-marine-callout/" class="mm-child">Urgent Callout</a>
+      <a href="/contact/" class="mobile-cta">Get a Quote</a>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-bg"><img src="/assets/img/IMG_6704.jpg" alt=""></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-inner">
+    <p class="eyebrow">Enquiry received</p>
+    <h1>Thanks &mdash; your enquiry is in.</h1>
+    <p class="lede">We'll call or email you back, usually within one business day. If the boat is stranded or not running, don't wait on us &mdash; call now.</p>
+    <div class="page-hero-btns">
+      <a href="tel:0436965243" class="btn-primary">&#128222; 0436 965 243</a>
+    </div>
+  </div>
+</header>
+
+<section class="section section--tint">
+  <div class="section-inner">
+    <h2>What happens next</h2>
+    <p>Geordie reads every enquiry personally. If the job needs more detail, he'll ring to talk it through; otherwise you'll get a quote and availability by email or SMS.</p>
+    <p>Urgent breakdown? See the <a href="/emergency-marine-callout/">Urgent Callout</a> page, or go <a href="/">back to the home page</a>.</p>
+  </div>
+</section>
+
+<!-- MOBILE STICKY CALL BAR -->
+<div class="sticky-call">
+  <a href="tel:0436965243" class="call-btn">&#128222; Call</a>
+  <a href="https://wa.me/61436965243?text=Hi%20Geordie%2C%20I%27d%20like%20a%20quote%20for%20my%20boat." class="call-btn">&#128172; WhatsApp</a>
+  <a href="/contact/" class="quote-btn">Get a Quote</a>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="nav-logo" style="margin-bottom:8px;">
+        <img src="/logo.png" alt="Gold Marine Solutions" style="height:52px; filter: drop-shadow(0 1px 3px rgba(0,0,0,0.3));" loading="lazy">
+      </a>
+      <p>One call. Every marine solution.<br>Mobile marine mechanical and electrical service across the Gold Coast and South East Queensland.</p>
+      <p style="margin-top:12px;">ABN 57 680 746 356</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="/marine-mechanical/">Marine Mechanical</a>
+      <a href="/marine-electrical/">Marine Electrical</a>
+      <a href="/vessel-systems/">Vessel Systems</a>
+      <a href="/purchase-and-sale/">Purchase &amp; Sale</a>
+      <a href="/vessel-management/">Vessel Management</a>
+      <a href="/emergency-marine-callout/">Urgent Callout</a>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <a href="/#about">About</a>
+      <a href="/membership.html">Memberships</a>
+      <a href="/#gallery">Our Work</a>
+      <a href="/contact/">Contact</a>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <a href="tel:0436965243">0436 965 243</a>
+      <a href="mailto:geordie@goldmarinesolutions.com">geordie@goldmarinesolutions.com</a>
+      <a href="https://www.instagram.com/goldmarinesolutions/" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/profile.php?id=61556990786261" rel="noopener">Facebook</a>
+      <a href="/links.html">Links</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year">2026</span> Gold Marine Solutions Pty Ltd. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js?v=1cbaa058"></script>
+
+</body>
+</html>
