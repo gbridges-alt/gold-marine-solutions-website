@@ -100,6 +100,14 @@
 # unchanged — MASTER-SITEMAP-v3.2 §2. The redirects above only collapse the
 # extensionless duplicates onto them.
 
+# ---------------------------------------------------------------------------
+# /contact/thank-you/ is the contact form's success page (form action). It
+# carries its own <meta name="robots" content="noindex"> and is not in the
+# sitemap. It fires the Google Ads form conversion on load, so it must stay a
+# real 200 page on this domain — never redirect it, and never list it as a
+# [[redirects]] target for anything else.
+# ---------------------------------------------------------------------------
+
 [functions]
 
   [functions.emails]

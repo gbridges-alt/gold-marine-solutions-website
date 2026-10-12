@@ -8,6 +8,13 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-6W754KYH0C');
+  // Google Ads website-call tracking (AW-17391166943). For visitors who arrive
+  // from a Google ad, Google swaps the visible 0436 965 243 for a forwarding
+  // number that rings through to it; calls of 60s+ count as a conversion.
+  // Everyone else sees the real number. Shared across all pages.
+  gtag('config', 'AW-17391166943/w7LECNDmoJodEN_L4ORA', {
+    'phone_conversion_number': '0436 965 243'
+  });
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -378,7 +385,7 @@
   </div>
 </footer>
 
-<script src="/assets/js/site.js?v=29e60582"></script>
+<script src="/assets/js/site.js?v=1cbaa058"></script>
 
 </body>
 </html>
